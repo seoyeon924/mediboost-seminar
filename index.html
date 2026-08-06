@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>파닥파닥 세미나 — AI 검색 시대의 병원 마케팅</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+  :root{
+    --grad:linear-gradient(158deg,#6f8bb4 0%,#8ba3c6 46%,#b7c9e0 100%);
+    --ink:#0d1320; --ink-soft:#45505f; --ink-faint:#8892a3;
+    --accent:#5e7ea6; --accent-deep:#3f5f83; --accent-ink:#213b57;
+    --tint:#d9e6f4; --tint-soft:#eff4fb; --line:#c7d5e6; --line-2:#e4e9f0;
+    --paper:#ffffff; --paper-2:#f4f7fb;
+    --warn:#b4623f; --warn-soft:#f7ece6; --warn-line:#eccdbd; --ok:#2f7d54; --ok-soft:#e6f1ea;
+    --good:#3d8a6b; --good-soft:#e7f2ec; --good-deep:#2f6f54;
+    --sans:"Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:var(--sans);color:var(--ink);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased}
+  .deck{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+  .deck::-webkit-scrollbar{display:none}
+  .slide{position:relative;height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:6vh 6.5vw;overflow:hidden}
+  .cover{background:var(--grad);color:#fff}
+  .content{background:var(--paper)}
+  .tint{background:var(--paper-2)}
+  .dark{background:var(--accent-ink);color:#eef3fb}
+
+  .eyebrow{font-size:clamp(13px,1.35vw,20px);font-weight:700;letter-spacing:.03em;margin-bottom:16px;display:inline-flex;align-items:center;gap:9px}
+  .cover .eyebrow{color:#e7eefa}.content .eyebrow{color:var(--accent-deep)}.dark .eyebrow{color:#a9c2e6;font-family:ui-monospace,monospace}
+  .eyebrow .n{font-family:ui-monospace,monospace}
+  h1{font-size:clamp(40px,5.6vw,84px);font-weight:800;line-height:1.16;letter-spacing:-0.045em}
+  h2{font-size:clamp(28px,3.6vw,52px);font-weight:800;line-height:1.2;letter-spacing:-0.04em;color:var(--ink)}
+  .lead{font-size:clamp(16px,1.9vw,27px);line-height:1.6;font-weight:500}
+  .cover .lead{color:#eaf1fb}.content .lead{color:var(--ink-soft)}
+  .accent{color:var(--accent-deep)}.cover .accent{color:#fff}
+  .foot{position:absolute;left:6.5vw;bottom:4.5vh;font-size:clamp(12px,1.25vw,17px)}
+  .cover .foot{color:#dbe6f5}.content .foot{color:var(--ink-faint)}
+  .note{font-size:clamp(12px,1.3vw,18px);color:var(--ink-faint);margin-top:16px;line-height:1.5}
+  .rsub{font-size:clamp(14px,1.55vw,22px);color:var(--ink-soft);margin-top:10px}
+
+  /* 정보 리스트 */
+  ul.info{list-style:none;display:grid;gap:clamp(11px,1.7vh,20px);margin-top:clamp(18px,2.8vh,32px)}
+  ul.info>li{display:flex;gap:15px;align-items:flex-start;font-size:clamp(16px,1.85vw,26px);font-weight:600;line-height:1.4}
+  ul.info .m{flex:0 0 auto;width:clamp(34px,2.9vw,48px);height:clamp(34px,2.9vw,48px);border-radius:11px;background:var(--tint);color:var(--accent-ink);display:flex;align-items:center;justify-content:center;font-size:clamp(15px,1.5vw,21px);font-weight:800;margin-top:1px}
+  ul.info .m.x{background:var(--warn-soft);color:var(--warn)}
+  ul.info .m.ok{background:var(--ok-soft);color:var(--ok)}
+  ul.info .m svg{width:56%;height:56%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  ul.info li .sub{display:block;font-size:clamp(13px,1.4vw,20px);font-weight:500;color:var(--ink-faint);margin-top:4px}
+
+  ul.agenda{list-style:none;display:grid;gap:clamp(13px,2.1vh,26px);margin-top:30px}
+  ul.agenda li{display:flex;gap:18px;align-items:baseline;font-size:clamp(21px,2.5vw,38px);font-weight:800;letter-spacing:-0.03em}
+  ul.agenda .no{font-family:ui-monospace,monospace;font-size:clamp(15px,1.5vw,22px);color:var(--accent);font-weight:700}
+  ul.agenda .tag{font-size:clamp(13px,1.35vw,18px);color:var(--ink-faint);font-weight:600;margin-left:6px}
+
+  .intro{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,4vw,60px);align-items:center}
+  .avatar{width:clamp(150px,16vw,250px);height:clamp(150px,16vw,250px);border-radius:24px;background:var(--tint);flex:0 0 auto;overflow:hidden;box-shadow:0 22px 46px -26px rgba(30,50,90,.5)}
+  .avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .intro .nm{font-size:clamp(30px,3.6vw,52px);font-weight:800;letter-spacing:-0.04em}
+  .intro .role{font-size:clamp(16px,1.65vw,24px);color:var(--accent-deep);font-weight:700;margin-top:5px}
+  .intro ul{list-style:none;margin-top:16px;display:grid;gap:9px}
+  .intro li{font-size:clamp(15px,1.55vw,22px);color:var(--ink-soft);font-weight:500;display:flex;gap:10px}
+  .intro li::before{content:"—";color:var(--accent)}
+  .intro .why{margin-top:18px;font-size:clamp(15px,1.6vw,23px);color:var(--ink);font-weight:600;line-height:1.5}
+
+  /* 리서치 카드 */
+  .rcards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(18px,2.6vh,32px)}
+  .rcard{background:#fff;border:1px solid var(--line-2);border-radius:20px;padding:clamp(18px,1.9vw,28px);box-shadow:0 22px 46px -28px rgba(30,50,90,.42);position:relative;display:flex;flex-direction:column}
+  .rbadge{position:absolute;top:16px;right:16px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .rtitle{font-size:clamp(16px,1.65vw,24px);font-weight:800;color:var(--ink);letter-spacing:-0.03em;padding-right:36px;line-height:1.3}
+  .rchart{margin-top:16px;flex:1;display:flex;flex-direction:column;justify-content:center}
+  .rsrc{margin-top:14px;font-size:clamp(11px,1.1vw,15px);color:var(--ink-faint)}
+  .conns{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px}
+  .conns span{height:24px;position:relative}
+  .conns span::after{content:"";position:absolute;left:50%;top:0;height:18px;border-left:2px dashed var(--line-2)}
+  .conns span::before{content:"";position:absolute;left:calc(50% - 5px);bottom:0;border-top:8px solid var(--accent);border-left:5px solid transparent;border-right:5px solid transparent}
+  .cpills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .cpill{background:var(--accent);color:#fff;border-radius:40px;padding:14px 16px;text-align:center;font-size:clamp(13px,1.5vw,21px);font-weight:700;box-shadow:0 14px 28px -15px rgba(60,95,131,.6)}
+  .bignum{font-size:clamp(34px,4vw,60px);font-weight:800;color:var(--accent-deep);letter-spacing:-0.04em;line-height:1}
+  .bignum small{font-size:clamp(13px,1.3vw,18px);color:var(--ink-faint);font-weight:600;margin-left:6px}
+  .statchips{display:flex;gap:8px;margin-top:16px}
+  .statchips span{flex:1;background:var(--tint-soft);border:1px solid var(--line);border-radius:10px;padding:9px 4px;text-align:center;font-size:clamp(11px,1.15vw,15px);font-weight:600;color:var(--ink-soft)}
+  .statchips span b{display:block;font-size:clamp(17px,1.8vw,25px);color:var(--accent-deep);font-weight:800}
+  .miniflow{display:flex;align-items:center;justify-content:space-between}
+  .miniflow .mn{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:clamp(11px,1.1vw,15px);font-weight:700;color:var(--ink-soft)}
+  .miniflow .mn .mc{width:clamp(38px,3.6vw,54px);height:clamp(38px,3.6vw,54px);border-radius:13px;background:var(--tint-soft);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--accent-deep)}
+  .miniflow .mn .mc svg{width:52%;height:52%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .miniflow .mn.on .mc{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .miniflow .ma{color:#c3ccd8;font-size:20px}
+  .srclist{display:grid;gap:12px}
+  .srclist .sr{display:flex;align-items:center;gap:9px;font-size:clamp(12px,1.3vw,18px)}
+  .srclist .sr .tag{font-size:clamp(10px,1.05vw,13px);font-weight:800;color:#fff;background:var(--accent);border-radius:6px;padding:3px 7px;flex:0 0 auto}
+  .srclist .sr .d{color:var(--ink-soft);font-weight:600}
+
+  /* 4-up 아이콘 카드 */
+  .cardrow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:clamp(18px,2.8vh,34px)}
+  .icard{background:#fff;border:1px solid var(--line-2);border-radius:18px;padding:clamp(18px,1.9vw,28px);box-shadow:0 18px 40px -28px rgba(30,50,90,.4)}
+  .icard .ii{width:clamp(46px,4vw,60px);height:clamp(46px,4vw,60px);border-radius:15px;background:var(--tint-soft);display:flex;align-items:center;justify-content:center;color:var(--accent-deep)}
+  .icard .ii svg{width:52%;height:52%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .icard h4{font-size:clamp(15px,1.55vw,23px);font-weight:800;margin-top:16px;letter-spacing:-0.02em}
+  .icard p{font-size:clamp(13px,1.35vw,19px);color:var(--ink-soft);margin-top:8px;line-height:1.55;font-weight:500}
+  @media(max-width:820px){.cardrow{grid-template-columns:1fr 1fr}}
+
+  /* 비교 */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:26px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 22px 46px -30px rgba(30,50,90,.4)}
+  .cmp .col{padding:clamp(20px,2.3vw,36px)}
+  .cmp .col+.col{border-left:1px solid var(--line)}
+  .cmp .col.bad{background:var(--warn-soft)}
+  .cmp .h{font-size:clamp(18px,2vw,30px);font-weight:800;color:var(--accent-ink)}
+  .cmp .col.bad .h{color:var(--warn)}
+  .cmp ul{list-style:none;margin-top:16px;display:grid;gap:12px}
+  .cmp li{font-size:clamp(15px,1.55vw,23px);color:var(--ink-soft);font-weight:600;line-height:1.4;display:flex;gap:9px}
+  .cmp li b{color:var(--ink);font-weight:800}
+  .cmp .col.good{background:var(--good-soft)}
+  .cmp .col.good .h{color:var(--good-deep)}
+  .cmp .mk{flex:0 0 auto;width:24px;height:24px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;margin-top:2px;color:#fff}
+  .cmp .mk.x{background:var(--warn)}
+  .cmp .mk.o{background:var(--good)}
+  .dmock{margin:14px 0 4px}.dmock svg{width:100%;height:auto;display:block}
+
+  /* 타임라인 */
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(18px,2.8vh,34px)}
+  .tstep{border:1px solid var(--line-2);border-radius:18px;padding:clamp(18px,2vw,30px);background:#fff;box-shadow:0 18px 40px -30px rgba(30,50,90,.4)}
+  .tstep .w{display:inline-flex;font-family:ui-monospace,monospace;font-size:clamp(12px,1.35vw,18px);color:#fff;background:var(--accent);border-radius:20px;padding:4px 12px;font-weight:700}
+  .tstep .tt{font-size:clamp(18px,1.9vw,28px);font-weight:800;margin-top:12px}
+  .tstep ul{list-style:none;margin-top:12px;display:grid;gap:8px}
+  .tstep li{font-size:clamp(13px,1.4vw,20px);color:var(--ink-soft);font-weight:500;line-height:1.4;padding-left:15px;position:relative}
+  .tstep li::before{content:"·";position:absolute;left:2px;color:var(--accent);font-weight:800}
+  @media(max-width:820px){.timeline{grid-template-columns:1fr}}
+
+  /* 스크린샷 */
+  .split{display:grid;grid-template-columns:0.82fr 1.18fr;gap:clamp(26px,3.5vw,56px);align-items:center;margin-top:6px}
+  .split.rev{grid-template-columns:1.18fr 0.82fr}
+  .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 28px 60px -34px rgba(30,50,90,.55);background:#fff}
+  .shot .bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line-2);background:var(--paper-2)}
+  .shot .bar i{width:9px;height:9px;border-radius:50%;background:#d7dee8;display:block}
+  .shot .bar .u{margin-left:8px;font-size:11px;color:var(--ink-faint);font-family:ui-monospace,monospace}
+  .shot img{width:100%;display:block}
+  .cap-split{font-size:clamp(15px,1.7vw,24px);color:var(--ink-soft);font-weight:600;line-height:1.55}
+  @media(max-width:820px){.split,.split.rev,.cmp{grid-template-columns:1fr}.cmp .col+.col{border-left:0;border-top:1px solid var(--line)}}
+
+  /* Key Insight 다크 패널 */
+  .insight-wrap{position:relative;background:var(--accent-ink);border-radius:26px;padding:clamp(30px,4vw,56px);color:#fff;overflow:hidden}
+  .insight-wrap .radial{position:absolute;left:auto;right:-150px;top:50%;transform:translateY(-50%);width:540px;height:540px;border-radius:50%;border:1.5px solid rgba(255,255,255,.09);box-shadow:0 0 0 70px rgba(255,255,255,.035),0 0 0 150px rgba(255,255,255,.02);pointer-events:none}
+  .insight-wrap .il{font-family:ui-monospace,monospace;font-size:clamp(13px,1.4vw,19px);color:#a9c2e6;letter-spacing:.06em;position:relative}
+  .insight-wrap ul{list-style:none;margin-top:20px;display:grid;gap:14px;position:relative}
+  .insight-wrap li{font-size:clamp(15px,1.75vw,26px);font-weight:700;display:flex;gap:13px;line-height:1.4;color:#eef3fb}
+  .insight-wrap li::before{content:"";width:9px;height:9px;border-radius:50%;background:#8fb0e0;margin-top:.55em;flex:0 0 auto}
+
+  .stats{display:flex;flex-wrap:wrap;gap:clamp(18px,3.2vw,56px);margin:26px 0}
+  .stat .v{font-size:clamp(36px,5.4vw,84px);font-weight:800;line-height:1;letter-spacing:-0.05em;color:var(--accent-deep)}
+  .stat .l{font-size:clamp(13px,1.4vw,20px);color:var(--ink-faint);margin-top:9px;font-weight:600}
+  .pill{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:40px;padding:12px 22px;font-size:clamp(14px,1.5vw,21px);font-weight:600}
+
+  .cover-art{position:absolute;right:-3%;bottom:-6%;width:min(40vw,540px);opacity:.16;pointer-events:none}
+  .cover-art svg{width:100%;height:auto;fill:none;stroke:#fff;stroke-width:1.4;stroke-linecap:round}
+  /* 아임웹 FAQ 문서 스타일 */
+  .doc{background:#fff;border:1px solid var(--line-2);border-radius:18px;padding:clamp(20px,2.3vw,36px);box-shadow:0 22px 46px -30px rgba(30,50,90,.4);margin-top:clamp(14px,2.2vh,26px)}
+  .d403{display:inline-flex;align-items:center;gap:10px;background:#fbe9e6;color:#b4322a;border:1px solid #f0c4bd;border-radius:10px;padding:10px 15px;font-weight:800;font-size:clamp(14px,1.55vw,23px)}
+  .d403 svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+  .d403 .mono{font-family:ui-monospace,monospace}
+  .docul{list-style:none;margin-top:16px;display:grid;gap:9px}
+  .docul li{font-size:clamp(14px,1.5vw,21px);color:var(--ink-soft);font-weight:600;line-height:1.45;display:flex;gap:10px}
+  .docul li::before{content:"•";color:var(--accent);font-weight:800}
+  .docul b{color:var(--ink);font-weight:800}
+  .chip{font-family:ui-monospace,monospace;font-size:.86em;background:#eef1f5;color:#b4322a;border-radius:5px;padding:1px 6px}
+  .alert{border-radius:12px;padding:13px 17px;margin-top:14px;font-size:clamp(13px,1.45vw,20px);line-height:1.5;font-weight:600}
+  .alert.red{background:#e0655a;color:#fff}
+  .alert.red b{color:#fff;font-weight:800}
+  .alert.green{background:#e6f1ea;color:#2f7d54;border:1px solid #cbe6d6}
+  .alert.green b{color:#1f6b45;font-weight:800}
+  .ptable{width:100%;border-collapse:collapse;margin-top:16px;font-size:clamp(12px,1.35vw,19px)}
+  .ptable th,.ptable td{text-align:left;padding:9px 12px;border-top:1px solid var(--line-2)}
+  .ptable th{color:var(--ink-faint);font-weight:700;border-top:0}
+  .ptable td:first-child{font-weight:800;color:var(--ink);white-space:nowrap}
+  .ptable td{color:var(--ink-soft);font-weight:500}
+  .srcline{margin-top:14px;font-size:clamp(11px,1.2vw,16px);color:var(--ink-faint)}
+  /* Before/After 해결 */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(16px,2.4vh,30px)}
+  .bacard{border-radius:20px;padding:clamp(20px,2.2vw,34px);border:1px solid var(--line-2)}
+  .bacard.bad{background:var(--warn-soft);border-color:var(--warn-line)}
+  .bacard.good{background:var(--tint-soft);border-color:var(--line)}
+  .bacard .bt{font-size:clamp(15px,1.6vw,24px);font-weight:800;margin-bottom:16px}
+  .bacard.bad .bt{color:var(--warn)}.bacard.good .bt{color:var(--accent-deep)}
+  .baflow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:clamp(12px,1.35vw,19px);font-weight:700;color:var(--ink)}
+  .baflow .box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+  .baflow .res{padding:8px 12px;border-radius:8px;font-weight:800;font-family:ui-monospace,monospace}
+  .baflow .res.x{background:#f4d7d0;color:#b4322a}.baflow .res.o{background:#d9ecdf;color:#2f7d54}
+  .baflow .ar{color:#b0b8c3;font-size:18px}
+  .baout{margin-top:14px;font-size:clamp(13px,1.45vw,21px);font-weight:800}
+  .bacard.bad .baout{color:var(--warn)}.bacard.good .baout{color:var(--accent-deep)}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:clamp(12px,1.3vw,17px);font-weight:800;border-radius:20px;padding:6px 14px;margin-top:16px}
+  .badge.us{background:var(--good);color:#fff}
+  .actionbar{margin-top:20px;font-size:clamp(13px,1.45vw,20px);color:var(--ink-soft);font-weight:600}
+  .actionbar b{color:var(--ink);font-weight:800}
+
+  .gbuild{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(18px,2.4vw,40px);margin-top:22px;align-items:start}
+  .gsteps{list-style:none;display:grid;gap:10px}
+  .gsteps li{display:flex;gap:11px;align-items:flex-start;font-size:clamp(13px,1.4vw,20px);font-weight:600;line-height:1.35;color:var(--ink-faint);opacity:.4}
+  .gsteps li .gn{flex:none;width:29px;height:29px;border-radius:9px;background:#eef1f5;color:var(--ink-faint);display:grid;place-items:center;font-weight:800;font-size:.85em;margin-top:1px}
+  .gsteps li.done{opacity:1;color:var(--ink-soft)}
+  .gsteps li.done .gn{background:var(--tint-soft);color:var(--accent-deep)}
+  .gsteps li.now{opacity:1;color:var(--ink)}
+  .gsteps li.now .gn{background:var(--accent);color:#fff}
+  .gsteps li b{color:var(--ink);font-weight:800}
+  .gdoc{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 20px 44px -30px rgba(30,50,90,.4);overflow:hidden}
+  .gdoc .gbar{display:flex;align-items:center;gap:6px;padding:11px 15px;border-bottom:1px solid var(--line);background:var(--paper-2)}
+  .gdoc .gbar i{width:9px;height:9px;border-radius:50%;background:#d7dee8}
+  .gdoc .gbar span{margin-left:8px;font-size:12px;color:var(--ink-faint)}
+  .gbody{padding:clamp(13px,1.7vw,24px);display:grid;gap:8px}
+  .part{padding:5px 11px;border-radius:9px;transition:.2s}
+  .part.new{background:var(--tint-soft);padding:9px 12px}
+  .part .lbl{display:inline-block;font-size:clamp(10px,1.05vw,12px);font-weight:800;color:var(--accent-deep);background:#fff;border:1px solid var(--line);border-radius:20px;padding:1px 9px;margin-bottom:7px}
+  .gttl{font-size:clamp(16px,1.75vw,26px);font-weight:800;color:var(--ink);line-height:1.3}
+  .gby{font-size:clamp(12px,1.3vw,17px);color:var(--ink-faint);font-weight:600}
+  .glead{font-size:clamp(13px,1.4vw,19px);color:var(--ink);font-weight:700;line-height:1.6}
+  .gtext{font-size:clamp(12px,1.3vw,17px);color:var(--ink-soft);line-height:1.65}
+  .gschema{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(10px,1vw,12.5px);background:#0f1b2d;color:#cfe0f5;border-radius:10px;padding:12px 14px;line-height:1.6;white-space:pre;overflow:auto}
+  .gschema b{color:#7fb0e6;font-weight:700}.gschema em{color:#9ad19a;font-style:normal}
+
+  .badge.you{background:#eef1f5;color:var(--ink-soft)}
+  .aim{padding:16px}
+  .aim .q{background:var(--accent);color:#fff;font-size:clamp(12px,1.35vw,18px);font-weight:600;padding:10px 13px;border-radius:13px 13px 4px 13px;max-width:88%;margin-left:auto}
+  .aim .a{background:var(--paper-2);border:1px solid var(--line);font-size:clamp(12px,1.35vw,18px);color:var(--ink);padding:12px 14px;border-radius:13px 13px 13px 4px;margin-top:12px;line-height:1.65}
+  .aim .cite{background:#fff;border:1px solid var(--line);color:var(--accent-deep);border-radius:6px;padding:1px 6px;font-size:.86em;font-weight:800;white-space:nowrap}
+  .aim .srcs{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+  .aim .srcs span{font-size:clamp(10px,1.05vw,13px);color:var(--ink-faint);background:#fff;border:1px solid var(--line);border-radius:20px;padding:3px 9px}
+  .aim .srcs span.on{color:var(--accent-deep);border-color:var(--line);background:var(--tint-soft);font-weight:700}
+  .alert.narrow{max-width:60ch}
+
+  /* 섹션 큰그림 맵 */
+  .secmap{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:clamp(22px,3.4vh,44px)}
+  .smq{position:relative;background:#fff;border:1px solid var(--line-2);border-radius:18px;padding:clamp(20px,2.2vw,32px);box-shadow:0 18px 40px -30px rgba(30,50,90,.4)}
+  .smq .sn{font-family:ui-monospace,monospace;font-size:clamp(12px,1.3vw,17px);font-weight:800;color:var(--accent)}
+  .smq .st{font-size:clamp(17px,1.9vw,27px);font-weight:800;margin-top:10px;letter-spacing:-.02em}
+  .smq .sd{font-size:clamp(13px,1.4vw,19px);color:var(--ink-soft);font-weight:500;margin-top:9px;line-height:1.55}
+  .smq:not(:last-child)::after{content:"→";position:absolute;right:-15px;top:50%;transform:translateY(-50%);color:#c3ccd8;font-size:20px;z-index:2}
+  @media(max-width:820px){.secmap{grid-template-columns:1fr}.smq:not(:last-child)::after{display:none}}
+
+  /* 광고·대행사 목업 그리드 */
+  .adgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:clamp(16px,2.4vh,28px)}
+  .adcard{border:1px solid var(--line-2);border-radius:13px;overflow:hidden;background:#fff;box-shadow:0 16px 36px -28px rgba(30,50,90,.4);display:flex;flex-direction:column}
+  .adcard .url{display:flex;align-items:center;gap:6px;font-family:ui-monospace,monospace;font-size:clamp(10px,1.05vw,12.5px);color:var(--ink-faint);padding:8px 12px;border-bottom:1px solid var(--line-2);background:var(--paper-2)}
+  .adcard .url i{width:7px;height:7px;border-radius:50%;background:#d7dee8;flex:0 0 auto}
+  .adcard .b{padding:14px 15px;flex:1;display:flex;flex-direction:column;gap:8px}
+  .adcard .t{font-size:clamp(14px,1.5vw,20px);font-weight:800;color:var(--accent-deep);line-height:1.32;letter-spacing:-.02em}
+  .adcard .d{font-size:clamp(11.5px,1.25vw,16px);color:var(--ink-soft);font-weight:500;line-height:1.5}
+  .adcard .flag{margin-top:auto;font-size:clamp(10.5px,1.1vw,14px);font-weight:800;color:var(--warn);background:var(--warn-soft);border:1px solid var(--warn-line);border-radius:7px;padding:7px 10px;line-height:1.4}
+
+  /* 계약서 목업 */
+  .contract{background:#fff;border:1px solid var(--line-2);border-radius:16px;box-shadow:0 22px 46px -30px rgba(30,50,90,.4);overflow:hidden;margin-top:clamp(14px,2.2vh,24px)}
+  .contract .ch{padding:13px 20px;border-bottom:1px solid var(--line-2);background:var(--paper-2);font-weight:800;font-size:clamp(14px,1.5vw,21px);display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .contract .ch .stamp{font-family:ui-monospace,monospace;font-size:.66em;color:var(--ink-faint);font-weight:700;border:1px dashed var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap}
+  .contract .cb{padding:clamp(13px,1.7vw,24px);display:grid;gap:8px}
+  .clause{display:grid;grid-template-columns:auto 1fr;gap:14px;font-size:clamp(12.5px,1.35vw,18px);color:var(--ink-soft);line-height:1.5;padding:10px 13px;border-radius:9px;font-weight:500}
+  .clause .cn{font-weight:800;color:var(--ink);white-space:nowrap}
+  .clause.bad{background:#fbe9e6;color:#7a2b23}
+  .clause.bad .cn{color:#b4322a}
+  .clause .hl{font-weight:800;color:#b4322a}
+
+  /* 실행 순서 도식 */
+  .howflow{display:flex;align-items:stretch;gap:0;margin-top:clamp(22px,3.2vh,44px)}
+  .hstep{flex:1;background:#fff;border:1px solid var(--line-2);border-radius:18px;padding:clamp(16px,1.9vw,26px);box-shadow:0 18px 40px -30px rgba(30,50,90,.4);display:flex;flex-direction:column;gap:10px}
+  .hstep .hn{width:32px;height:32px;border-radius:9px;background:var(--tint-soft);color:var(--accent-deep);display:grid;place-items:center;font-weight:800;font-family:ui-monospace,monospace;font-size:13px}
+  .hstep .hic{color:var(--accent-deep)}
+  .hstep .hic svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .hstep .ht{font-size:clamp(15px,1.55vw,22px);font-weight:800;letter-spacing:-.02em;line-height:1.25}
+  .hstep .hd{font-size:clamp(12px,1.25vw,16px);color:var(--ink-soft);font-weight:500;line-height:1.5}
+  .harrow{flex:0 0 auto;align-self:center;display:grid;place-items:center;color:#c3ccd8;padding:0 4px}
+  .harrow svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  @media(max-width:820px){.howflow{flex-direction:column}.harrow{transform:rotate(90deg);padding:4px 0}}
+
+  .spark{position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.5;animation:tw 3.5s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:.85;transform:scale(1)}}
+  .counter{position:fixed;right:20px;bottom:15px;z-index:20;font-size:13px;font-weight:700;color:var(--ink-faint);background:rgba(255,255,255,.72);backdrop-filter:blur(6px);padding:5px 11px;border-radius:20px;font-family:ui-monospace,monospace}
+  .hint{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:20;font-size:11px;color:var(--ink-faint);opacity:.55}
+  @media print{.hint,.counter{display:none}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important}.deck{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="counter"><span id="pgnum">1</span> / <span id="pgtot">21</span></div>
+<div class="hint">← → 로 넘김</div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 표지 -->
+  <section class="slide cover">
+    <span class="spark" style="top:20%;left:72%"></span><span class="spark" style="top:34%;left:86%;animation-delay:1.2s"></span><span class="spark" style="top:62%;left:78%;animation-delay:2s"></span>
+    <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/><circle cx="362" cy="200" r="3"/></svg></div>
+    <span class="eyebrow">파닥파닥 개원의 세미나</span>
+    <h1>AI 검색 시대의<br>병원 마케팅</h1>
+    <p class="lead" style="margin-top:22px;max-width:40ch">대행사 고르는 법 · SEO·GEO의 기준 · 앞으로의 마케팅. 아무도 정리해 주지 않던 것을 데이터 관점에서 정리합니다.</p>
+    <div class="foot">전서연 · 데이터브릿지랩 대표 &nbsp;|&nbsp; 발표 + Q&amp;A</div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">발표자 소개</span>
+    <div class="intro">
+      <div class="avatar"><img src="assets/profile.png" alt="전서연 대표" /></div>
+      <div>
+        <div class="nm">전서연</div>
+        <div class="role">데이터브릿지랩 대표 · 데이터 분석가</div>
+        <ul>
+          <li>前 아마존웹서비스(AWS) Business Analyst</li>
+          <li>Tableau Visionary 2026 (국내 최초) · 데이터 시각화 전문가</li>
+          <li>기업·기관 교육: 현대자동차그룹 · KT · 하나은행 · CJ그룹 · 성균관대 · 경찰청</li>
+          <li>現 데이터 관점으로 병원 온라인 마케팅(Mediboost) 운영·연구</li>
+        </ul>
+        <p class="why">마케터가 아니라 데이터 다루던 사람입니다. 병원 마케팅을 숫자로 뜯어봤더니, 원장님이 판단할 근거가 유독 없는 시장이더군요. 오늘은 그 판단 기준을 공유합니다.</p>
+      </div>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent">목차 · 오늘 다룰 것</span>
+    <ul class="agenda">
+      <li><span class="no">01</span> 검색 환경의 변화와 AI <span class="tag">현황·원리</span></li>
+      <li><span class="no">02</span> 대행사 거르는 법 <span class="tag">배경·계약·표현·법</span></li>
+      <li><span class="no">03</span> 좋은 업체·좋은 마케팅의 기준 <span class="tag">체크리스트·측정</span></li>
+      <li><span class="no">04</span> 앞으로 무엇을, 어떻게 <span class="tag">실행·로드맵</span></li>
+    </ul>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">01</span> 시장 현황</span>
+    <h2>지금, 환자는 이렇게 움직입니다</h2>
+    <p class="rsub">직접 확인한 데이터와 시장 흐름을 정리했습니다.</p>
+    <div class="rcards">
+      <div class="rcard"><span class="rbadge">01</span>
+        <div class="rtitle">내돈내산 후기 1편의 반응</div>
+        <div class="rchart">
+          <div class="bignum">6만+<small>조회수</small></div>
+          <div class="statchips"><span><b>123</b>좋아요</span><span><b>52</b>댓글</span><span><b>30+</b>문의 DM</span></div>
+        </div>
+        <div class="rsrc">출처 : 자체 스레드 게시물 (2026) · 광고비 0원</div>
+      </div>
+      <div class="rcard"><span class="rbadge">02</span>
+        <div class="rtitle">환자의 병원 탐색 경로</div>
+        <div class="rchart"><div class="miniflow">
+          <div class="mn"><div class="mc"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>검색</div><span class="ma">›</span>
+          <div class="mn"><div class="mc"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4z"/></svg></div>SNS</div><span class="ma">›</span>
+          <div class="mn on"><div class="mc"><svg viewBox="0 0 24 24"><path d="M12 3l1.7 4.5L18 9l-4.3 1.6L12 15l-1.7-4.4L6 9l4.3-1.5z"/></svg></div>AI</div>
+        </div></div>
+        <div class="rsrc">검색 → SNS → AI 순으로 이동</div>
+      </div>
+      <div class="rcard"><span class="rbadge">03</span>
+        <div class="rtitle">AI가 인용하는 출처</div>
+        <div class="rchart"><div class="srclist">
+          <div class="sr"><span class="tag">GPT</span><span class="d">위키·언론 등 권위 매체</span></div>
+          <div class="sr"><span class="tag">PPX</span><span class="d">커뮤니티·리뷰</span></div>
+          <div class="sr"><span class="tag">NAVER</span><span class="d">블로그·플레이스·뉴스</span></div>
+        </div></div>
+        <div class="rsrc">채널마다 인용 출처가 다름</div>
+      </div>
+    </div>
+    <div class="conns"><span></span><span></span><span></span></div>
+    <div class="cpills">
+      <div class="cpill">광고보다 경험 콘텐츠에 반응</div>
+      <div class="cpill">검색이 AI로 이동 중</div>
+      <div class="cpill">실명·구조화가 인용을 만든다</div>
+    </div>
+  </section>
+
+<section class="slide cover">
+    <span class="spark" style="top:24%;left:70%"></span><span class="spark" style="top:56%;left:82%;animation-delay:1.4s"></span>
+    <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
+    <span class="eyebrow"><span class="n">[ 02 ]</span></span>
+    <h1>대행사<br>거르는 법</h1>
+    <p class="lead" style="margin-top:20px">시장이 어떤지 보고 → 무엇을 조심할지 확인하고 → 어떤 기준으로 고를지 정리합니다.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">02</span> 큰 그림</span>
+    <h2>대행사, 이 순서로 판단합니다</h2>
+    <p class="rsub">개별 업체를 하나씩 따지기 전에, 판단의 큰 흐름을 먼저 봅니다.</p>
+    <div class="secmap">
+      <div class="smq"><div class="sn">STEP 1</div><div class="st">시장 현황</div><div class="sd">지금 어떤 업체들이 영업하고 있고, 무엇이 문제인지 본다.</div></div>
+      <div class="smq"><div class="sn">STEP 2</div><div class="st">조심할 것</div><div class="sd">누가 쓰는지(담당자)와 무엇에 서명하는지(계약서)를 확인한다.</div></div>
+      <div class="smq"><div class="sn">STEP 3</div><div class="st">고르는 기준</div><div class="sd">그래서 어떤 곳을 피하고, 어떤 곳을 골라야 하는지 정리한다.</div></div>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent"><span class="n">02</span> 시장 현황</span>
+    <h2>지금 병원 마케팅 시장은</h2>
+    <p class="rsub">검색하면 이런 광고가 먼저 나옵니다. 간판과 가격만으로는 좋은 곳과 문제 있는 곳이 구분되지 않습니다.</p>
+    <div class="adgrid">
+      <div class="adcard"><div class="url"><i></i><i></i>recruit-blog-job.co.kr</div><div class="b"><div class="t">“블로그 원고 재택부업<br>초보도 월 300”</div><div class="d">하루 1시간, 누구나 · 광고 포스팅 시스템 제공</div><div class="flag">→ 병원 글을 비전문 재택 인력이 대량 작성</div></div></div>
+      <div class="adcard"><div class="url"><i></i><i></i>medi-ad-lowcost.kr</div><div class="b"><div class="t">“병원 블로그 30건<br>월 33만원”</div><div class="d">상위노출 보장 · 안 되면 100% 환불</div><div class="flag">→ ‘보장·초저가’는 자동 프로그램·어뷰징 신호</div></div></div>
+      <div class="adcard"><div class="url"><i></i><i></i>rank-1st-guarantee.com</div><div class="b"><div class="t">“네이버 1위<br>확정 노출”</div><div class="d">의료·병원 전문 · 계약 즉시 세팅</div><div class="flag">→ 의료광고법 위반 시 처벌은 대행사가 아닌 ‘원장’</div></div></div>
+    </div>
+    <p class="note">그래서 세 가지를 봅니다 — <b>누가 쓰는지(담당자)</b>, <b>무엇에 서명하는지(계약서)</b>, 그리고 <b>어떤 기준으로 고를지</b>.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">02</span> 담당자</span>
+    <h2>글을 실제로 쓰는 사람은 누구인가</h2>
+    <p class="rsub">진입장벽이 낮아 ‘재택부업’ 인력까지 유입되는 시장입니다. 회사 간판이 아니라 실제 작업자의 경력이 결과물의 품질을 사실상 결정합니다. 그래서 다음을 확인합니다.</p>
+    <ul class="info">
+      <li><span class="m"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.4 2.9-5.3 6.5-5.3s6.5 1.9 6.5 5.3"/></svg></span><div>이전에 <b>어느 회사에서 뭘 하던</b> 사람인가 — 경력·직무를 실명으로 밝히는지</div></li>
+      <li><span class="m"><svg viewBox="0 0 24 24"><path d="M4 20V11M9.3 20V5M14.6 20v-6M20 20H3.5"/></svg></span><div>본인이 <b>직접 키운 계정·성과</b>가 있나 — 남의 사례 말고</div></li>
+      <li><span class="m"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/><path d="M8.5 14.5l2 2 3.5-3.5"/></svg></span><div>포트폴리오가 <b>실명·검증 가능</b>한가 — “비밀유지”로 안 보여주면 의심</div></li>
+      <li><span class="m"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></span><div>계약 후 <b>담당자가 고정</b>인가 — 외주·재외주로 굴러가지 않는지</div></li>
+    </ul>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent"><span class="n">02</span> 계약서</span>
+    <h2>대부분의 계약서엔, 이런 조항이 들어갑니다</h2>
+    <p class="rsub">문제는 대행을 맡기는 것 자체가 아니라, 원장에게 불리한 조항이 계약서에 ‘기본값’으로 들어가 있다는 점입니다.</p>
+    <div class="contract">
+      <div class="ch">○○ 마케팅 대행 표준계약서 <span class="stamp">예시 · 자주 쓰이는 조항</span></div>
+      <div class="cb">
+        <div class="clause bad"><span class="cn">제2조 (기간)</span><div>계약기간은 <span class="hl">12개월</span>로 하며, 만료 30일 전 서면 통보가 없으면 <span class="hl">자동 연장</span>된다.</div></div>
+        <div class="clause bad"><span class="cn">제6조 (중도해지)</span><div>갑의 사정으로 해지할 경우 <span class="hl">잔여기간 대금의 50%</span>를 위약금으로 지급한다.</div></div>
+        <div class="clause bad"><span class="cn">제9조 (산출물)</span><div>제작된 블로그·콘텐츠·홈페이지의 소유권은 <span class="hl">‘을’(대행사)에 귀속</span>하며, 계약 종료 시 을이 회수할 수 있다.</div></div>
+        <div class="clause bad"><span class="cn">제11조 (계정)</span><div>네이버·구글 등 채널 계정은 을이 관리하며, <span class="hl">갑에게 계정·관리자 권한을 이양할 의무가 없다.</span></div></div>
+      </div>
+    </div>
+    <p class="note">계약이 끝나면, 그동안 쌓은 <b>글·계정·순위가 원장에게 하나도 남지 않을 수</b> 있습니다.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">02</span> 고르는 기준</span>
+    <h2>그럼, 어떤 대행사를 골라야 하나?</h2>
+    <div class="cmp">
+      <div class="col bad"><div class="h">피해야 할 신호</div><ul>
+        <li><i class="mk x">✕</i>“노출·순위 <b>보장</b>합니다”</li>
+        <li><i class="mk x">✕</i>글 <b>작성자를 안 밝힘</b></li>
+        <li><i class="mk x">✕</i>성과를 <b>안 재고</b> “늘었다”만</li>
+        <li><i class="mk x">✕</i>의료광고법을 <b>모름</b></li>
+      </ul></div>
+      <div class="col good"><div class="h">골라야 할 기준</div><ul>
+        <li><i class="mk o">✓</i><b>실명·출처</b>를 밝히고 씀</li>
+        <li><i class="mk o">✓</i>측정하고 <b>결과를 리포트</b>로 줌</li>
+        <li><i class="mk o">✓</i>의료광고법에 맞춰 <b>표현 정제</b></li>
+        <li><i class="mk o">✓</i>“<b>보장 안 합니다</b>”라고 정직하게</li>
+      </ul></div>
+    </div>
+  </section>
+
+<section class="slide cover">
+    <span class="spark" style="top:28%;left:72%"></span><span class="spark" style="top:58%;left:80%;animation-delay:1.3s"></span>
+    <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
+    <span class="eyebrow"><span class="n">[ 03 ]</span></span>
+    <h1>왜 지금 GEO인가<br>· 글의 구조</h1>
+    <p class="lead" style="margin-top:20px">잘 쓴 글이 AI에 인용되는 원리를, 한 조각씩.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">03</span> 용어 정리</span>
+    <h2>SEO와 GEO의 차이</h2>
+    <div class="cmp">
+      <div class="col"><div class="h">SEO — 검색 최적화</div>
+        <div class="dmock"><svg viewBox="0 0 240 92">
+          <rect x="4" y="8" width="20" height="20" rx="5" fill="#5e7ea6"/><text x="14" y="22" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">1</text><rect x="32" y="13" width="180" height="10" rx="5" fill="#d9e6f4"/>
+          <rect x="4" y="36" width="20" height="20" rx="5" fill="#9fb0c6"/><text x="14" y="50" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">2</text><rect x="32" y="41" width="150" height="10" rx="5" fill="#e6ebf2"/>
+          <rect x="4" y="64" width="20" height="20" rx="5" fill="#c7d5e6"/><text x="14" y="78" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">3</text><rect x="32" y="69" width="120" height="10" rx="5" fill="#e6ebf2"/>
+        </svg></div>
+        <ul><li>목표 : 검색 결과 <b>‘순위’</b></li><li>대상 : 네이버·구글 검색</li><li>지표 : 키워드 순위·클릭률</li></ul></div>
+      <div class="col"><div class="h">GEO — 생성형 검색 최적화</div>
+        <div class="dmock"><svg viewBox="0 0 240 92">
+          <rect x="4" y="6" width="212" height="50" rx="12" fill="#eff4fb" stroke="#c7d5e6"/>
+          <rect x="16" y="18" width="120" height="7" rx="3.5" fill="#9fb0c6"/><rect x="16" y="31" width="172" height="7" rx="3.5" fill="#c7d5e6"/><rect x="16" y="42" width="90" height="7" rx="3.5" fill="#c7d5e6"/>
+          <rect x="16" y="68" width="56" height="17" rx="8.5" fill="#d9e6f4"/><rect x="78" y="68" width="44" height="17" rx="8.5" fill="#d9e6f4"/><rect x="128" y="68" width="38" height="17" rx="8.5" fill="#d9e6f4"/>
+        </svg></div>
+        <ul><li>목표 : AI 답변 속 <b>‘인용’</b></li><li>대상 : 챗GPT·퍼플렉시티</li><li>지표 : 언급 점유율·인용 수</li></ul></div>
+    </div>
+    <p class="note">대체 관계가 아니라 병행해야 하는 별개 영역입니다.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">03</span> GEO · 글의 구조</span>
+    <h2>① 환자가 실제 묻는 질문을 제목으로</h2>
+    <div class="gbuild">
+      <ul class="gsteps">
+        <li class="now"><span class="gn">1</span><div>환자의 질문을 <b>그대로 제목</b>으로</div></li>
+        <li><span class="gn">2</span><div><b>실명·전문성</b> · 누가 썼는지</div></li>
+        <li><span class="gn">3</span><div>질문 바로 아래 <b>한 문장 결론</b></div></li>
+        <li><span class="gn">4</span><div><b>진료 경험·근거</b>로 뒷받침</div></li>
+        <li><span class="gn">5</span><div><b>구조화 데이터</b> · 기계가 읽는 표시</div></li>
+      </ul>
+      <div class="gdoc"><div class="gbar"><i></i><i></i><i></i><span>더마칼럼 · 글쓰기</span></div>
+        <div class="gbody">
+          <div class="part new"><span class="lbl">① 질문형 제목</span><div class="gttl">기미와 주근깨, 같은 레이저로 치료되나요?</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">AI는 ‘질문’에 답합니다. 제목이 곧 환자의 질문이면 매칭됩니다.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">03</span> GEO · 글의 구조</span>
+    <h2>② 누가 썼는지 · 실명과 전문성</h2>
+    <div class="gbuild">
+      <ul class="gsteps">
+        <li class="done"><span class="gn">1</span><div>환자의 질문을 <b>그대로 제목</b>으로</div></li>
+        <li class="now"><span class="gn">2</span><div><b>실명·전문성</b> · 누가 썼는지</div></li>
+        <li><span class="gn">3</span><div>질문 바로 아래 <b>한 문장 결론</b></div></li>
+        <li><span class="gn">4</span><div><b>진료 경험·근거</b>로 뒷받침</div></li>
+        <li><span class="gn">5</span><div><b>구조화 데이터</b> · 기계가 읽는 표시</div></li>
+      </ul>
+      <div class="gdoc"><div class="gbar"><i></i><i></i><i></i><span>더마칼럼 · 글쓰기</span></div>
+        <div class="gbody">
+          <div class="part"><div class="gttl">기미와 주근깨, 같은 레이저로 치료되나요?</div></div>
+          <div class="part new"><span class="lbl">② 실명 저자</span><div class="gby">글 · 김세인 · 피부과 전문의 · 라움피부과 원장</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">익명 블로그와 실명 전문의 글은, AI가 신뢰도를 다르게 봅니다. (E-E-A-T)</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">03</span> GEO · 글의 구조</span>
+    <h2>③ 질문 바로 아래, 한 문장 결론</h2>
+    <div class="gbuild">
+      <ul class="gsteps">
+        <li class="done"><span class="gn">1</span><div>환자의 질문을 <b>그대로 제목</b>으로</div></li>
+        <li class="done"><span class="gn">2</span><div><b>실명·전문성</b> · 누가 썼는지</div></li>
+        <li class="now"><span class="gn">3</span><div>질문 바로 아래 <b>한 문장 결론</b></div></li>
+        <li><span class="gn">4</span><div><b>진료 경험·근거</b>로 뒷받침</div></li>
+        <li><span class="gn">5</span><div><b>구조화 데이터</b> · 기계가 읽는 표시</div></li>
+      </ul>
+      <div class="gdoc"><div class="gbar"><i></i><i></i><i></i><span>더마칼럼 · 글쓰기</span></div>
+        <div class="gbody">
+          <div class="part"><div class="gttl">기미와 주근깨, 같은 레이저로 치료되나요?</div></div>
+          <div class="part"><div class="gby">글 · 김세인 · 피부과 전문의 · 라움피부과 원장</div></div>
+          <div class="part new"><span class="lbl">③ 두괄식 결론</span><div class="glead">결론부터. 기미와 주근깨는 생기는 원인과 피부 속 깊이가 달라, 하나의 레이저로 함께 접근하기 어렵습니다.</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">AI는 첫 두세 문장을 답으로 뽑습니다. 결론을 맨 앞에 둡니다.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">03</span> GEO · 글의 구조</span>
+    <h2>④ 진료 경험으로 근거를 댄다</h2>
+    <div class="gbuild">
+      <ul class="gsteps">
+        <li class="done"><span class="gn">1</span><div>환자의 질문을 <b>그대로 제목</b>으로</div></li>
+        <li class="done"><span class="gn">2</span><div><b>실명·전문성</b> · 누가 썼는지</div></li>
+        <li class="done"><span class="gn">3</span><div>질문 바로 아래 <b>한 문장 결론</b></div></li>
+        <li class="now"><span class="gn">4</span><div><b>진료 경험·근거</b>로 뒷받침</div></li>
+        <li><span class="gn">5</span><div><b>구조화 데이터</b> · 기계가 읽는 표시</div></li>
+      </ul>
+      <div class="gdoc"><div class="gbar"><i></i><i></i><i></i><span>더마칼럼 · 글쓰기</span></div>
+        <div class="gbody">
+          <div class="part"><div class="gttl">기미와 주근깨, 같은 레이저로 치료되나요?</div></div>
+          <div class="part"><div class="gby">글 · 김세인 · 피부과 전문의 · 라움피부과 원장</div></div>
+          <div class="part"><div class="glead">결론부터. 기미와 주근깨는 원인과 깊이가 달라 하나의 레이저로 함께 접근하기 어렵습니다.</div></div>
+          <div class="part new"><span class="lbl">④ 경험 기반 근거</span><div class="gtext">주근깨는 표피의 색소라 큐스위치 레이저에 비교적 잘 반응합니다. 반면 기미는 진피 경계까지 색소가 내려가 있어, 같은 세기로 쏘면 오히려 자극으로 짙어질 수 있습니다. 저는 진료에서 두 색소를 나눠 단계적으로 접근합니다.</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">경험·수치·사례가 들어간 글을 AI가 더 신뢰합니다. (Experience)</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">03</span> GEO · 글의 구조</span>
+    <h2>⑤ 기계가 읽도록 구조화 데이터</h2>
+    <div class="gbuild">
+      <ul class="gsteps">
+        <li class="done"><span class="gn">1</span><div>환자의 질문을 <b>그대로 제목</b>으로</div></li>
+        <li class="done"><span class="gn">2</span><div><b>실명·전문성</b> · 누가 썼는지</div></li>
+        <li class="done"><span class="gn">3</span><div>질문 바로 아래 <b>한 문장 결론</b></div></li>
+        <li class="done"><span class="gn">4</span><div><b>진료 경험·근거</b>로 뒷받침</div></li>
+        <li class="now"><span class="gn">5</span><div><b>구조화 데이터</b> · 기계가 읽는 표시</div></li>
+      </ul>
+      <div class="gdoc"><div class="gbar"><i></i><i></i><i></i><span>더마칼럼 · 글쓰기</span></div>
+        <div class="gbody">
+          <div class="part"><div class="gttl">기미와 주근깨, 같은 레이저로 치료되나요?</div></div>
+          <div class="part"><div class="gby">글 · 김세인 · 피부과 전문의 · 라움피부과 원장</div></div>
+          <div class="part"><div class="glead">결론부터. 기미와 주근깨는 원인과 깊이가 달라 하나의 레이저로 함께 접근하기 어렵습니다.</div></div>
+          <div class="part"><div class="gtext">주근깨는 표피 색소라 레이저에 잘 반응하지만, 기미는 진피까지 내려가 있어 같은 세기론 오히려 짙어질 수 있습니다.</div></div>
+          <div class="part new"><span class="lbl">⑤ 구조화 데이터 (FAQ · JSON-LD)</span>
+            <div class="gschema">{
+  <b>"@type"</b>: <em>"FAQPage"</em>,
+  <b>"question"</b>: <em>"기미와 주근깨는 같은 레이저로 치료되나요?"</em>,
+  <b>"author"</b>: <em>"김세인 · 피부과 전문의"</em>,
+  <b>"answer"</b>: <em>"원인과 깊이가 달라 함께 접근하기 어렵습니다"</em>
+}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">사람 눈에는 안 보이지만, AI가 ‘이건 신뢰할 답’이라고 인식하는 표식입니다.</p>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent"><span class="n">03</span> 실습</span>
+    <h2>우리 병원 노출, 직접 점검 3단계</h2>
+    <div class="timeline">
+      <div class="tstep"><span class="w">STEP 1</span><div class="tt">물어보기</div><ul><li>“(우리 진료) 추천해줘”</li><li>우리 병원이 언급되나</li></ul></div>
+      <div class="tstep"><span class="w">STEP 2</span><div class="tt">정확성 확인</div><ul><li>“(우리 병원) 어떤 곳이야?”</li><li>틀린·옛 정보는 없나</li></ul></div>
+      <div class="tstep"><span class="w">STEP 3</span><div class="tt">경쟁 비교</div><ul><li>같은 질문에 경쟁 병원은?</li><li>걔넨 1위, 우린 없다 → 격차</li></ul></div>
+    </div>
+    <p class="note">복잡한 도구 없이 10분이면 원장님 혼자 확인할 수 있습니다.</p>
+  </section>
+
+<section class="slide cover">
+    <span class="spark" style="top:30%;left:70%"></span><span class="spark" style="top:60%;left:82%;animation-delay:1.1s"></span>
+    <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
+    <span class="eyebrow"><span class="n">[ 04 ]</span></span>
+    <h1>AI가 인용하는<br>병원이 되려면</h1>
+    <p class="lead" style="margin-top:20px">특정 도구가 아니라, 병원이 밟아야 할 준비 순서를 정리합니다.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">04</span> 실행 요약</span>
+    <h2>한 장으로 보는, 준비 순서</h2>
+    <p class="rsub">특정 업체·도구 이야기가 아니라, 어느 병원이든 밟아야 할 일반적인 순서입니다.</p>
+    <div class="howflow">
+      <div class="hstep">
+        <div class="hn">1</div>
+        <div class="hic"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div>
+        <div class="ht">실명 전문가 칼럼</div>
+        <div class="hd">누가 썼는지 명확한, 진료 경험 기반의 글을 쌓는다.</div>
+      </div>
+      <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="hstep">
+        <div class="hn">2</div>
+        <div class="hic"><svg viewBox="0 0 24 24"><path d="M8 4H6a2 2 0 00-2 2v3a2 2 0 01-2 2 2 2 0 012 2v3a2 2 0 002 2h2"/><path d="M16 4h2a2 2 0 012 2v3a2 2 0 002 2 2 2 0 00-2 2v3a2 2 0 01-2 2h-2"/></svg></div>
+        <div class="ht">AI가 읽는 구조</div>
+        <div class="hd">질문형 제목·두괄식 결론·구조화 데이터로 정리한다.</div>
+      </div>
+      <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="hstep">
+        <div class="hn">3</div>
+        <div class="hic"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 10.6l6.8-4.2M8.6 13.4l6.8 4.2"/></svg></div>
+        <div class="ht">채널에 발행</div>
+        <div class="hd">검색·SNS·AI가 모두 읽을 수 있는 곳에 올린다.</div>
+      </div>
+      <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="hstep">
+        <div class="hn">4</div>
+        <div class="hic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <div class="ht">측정·개선</div>
+        <div class="hd">어디에 인용·반응이 생기는지 확인하고 보완한다.</div>
+      </div>
+    </div>
+    <p class="note">노출·순위를 ‘보장’하는 단계는 없습니다. 신뢰를 쌓아 자연스럽게 인용되게 만드는 과정입니다.</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">04</span> 아임웹의 함정</span>
+    <h2>아임웹 사이트는 ChatGPT가 못 읽습니다</h2>
+    <div class="doc">
+      <span class="d403"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg> ChatGPT에 아임웹 링크 전달 시 → <span class="mono">403 Forbidden</span></span>
+      <ul class="docul">
+        <li>아임웹은 수만 고객사가 공유하는 SaaS(CDN·WAF). <b>ChatGPT·OpenAI 봇을 플랫폼 전체에서 차단</b></li>
+        <li>차단 대상 : OpenAI 계열 봇 <span class="chip">GPTBot</span> <span class="chip">ChatGPT-User</span></li>
+        <li>차단 방식 : <b>WAF(웹 방화벽)에서 즉시 403 반환</b> · 2024년 8월부터 공식 보안 정책</li>
+      </ul>
+      <div class="alert red"><b>사이트별 개별 예외 처리 지원 안 됨</b> — 원장님이 설정으로 풀 수 없습니다</div>
+      <div class="alert green"><b>구글·빙·네이버·다음</b> 등 일반 검색엔진은 정상 허용 → <b>SEO엔 영향 없음</b></div>
+      <table class="ptable">
+        <tr><th>플랫폼</th><th>AI 봇 차단 방식</th></tr>
+        <tr><td>네이버·카카오</td><td>전체 크롤러 기본 차단, 지정 검색엔진만 허용</td></tr>
+        <tr><td>쿠팡</td><td>WAF에서 robots.txt 요청 자체를 차단</td></tr>
+        <tr><td>배민</td><td>전체 차단 후 Googlebot·Yeti만 허용</td></tr>
+      </table>
+      <div class="srcline">출처 : 아임웹 공식 고객센터 FAQ — “GPT 링크 공유 시 403 오류” (2024. 8~)</div>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent"><span class="n">04</span> 해결</span>
+    <h2>그래서, GPT가 읽는 곳으로 옮깁니다</h2>
+    <p class="rsub">홈페이지를 갈아엎지 않아도 됩니다. 아임웹은 그대로 두고, 실명 칼럼만 GPT가 읽을 수 있는 사이트로.</p>
+    <div class="ba">
+      <div class="bacard bad">
+        <div class="bt">지금 — 아임웹 그대로</div>
+        <div class="baflow"><span class="box">아임웹 글</span><span class="ar">→</span><span class="box">GPTBot</span><span class="ar">→</span><span class="res x">403</span></div>
+        <div class="baout">AI 답변에서 빠짐</div>
+      </div>
+      <div class="bacard good">
+        <div class="bt">해결 — 크롤링 되는 GEO 사이트로</div>
+        <div class="baflow"><span class="box">실명 칼럼 사이트</span><span class="ar">→</span><span class="box">GPTBot</span><span class="ar">→</span><span class="res o">200</span></div>
+        <div class="baout">AI 답변에 인용</div>
+        <span class="badge us">우리가 대신 이전·구조화</span>
+      </div>
+    </div>
+    <p class="actionbar"><b>원장님이 할 것</b> : 없음 (홈페이지 유지) &nbsp;·&nbsp; <b>우리가 할 것</b> : 실명 칼럼을 GPT가 읽는 GEO 사이트로 이전·최적화</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">메디부스트 · 실제 화면</span>
+    <div class="split">
+      <div>
+        <h2 style="font-size:clamp(24px,3vw,44px)">지금 뜨는 질문·<br>시술 키워드</h2>
+        <p class="cap-split" style="margin-top:16px">환자가 요즘 검색·질문하는 키워드와 신규 시술을 매주 정리합니다. 어떤 글을 쓸지 감이 아니라 데이터로 정합니다.</p>
+        <span class="badge us">우리가 대신 — 수집·선별·발행</span>
+      </div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">트렌드</span></div><img src="assets/shot-trend.png" alt="트렌드 화면" /></div>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent">메디부스트 · 실제 화면</span>
+    <div class="split rev">
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">AI 노출 진단</span></div><img src="assets/shot-geo-scan.png" alt="AI 노출 진단 화면" /></div>
+      <div>
+        <h2 style="font-size:clamp(24px,3vw,44px)">우리 병원, AI에<br>나오는지 진단</h2>
+        <p class="cap-split" style="margin-top:16px">질문별로 우리 병원이 AI 답변에 나오는지, 어디가 비어 있는지 점수로 봅니다.</p>
+        <span class="badge us">우리가 대신 — 진단·리포트</span>
+      </div>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent">메디부스트 · 실제 화면</span>
+    <div class="split">
+      <div>
+        <h2 style="font-size:clamp(24px,3vw,44px)">데이터 기반<br>성과 관리</h2>
+        <ul class="info" style="margin-top:20px">
+          <li><span class="m">·</span><div>노출되는 <b>질문의 수</b></div></li>
+          <li><span class="m">·</span><div><b>몇 번째로 언급</b>·경쟁 대비</div></li>
+          <li><span class="m">·</span><div>실행 <b>전과 후</b>를 같은 기준으로 비교</div></li>
+        </ul>
+        <p class="note">실제 제품 화면 · 수치는 예시(데모 계정)</p>
+      </div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">app.mediboost.ai</span></div><img src="assets/dashboard.png" alt="대시보드" /></div>
+    </div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">메디부스트 · 실제 화면</span>
+    <div class="split rev">
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">경쟁사 분석</span></div><img src="assets/shot-competitor.png" alt="경쟁 비교" /></div>
+      <div>
+        <h2 style="font-size:clamp(24px,3vw,44px)">경쟁 병원<br>비교</h2>
+        <p class="cap-split" style="margin-top:16px">리뷰 수·블로그 활동·검색/AI 노출을 경쟁 병원과 같은 기준으로 정리합니다. 어디를 따라잡을지 보입니다.</p>
+        <p class="note">실제 제품 화면 · 수치는 예시</p>
+      </div>
+    </div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">04</span> 이렇게 인용됩니다 · 예시</span>
+    <h2>AI 답변에 우리 병원이 ‘출처’로</h2>
+    <div class="split">
+      <div>
+        <p class="cap-split">환자가 AI에게 물으면, 실명 칼럼이 답변의 근거로 인용됩니다. 광고가 아니라 정보라서 인용됩니다.</p>
+        <p class="note">예시 화면입니다. 실제 인용은 질문·시점에 따라 달라지며 보장되지 않습니다.</p>
+      </div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">Perplexity</span></div>
+        <div class="aim">
+          <div class="q">강남에서 기미·색소 레이저 잘 보는 피부과 알려줘</div>
+          <div class="a">색소는 종류에 따라 접근이 다릅니다. 라움피부과 김세인 원장은 “기미와 주근깨는 원인·깊이가 달라 같은 레이저로 접근하기 어렵다”고 설명합니다 <span class="cite">더마칼럼</span>.
+            <div class="srcs"><span class="on">더마칼럼 · 김세인 원장 칼럼</span><span>naver place</span><span>블로그</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">정리 · 역할 분담</span>
+    <h2>원장님이 직접 vs 우리가 대신</h2>
+    <div class="cmp">
+      <div class="col"><div class="h">원장님이 직접 — 오늘부터</div>
+        <ul>
+          <li>챗GPT에 <b>우리 병원 직접 물어보기</b></li>
+          <li>진료실 단골 질문 5개 적어두기</li>
+          <li>네이버 플레이스·구글 비즈니스 최신화</li>
+          <li>대행 계약서 <b>소유권·해지 조건</b> 확인</li></ul></div>
+      <div class="col"><div class="h">우리가 대신</div>
+        <ul>
+          <li>실명 칼럼 작성 + <b>GPT 읽는 사이트로 이전</b></li>
+          <li>아임웹 홈페이지 구조 정비</li>
+          <li>데이터 분석·시각화 · 리뷰·SNS 관리</li>
+          <li>경쟁 모니터링 · 전·후 리포트</li></ul></div>
+    </div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">사례 · 이 후기가 확산된 이유</span>
+    <div class="cardrow" style="grid-template-columns:repeat(3,1fr)">
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20c0-3.4 2.9-5.3 6.5-5.3s6.5 1.9 6.5 5.3"/></svg></div><h4>실명·실제 경험</h4><p>광고가 아니라 개인의 기록이라 신뢰가 형성됨</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h4>실제 질문에 답함</h4><p>사람들이 궁금해하던 지점을 구체적으로 다룸</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 12l6-6M4 12l6 6M4 12h12a4 4 0 010 8h-2"/></svg></div><h4>정보처럼 읽힘</h4><p>광고 형식이 아니어서 공유·저장으로 확산</p></div>
+    </div>
+    <p class="note" style="margin-top:26px;font-size:clamp(15px,1.7vw,24px);color:var(--ink-soft);font-weight:600">광고량을 늘리는 대신, 정보성 콘텐츠를 꾸준히 쌓는 방식이 유효했습니다.</p>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent"><span class="n">04</span> 실질적으로 도움이 되는 것</span>
+    <h2>실질적으로 도움이 되는 마케팅</h2>
+    <div class="cardrow" style="grid-template-columns:repeat(3,1fr)">
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div><h4>블로그 콘텐츠</h4><p>환자가 검색·질문하는 주제를 실명·근거로 작성</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9.5 21v-4h5v4"/></svg></div><h4>홈페이지 정비</h4><p>아임웹 등 — 검색·AI가 함께 읽도록 구조 손봄</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 20V11M9.3 20V5M14.6 20v-6M20 20H3.5"/></svg></div><h4>데이터 분석·시각화</h4><p>유입 경로·이탈 지점을 숫자로 확인</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4z"/><path d="M12 8.6c-1-1.1-3-.5-3 1 0 1.2 3 2.9 3 2.9s3-1.7 3-2.9c0-1.5-2-2.1-3-1z"/></svg></div><h4>리뷰·SNS 관리</h4><p>달린 리뷰 응대와 채널 콘텐츠 운영</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15 0 18M12 3c-2.5 2.6-2.5 15 0 18"/></svg></div><h4>AI 검색 대응</h4><p>GEO — 위 활동의 일부로 함께 다룸</p></div>
+    </div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent"><span class="n">05</span> 로드맵</span>
+    <h2>90일 실행 우선순위</h2>
+    <div class="timeline">
+      <div class="tstep"><span class="w">0–2주</span><div class="tt">진단</div><ul><li>AI 노출 직접 점검</li><li>홈페이지 구조 체크</li><li>빠진 질문 목록화</li></ul></div>
+      <div class="tstep"><span class="w">2–6주</span><div class="tt">기반 정비</div><ul><li>구조화·FAQ·llms.txt</li><li>플레이스·프로필 최신화</li><li>실명 저자 세팅</li></ul></div>
+      <div class="tstep"><span class="w">6–12주</span><div class="tt">운영·확인</div><ul><li>질문형 콘텐츠 발행</li><li>리뷰 응대·평판 관리</li><li>전·후 비교 확인</li></ul></div>
+    </div>
+    <p class="note">한 번에 다 하지 말고, 진단 → 기반 → 운영 순서로.</p>
+  </section>
+
+<section class="slide dark">
+    <span class="eyebrow">오늘의 정리</span>
+    <div class="insight-wrap" style="margin-top:22px">
+      <div class="radial"></div>
+      <div class="il">요약</div>
+      <ul>
+        <li>대행사는 간판이 아니라 <b>담당자 배경·계약서·표현</b>으로 거른다</li>
+        <li>좋은 업체는 <b>실명·근거</b>로 쓰고, <b>성과를 측정</b>해 보여주며, <b>보장하지 않는다</b></li>
+        <li>광고량보다 <b>정보성 콘텐츠의 축적</b>이 반응을 만든다</li>
+        <li>검색·SNS·AI를 함께 — <b>실명·구조화</b>가 인용과 신뢰를 만든다</li>
+      </ul>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent">참고 — 저희가 하는 일</span>
+    <div class="split">
+      <div>
+        <h2 style="font-size:clamp(24px,3vw,44px)">Mediboost</h2>
+        <p class="cap-split" style="margin-top:16px">블로그 콘텐츠 대행 · 아임웹 홈페이지 GEO 최적화 · 데이터 분석·시각화 · 리뷰·SNS 관리.</p>
+        <p class="cap-split" style="margin-top:12px;font-size:clamp(14px,1.5vw,21px);color:var(--ink-faint)">실명·근거 기반으로 운영합니다. 오늘 내용은 고객이 아니어도 그대로 쓰실 수 있게 정리했습니다.</p>
+        <p class="note">노출·순위·환자 유입은 보장하지 않습니다. 현재 상태를 조사하고 실행합니다.</p>
+      </div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">mediboost.ai</span></div><img src="assets/landing.png" alt="Mediboost 랜딩" /></div>
+    </div>
+  </section>
+
+<section class="slide cover">
+    <span class="spark" style="top:26%;left:68%"></span><span class="spark" style="top:46%;left:84%;animation-delay:1.1s"></span><span class="spark" style="top:66%;left:74%;animation-delay:2s"></span>
+    <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/></svg></div>
+    <h1>대행사를 고르지 말고,<br>거르세요.</h1>
+    <p class="lead" style="margin-top:22px;max-width:34ch">질문 받습니다. 오늘 자료(체크리스트)는 QR·링크로 공유드립니다.</p>
+    <div style="margin-top:28px"><span class="pill">자료·문의 → @mediboost / 데이터브릿지랩</span></div>
+    <div class="foot">전서연 · 데이터브릿지랩 대표</div>
+  </section>
+
+
+
+</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  document.getElementById('pgtot').textContent=slides.length;
+  let cur=0;
+  function go(i){cur=Math.max(0,Math.min(slides.length-1,i));slides[cur].scrollIntoView({behavior:'smooth'})}
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}
+    else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}
+    else if(e.key==='Home'){e.preventDefault();go(0)} else if(e.key==='End'){e.preventDefault();go(slides.length-1)}
+  });
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){cur=slides.indexOf(e.target);document.getElementById('pgnum').textContent=cur+1}})},{threshold:.55});
+  slides.forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
