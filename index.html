@@ -6,14 +6,16 @@
 <title>파닥파닥 세미나 · AI 검색 시대의 병원 마케팅</title>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 <style>
+  /* 색 토큰 · KRDS(정부 디자인시스템) 램프 기준 · 흰 배경 고정
+     Navy 50 #003675 = 제목·강조 / Blue 50 #246beb = 액센트 / Point #e71825 = 경고 */
   :root{
-    --grad:linear-gradient(158deg,#6f8bb4 0%,#8ba3c6 46%,#b7c9e0 100%);
-    --ink:#0d1320; --ink-soft:#45505f; --ink-faint:#8892a3;
-    --accent:#5e7ea6; --accent-deep:#3f5f83; --accent-ink:#213b57;
-    --tint:#d9e6f4; --tint-soft:#eff4fb; --line:#c7d5e6; --line-2:#e4e9f0;
-    --paper:#ffffff; --paper-2:#f4f7fb;
-    --warn:#b4623f; --warn-soft:#f7ece6; --warn-line:#eccdbd; --ok:#2f7d54; --ok-soft:#e6f1ea;
-    --good:#3d8a6b; --good-soft:#e7f2ec; --good-deep:#2f6f54;
+    --grad:#003675;
+    --ink:#1d1d1d; --ink-soft:#555555; --ink-faint:#8e8e8e;
+    --accent:#246beb; --accent-deep:#003675; --accent-ink:#003675;
+    --tint:#dbe7fb; --tint-soft:#eff5ff; --line:#d8d8d8; --line-2:#e4e4e4;
+    --paper:#ffffff; --paper-2:#fafbfc;
+    --warn:#c8202c; --warn-soft:#fdf2f3; --warn-line:#f0c6ca; --ok:#1baf7a; --ok-soft:#eefaf5;
+    --good:#1baf7a; --good-soft:#eefaf5; --good-deep:#0f7a53;
     --sans:"Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -372,6 +374,84 @@
   .sfoot .sf-s{font-weight:700;color:var(--accent-deep)}
   .sfoot .sf-s::before{content:"·";color:var(--line);margin-right:8px}
 
+  /* ===== KRDS 정돈 : 그림자 제거 · 1px 보더 · 여백 확대 · 라운드 축소 ===== */
+  .canvas{box-shadow:0 1px 12px rgba(0,0,0,.10)}
+  .deck{background:#eceef1}
+  .rcard,.icard,.tstep,.smq,.adcard,.contract,.doc,.cmp,.shot,.wshot,.gdoc,
+  .bacard,.hstep,.insight-wrap,.wcode{box-shadow:none}
+  .rcard,.icard,.tstep,.smq,.adcard,.contract,.doc,.cmp,.shot,.wshot,.gdoc,
+  .bacard,.hstep{border:1px solid var(--line);border-radius:10px;background:#fff}
+  .bacard.bad{background:var(--warn-soft);border-color:var(--warn-line)}
+  .bacard.good,.cmp .col.good{background:#fff}
+  .cmp .col.bad{background:var(--warn-soft)}
+  .cmp .col.good .h{color:var(--good-deep)}
+  .wcode{border-radius:10px;background:#00162f;color:#cdd7e4}
+  .insight-wrap{border-radius:12px}
+  .slide.content,.slide.tint{padding:34px 68px 46px}
+  .slide.tint{background:var(--paper-2)}
+
+  /* 타이포 · 작고 촘촘하게, 위계는 굵기와 색으로 */
+  .shead{padding-bottom:14px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+  .shead .eyebrow{font-size:12px;letter-spacing:.14em;font-weight:700;color:var(--accent);
+    border-left:0;padding-left:0;margin-bottom:8px;text-transform:uppercase}
+  .shead h2{font-size:29px;font-weight:700;color:var(--accent-deep);letter-spacing:-.025em;line-height:1.28}
+  .shead .rsub{font-size:14.5px;color:var(--ink-soft);margin-top:9px;line-height:1.62;max-width:98ch}
+  .sbody{gap:14px}
+  h1{font-weight:700;letter-spacing:-.035em}
+  .cover .lead{color:#d5e2f5}
+  .cover .eyebrow{color:#9dbcf0;letter-spacing:.16em}
+  .cover-art svg{stroke:#fff;opacity:.5}
+  .cover-art{opacity:.10}
+
+  /* 부품 세부 */
+  .rtitle,.icard h4,.tstep .tt,.smq .st,.cmp .h,.bacard .bt,.hstep .ht{color:var(--accent-deep);font-weight:700}
+  .icard p,.tstep li,.smq .sd,.hstep .hd,.rsrc,.srcline{color:var(--ink-soft)}
+  .icard .ii,.hstep .hn,.miniflow .mn .mc{background:var(--tint-soft);border:1px solid #cfe0ff;color:var(--accent)}
+  .bignum,.stat .v,.statchips span b{color:var(--accent-deep);font-weight:700;letter-spacing:-.03em}
+  .cpill{background:var(--accent-deep);box-shadow:none;border-radius:8px;font-weight:700}
+  .tstep .w{background:var(--accent-deep);border-radius:4px;font-weight:700}
+  .badge.us{background:var(--accent-deep)}
+  .wtag{background:var(--tint-soft);color:var(--accent-deep);border:1px solid #cfe0ff;border-radius:6px}
+  .wshot .wb .tag{border-radius:4px;border-color:#cfe0ff;background:var(--tint-soft)}
+  .wmeta span{border-radius:6px}
+  .wlist li::before{background:var(--accent)}
+  .ptable th{color:var(--ink-faint);font-weight:600}
+  .ptable td:first-child{color:var(--accent-deep)}
+  .alert.green{background:var(--tint-soft);border:1px solid #cfe0ff;color:var(--accent-deep)}
+  .alert.red{background:var(--warn);border-radius:6px}
+  .chip{background:#f1f3f5;color:var(--warn)}
+  .stake{background:var(--tint-soft);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
+    font-size:14px;color:var(--accent-deep);padding:12px 18px}
+  .stake.plain{color:var(--ink-faint)}
+  .sfoot .sf-n{background:transparent;color:var(--accent-deep);border:1px solid var(--line);border-radius:3px}
+
+  /* 근거 자료 캡처 */
+  .ev{display:grid;gap:14px;flex:1;min-height:0}
+  .ev.two{grid-template-columns:1fr 1fr}
+  .ev.side{grid-template-columns:1.24fr 0.76fr}
+  .ev.side.rev{grid-template-columns:0.76fr 1.24fr}
+  .ev > *{align-self:center;max-height:100%}
+  .evshot{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column;min-height:0}
+  .evshot .eh{display:flex;align-items:center;gap:8px;padding:7px 12px;border-bottom:1px solid var(--line-2);
+    background:var(--paper-2);font-size:11px;color:var(--ink-faint);font-weight:600;flex-shrink:0}
+  .evshot .eh b{color:var(--accent-deep);font-weight:700}
+  .evshot .eh .src{margin-left:auto;font-family:ui-monospace,monospace;font-size:10px}
+  .evshot figure{flex:1;min-height:0;overflow:hidden}
+  .evshot img{width:100%;display:block}
+  .quote{border-left:3px solid var(--accent);background:var(--tint-soft);padding:16px 20px;border-radius:0 8px 8px 0}
+  .quote p{font-size:17px;font-weight:700;color:var(--accent-deep);line-height:1.5}
+  .quote cite{display:block;margin-top:9px;font-size:11.5px;color:var(--ink-faint);font-style:normal;font-weight:600}
+  .numrow{display:flex;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+  .numrow > div{flex:1;padding:20px 22px}
+  .numrow > div + div{border-left:1px solid var(--line-2)}
+  .numrow .nv{font-size:38px;font-weight:700;color:var(--accent-deep);letter-spacing:-.035em;line-height:1;
+    font-variant-numeric:tabular-nums}
+  .numrow .nv small{font-size:15px;font-weight:600;color:var(--ink-soft);margin-left:3px}
+  .numrow .nl{font-size:13px;color:var(--ink-soft);margin-top:8px;font-weight:600;line-height:1.45}
+  .numrow .nd{font-size:11.5px;color:var(--ink-faint);margin-top:5px}
+  .numrow .nv.up{color:var(--accent)}
+  .numrow .nv.down{color:var(--warn)}
+
   @media print{.nav,.ctrl{display:none}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -410,12 +490,17 @@
   </section>
 
 <section class="slide content tint">
-    <span class="eyebrow accent">목차 · 오늘 다룰 것</span>
+    <span class="eyebrow accent">목차</span>
+    <h2>오늘 다룰 것</h2>
+    <p class="rsub">앞부분은 지금 무엇이 바뀌었는지, 뒷부분은 그래서 무엇을 하면 되는지입니다.</p>
     <ul class="agenda">
-      <li><span class="no">01</span> 검색 환경의 변화와 AI <span class="tag">현황·원리</span></li>
-      <li><span class="no">02</span> 대행사 거르는 법 <span class="tag">배경·계약·표현·법</span></li>
-      <li><span class="no">03</span> 좋은 업체·좋은 마케팅의 기준 <span class="tag">체크리스트·측정</span></li>
-      <li><span class="no">04</span> 앞으로 무엇을, 어떻게 <span class="tag">실행·로드맵</span></li>
+      <li><span class="no">01</span> 환경 변화 <span class="tag">시장 광고 · 네이버 공식 문서 · 해외 환자 통계</span></li>
+      <li><span class="no">02</span> 대행사 거르는 법 <span class="tag">담당자 · 계약서 · 고르는 기준</span></li>
+      <li><span class="no">03</span> SEO와 GEO의 원리 <span class="tag">차이 · 인용 조건 · 글의 구조</span></li>
+      <li><span class="no">04</span> 실행 준비 <span class="tag">기술 점검 · 준비 순서</span></li>
+      <li><span class="no">05</span> 실물로 보기 <span class="tag">실제 화면으로 확인</span></li>
+      <li><span class="no">06</span> 적용·사례 <span class="tag">인용 예시 · 역할 분담</span></li>
+      <li><span class="no">07</span> 정리 <span class="tag">90일 순서 · Q&amp;A</span></li>
     </ul>
   </section>
 
@@ -490,6 +575,130 @@
       </div>
     </div>
     <p class="note">병원 이름을 아는 환자만 검색하던 구조에서, <b>이름을 모르는 환자가 조건으로 묻는 구조</b>로 바뀌었습니다. 후보에 들어가려면 AI가 그 답을 만들 때 우리 병원 정보를 읽을 수 있어야 합니다.</p>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent">지금 시장이 파는 것</span>
+    <h2>검색하면 이런 광고가 먼저 나옵니다</h2>
+    <p class="rsub">'병원 블로그 상위노출 보장'을 검색한 결과입니다. 업체명은 가렸습니다. 파는 물건의 형태만 보시면 됩니다.</p>
+    <div class="ev side">
+      <div class="evshot"><div class="eh"><b>네이버 검색</b> 광고 영역<span class="src">2026.08 조회</span></div>
+        <figure><img src="assets/evidence/naver-ads.png" alt="검색 결과 광고 영역" /></figure></div>
+      <div>
+        <ul class="wlist">
+          <li>"확실한 결과 <b>보장</b>"</li>
+          <li>"불만족시 <b>100% 환불</b>"</li>
+          <li>"블로그 베이직 <b>월 10건 40만원~</b>"</li>
+          <li>월 단위로 <b>글 편수를 파는</b> 구조</li>
+        </ul>
+        <p class="note">10년 전과 판매 문구가 거의 같습니다. 바뀐 것은 시장 쪽이 아니라 검색 쪽입니다.</p>
+      </div>
+    </div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">네이버가 직접 답한 것</span>
+    <h2>같은 검색어에 네이버 AI는 이렇게 답합니다</h2>
+    <div class="ev side rev">
+      <div>
+        <div class="quote">
+          <p>"네이버에서 병원 블로그를 '상위노출 보장'하는 것은 현실적으로 불가능하며, 보장 약속을 하는 대행사는 사기 위험이 큽니다."</p>
+          <cite>네이버 AI 브리핑 · '병원 블로그 상위노출 보장' 검색 결과 · 2026.08</cite>
+        </div>
+        <p class="note">보장을 파는 광고 바로 위에, 그 보장이 불가능하다는 답이 붙어 있습니다. 환자도 같은 화면을 봅니다.</p>
+      </div>
+      <div class="evshot"><div class="eh"><b>네이버 AI 브리핑</b> 답변<span class="src">search.naver.com</span></div>
+        <figure><img src="assets/evidence/naver-ai-briefing.png" alt="네이버 AI 브리핑 답변" /></figure></div>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent">공식 문서</span>
+    <h2>그 방식은 네이버가 스팸으로 규정해 두었습니다</h2>
+    <p class="rsub">네이버 서치어드바이저 웹마스터 가이드의 '웹 콘텐츠 스팸사례' 문서입니다. 대행 상품에서 흔히 쓰이는 기법이 그대로 목록에 있습니다.</p>
+    <div class="ev side">
+      <div class="evshot"><div class="eh"><b>네이버 서치어드바이저</b> 웹마스터 가이드<span class="src">searchadvisor.naver.com</span></div>
+        <figure><img src="assets/evidence/naver-spam-policy.png" alt="네이버 웹 콘텐츠 스팸사례" /></figure></div>
+      <div>
+        <ul class="wlist">
+          <li><b>키워드 반복·남용</b> · 상위노출만을 목적으로 같은 키워드를 반복</li>
+          <li><b>매크로 및 조작 행위</b> · 방문·추천 수를 인위적으로 부풀림</li>
+          <li><b>저품질 콘텐츠 대량 생성</b> · 같은 템플릿으로 문장만 바꿔 대량 발행</li>
+          <li><b>스크래핑</b> · 남의 글을 기계적으로 변형해 게시</li>
+        </ul>
+        <p class="note">문서 원문 : "스팸으로 탐지된 사이트·문서는 검색 결과 노출 제외 또는 순위 하락 등의 불이익을 받을 수 있습니다."</p>
+      </div>
+    </div>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">환자는 어디로 갔나</span>
+    <h2>국내 검색만 봐도 네이버 밖이 더 큽니다</h2>
+    <div class="ev side rev">
+      <div>
+        <div class="numrow" style="margin-bottom:14px">
+          <div><div class="nv">49.5<small>%</small></div><div class="nl">구글</div></div>
+          <div><div class="nv" style="color:var(--ink-soft)">40.9<small>%</small></div><div class="nl">네이버</div></div>
+          <div><div class="nv" style="color:var(--ink-soft)">5.4<small>%</small></div><div class="nl">빙</div></div>
+        </div>
+        <ul class="wlist">
+          <li>측정 기관에 따라 <b>네이버 우위로 나오는 통계도</b> 있습니다</li>
+          <li>다투는 지점은 순위가 아니라 <b>네이버 밖이 이미 절반</b>이라는 사실</li>
+          <li>대행 상품은 여전히 <b>네이버 한 곳만</b> 다룹니다</li>
+        </ul>
+      </div>
+      <div class="evshot"><div class="eh"><b>StatCounter</b> 한국 검색엔진 점유율<span class="src">2026.07</span></div>
+        <figure><img src="assets/evidence/statcounter.png" alt="한국 검색엔진 점유율" /></figure></div>
+    </div>
+  </section>
+
+<section class="slide content tint">
+    <span class="eyebrow accent">놓치고 있는 시장</span>
+    <h2>외국인 환자가 3년 연속 두 배씩 늘었습니다</h2>
+    <p class="rsub">보건복지부 발표 기준입니다. 이 환자들은 네이버를 쓰지 않습니다. 구글과 AI에 묻고 옵니다.</p>
+    <div class="ev side">
+      <div>
+        <div class="numrow" style="margin-bottom:14px">
+          <div><div class="nv" style="color:var(--ink-soft)">61<small>만</small></div><div class="nl">2023년</div></div>
+          <div><div class="nv" style="color:var(--ink-soft)">117<small>만</small></div><div class="nl">2024년</div><div class="nd">전년 대비 1.9배</div></div>
+          <div><div class="nv up">201<small>만</small></div><div class="nl">2025년</div><div class="nd">통계 집계 이후 최초 200만 돌파</div></div>
+        </div>
+        <ul class="wlist">
+          <li>2025년 <b>201개국</b>에서 방문 · 중국 · 일본 · 대만 · 미국 · 태국 순</li>
+          <li>중국 <b>+137.5%</b> · 대만 <b>+122.5%</b></li>
+          <li>증가 요인 : 중국 무비자 · 미용·성형 부가세 환급 · K-뷰티</li>
+        </ul>
+      </div>
+      <div class="evshot"><div class="eh"><b>보건복지부</b> 보도자료<span class="src">2026.04.24</span></div>
+        <figure><img src="assets/evidence/mohw-release.png" alt="보건복지부 보도자료" /></figure></div>
+    </div>
+    <p class="srcline">출처 : 보건복지부 · 한국보건산업진흥원 「2025년 외국인환자 유치실적」 (2026.04.24 배포)</p>
+  </section>
+
+<section class="slide content">
+    <span class="eyebrow accent">정리</span>
+    <h2>그래서 기존 방식이 부족해진 지점</h2>
+    <div class="ev two">
+      <div class="bacard bad">
+        <div class="bt">파는 것 : 네이버 상위노출</div>
+        <ul class="wlist" style="margin-top:0">
+          <li>노출 <b>보장</b>을 약속한다</li>
+          <li>키워드 반복·대량 발행으로 만든다</li>
+          <li>네이버 <b>한 채널</b>만 본다</li>
+          <li>성과를 <b>순위 스크린샷</b>으로 보고한다</li>
+        </ul>
+      </div>
+      <div class="bacard good" style="border-color:#cfe0ff">
+        <div class="bt" style="color:var(--accent-deep)">지금 필요한 것</div>
+        <ul class="wlist" style="margin-top:0">
+          <li>보장 대신 <b>측정과 재측정</b></li>
+          <li>질문에 답하는 <b>실명 콘텐츠</b></li>
+          <li>네이버 · 구글 · AI · <b>다국어</b>까지</li>
+          <li>같은 질문으로 <b>전·후를 비교</b>해 보고</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">왼쪽이 나빠서가 아니라, 환자가 있는 자리가 옮겨갔기 때문입니다. 오늘 나머지 시간은 오른쪽을 어떻게 만드는지에 씁니다.</p>
   </section>
 
 <section class="slide cover" data-sec="02 대행사">
