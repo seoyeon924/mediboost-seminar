@@ -499,8 +499,9 @@
       <li><span class="no">02</span> 마케팅 성과는 무엇으로 봐야 할까 <span class="tag">유입경로 · 상담 · 예약 · 리포트</span></li>
       <li><span class="no">03</span> 검색 환경은 어떻게 바뀌고 있나 <span class="tag">네이버 · 구글 · AI · 해외 환자</span></li>
       <li><span class="no">04</span> GEO, 어디까지 준비해야 할까 <span class="tag">콘텐츠 · 접근성 · 정보 일관성</span></li>
-      <li><span class="no">05</span> 우리 병원 직접 확인하는 법 <span class="tag">10분 자가점검</span></li>
-      <li><span class="no">06</span> 앞으로 운영하는 순서 <span class="tag">내일 할 것 · 90일</span></li>
+      <li><span class="no">05</span> 실제 적용 사례 <span class="tag">한 피부과의 전후</span></li>
+      <li><span class="no">06</span> 우리 병원 직접 확인하는 법 <span class="tag">10분 자가점검</span></li>
+      <li><span class="no">07</span> 앞으로 운영하는 순서 <span class="tag">내일 할 것 · 90일</span></li>
     </ul>
   </section>
 
@@ -848,7 +849,7 @@
         <tr><td>전월 대비</td><td>증감과 그 이유</td><td>수치만 있고 해석이 없지 않은가</td></tr>
         <tr><td>다음 달 계획</td><td>무엇을 왜 바꾸는지</td><td>지난달과 같은 내용의 반복이 아닌가</td></tr>
       </table>
-      <div class="alert green">대행사에 요구할 수 있는 것은 여기까지 · 신환 수·예약·내원·객단가는 병원 기록에서만 나오므로 요구 대상이 아님</div>
+      
     </div>
   </section>
 
@@ -1166,16 +1167,102 @@
   </section>
 
   <!-- ============ 05 직접 확인 ============ -->
-  <section class="slide cover" data-sec="05 직접 확인">
-    <span class="spark" style="top:26%;left:68%"></span><span class="spark" style="top:56%;left:80%;animation-delay:1.5s"></span>
+  <section class="slide cover" data-sec="05 적용 사례">
+    <span class="spark" style="top:26%;left:71%"></span><span class="spark" style="top:58%;left:81%;animation-delay:1.2s"></span>
     <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
     <span class="eyebrow"><span class="n">[ 05 ]</span></span>
+    <h1>한 피부과에<br>실제로 적용한 과정</h1>
+    <p class="lead" style="margin-top:20px;max-width:46ch">서울의 한 피부과 · 병원명은 가렸습니다. 시작 상태 그대로, 진행 중인 수치 그대로 보여드립니다.</p>
+  </section>
+
+  <section class="slide content">
+    <span class="eyebrow accent"><span class="n">05</span> 시작 상태</span>
+    <h2>네이버 블로그만 있던 병원</h2>
+    <p class="rsub">SCI 논문 · 학회 강연 · 방송 자문 이력이 있는 원장. 그런데 검색에서는 보이지 않는 상태</p>
+    <div class="numrow" style="margin-bottom:14px">
+      <div><div class="nv down">0<small>개</small></div><div class="nl">홈페이지 구조화 데이터</div></div>
+      <div><div class="nv down">60<small>여 쪽</small></div><div class="nl">설정 오류로 색인 누락</div></div>
+      <div><div class="nv" style="color:var(--ink-soft)">154<small>건</small></div><div class="nl">로그인 뒤에 잠긴 원장 답변 글</div></div>
+      <div><div class="nv" style="color:var(--ink-soft)">11<small>건</small></div><div class="nl">노출되지 않는 학회 강연 이력</div></div>
+    </div>
+    <ul class="wlist">
+      <li>콘텐츠가 <b>네이버 블로그에만</b> · 구글·AI에서는 찾기 어려움</li>
+      <li>블로그에는 지역 키워드만 많고 <b>왜 이 원장인지</b>는 드러나지 않음</li>
+      <li>영문 사이트는 <b>대행사 소유 도메인</b> · 계약이 끝나면 병원에 남지 않음</li>
+    </ul>
+  </section>
+
+  <section class="slide content tint">
+    <span class="eyebrow accent"><span class="n">05</span> 작업</span>
+    <h2>홈페이지 점검과 처리 내역</h2>
+    <p class="rsub">파일을 직접 열어 확인하고, 되돌릴 수 있게 전체 백업 후 단계별로 반영</p>
+    <div class="ev side">
+      <div class="evshot"><div class="eh"><b>점검 결과</b> 원장 전달본<span class="src">병원명 가림</span></div>
+        <figure><img src="assets/work/audit-table.png" alt="점검 전후 표" /></figure></div>
+      <div>
+        <ul class="wlist">
+          <li><b>서치콘솔 · 애널리틱스</b> 설치 (기존 미설치)</li>
+          <li>사이트맵 재생성 · <b>죽은 옛 주소 정리</b></li>
+          <li>SSL · 대표주소 · 설명문 · <b>구조화 데이터 · llms.txt</b></li>
+          <li>원장 이력 · 진료 기준을 <b>공개 페이지로</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide content">
+    <span class="eyebrow accent"><span class="n">05</span> 전후 · 해외 환자</span>
+    <h2>영문 사이트, 소유부터 다시</h2>
+    <div class="ev two">
+      <div class="wshot"><div class="wb"><i></i><i></i><i></i><span class="u">기존 · 대행사 소유 도메인</span><span class="tag" style="background:var(--warn-soft);color:var(--warn);border-color:var(--warn-line)">BEFORE</span></div>
+        <figure><img src="assets/work/before-en.png" alt="기존 영문 사이트" /></figure></div>
+      <div class="wshot"><div class="wb"><i></i><i></i><i></i><span class="u">신규 · 병원 소유 도메인</span><span class="tag">AFTER</span></div>
+        <figure><img src="assets/work/after-en.png" alt="새 영문 사이트" /></figure></div>
+    </div>
+    <p class="wcap"><b>기존</b> : 대행사 도메인 · 계약 종료 시 반납 · 원장 정보 없음 &nbsp;→&nbsp; <b>신규</b> : 병원 소유 · 원장 실명·전문의 자격·논문이 첫 화면 · 비용은 질문 단위 페이지로</p>
+  </section>
+
+  <section class="slide content tint">
+    <span class="eyebrow accent"><span class="n">05</span> 지금</span>
+    <h2>진행 중인 수치, 그대로</h2>
+    <p class="rsub">시작 단계라 순위 대부분이 낮습니다. 이 화면을 그대로 보여드리는 것까지가 저희 방식입니다.</p>
+    <div class="ev side">
+      <div class="evshot"><div class="eh"><b>GEO 모니터</b> 일일 관측<span class="src">병원명 가림 · 2026.08</span></div>
+        <figure><img src="assets/work/monitor-yoon.png" alt="GEO 모니터" /></figure></div>
+      <div>
+        <ul class="wlist">
+          <li>추적 검색어 28개 중 구글 20위 안 <b>2개</b> · 시작 수치</li>
+          <li>검색어별 순위 · 수요를 <b>매일 같은 기준</b>으로 기록</li>
+          <li>어느 검색어부터 칠지 <b>공략 지도</b>로 우선순위</li>
+          <li>낮은 수치도 <b>숨기지 않고 공유</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide content">
+    <span class="eyebrow accent"><span class="n">05</span> 정리</span>
+    <h2>맡기실 곳이 어디든, 이것을 해주는지 보세요</h2>
+    <p class="rsub">이 사례에서 한 일을 기준으로 바꾸면 이렇습니다. 저희가 아니어도 이 기준은 유효합니다.</p>
+    <ul class="info">
+      <li><span class="m ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div><b>서치콘솔 · 애널리틱스</b>를 설치해 주는지</div></li>
+      <li><span class="m ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div>llms.txt · 구조화 데이터 등 <b>홈페이지 구조를 잡아 주는지</b></div></li>
+      <li><span class="m ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div>도메인과 콘텐츠를 <b>병원 소유로</b> 해주는지</div></li>
+      <li><span class="m ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div>원장의 <b>진료 기준이 담긴 글</b>을 쓰는지</div></li>
+      <li><span class="m ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div>부담스러운 비용을 요구하지 <b>않는지</b></div></li>
+    </ul>
+  </section>
+
+  <section class="slide cover" data-sec="06 직접 확인">
+    <span class="spark" style="top:26%;left:68%"></span><span class="spark" style="top:56%;left:80%;animation-delay:1.5s"></span>
+    <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
+    <span class="eyebrow"><span class="n">[ 06 ]</span></span>
     <h1>우리 병원,<br>지금 직접 확인해 보겠습니다</h1>
     <p class="lead" style="margin-top:20px;max-width:44ch">챗GPT · 10분</p>
   </section>
 
   <section class="slide content">
-    <span class="eyebrow accent">실습</span>
+    <span class="eyebrow accent"><span class="n">06</span> 실습</span>
     <h2>10분 자가점검 세 단계</h2>
     <div class="timeline">
       <div class="tstep"><span class="w">STEP 1</span><div class="tt">추천되는지</div>
@@ -1189,7 +1276,7 @@
   </section>
 
   <section class="slide content tint">
-    <span class="eyebrow accent">기록</span>
+    <span class="eyebrow accent"><span class="n">06</span> 기록</span>
     <h2>점검 결과 기록 양식</h2>
     <div class="doc">
       <table class="ptable" style="font-size:13.5px">
@@ -1204,7 +1291,7 @@
   </section>
 
   <!-- ============ 06 정리 ============ -->
-  <section class="slide content" data-sec="06 정리">
+  <section class="slide content" data-sec="07 정리">
     <span class="eyebrow accent">실행</span>
     <h2>내일 할 것 다섯 가지</h2>
     <p class="rsub">비용 0원 · 병원 내부에서 가능</p>
