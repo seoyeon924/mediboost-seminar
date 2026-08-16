@@ -9,7 +9,7 @@
   /* 색 토큰 · KRDS(정부 디자인시스템) 램프 기준 · 흰 배경 고정
      Navy 50 #003675 = 제목·강조 / Blue 50 #246beb = 액센트 / Point #e71825 = 경고 */
   :root{
-    --grad:#003675;
+    --grad:linear-gradient(158deg,#6f8bb4 0%,#8ba3c6 46%,#b7c9e0 100%);
     --ink:#1d1d1d; --ink-soft:#555555; --ink-faint:#8e8e8e;
     --accent:#246beb; --accent-deep:#003675; --accent-ink:#003675;
     --tint:#dbe7fb; --tint-soft:#eff5ff; --line:#d8d8d8; --line-2:#e4e4e4;
@@ -397,11 +397,11 @@
   .shead h2{font-size:29px;font-weight:700;color:var(--accent-deep);letter-spacing:-.025em;line-height:1.28}
   .shead .rsub{font-size:14.5px;color:var(--ink-soft);margin-top:9px;line-height:1.62;max-width:98ch}
   .sbody{gap:14px}
-  h1{font-weight:700;letter-spacing:-.035em}
-  .cover .lead{color:#d5e2f5}
-  .cover .eyebrow{color:#9dbcf0;letter-spacing:.16em}
-  .cover-art svg{stroke:#fff;opacity:.5}
-  .cover-art{opacity:.10}
+  h1{font-weight:800;letter-spacing:-.04em}
+  .cover .lead{color:#eaf1fb}
+  .cover .eyebrow{color:#e7eefa;letter-spacing:.16em}
+  .cover-art svg{stroke:#fff}
+  .cover-art{opacity:.16}
 
   /* 부품 세부 */
   .rtitle,.icard h4,.tstep .tt,.smq .st,.cmp .h,.bacard .bt,.hstep .ht{color:var(--accent-deep);font-weight:700}
@@ -420,9 +420,12 @@
   .alert.green{background:var(--tint-soft);border:1px solid #cfe0ff;color:var(--accent-deep)}
   .alert.red{background:var(--warn);border-radius:6px}
   .chip{background:#f1f3f5;color:var(--warn)}
-  .stake{background:var(--tint-soft);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;
-    font-size:14px;color:var(--accent-deep);padding:12px 18px}
-  .stake.plain{color:var(--ink-faint)}
+  /* 마무리 한 줄 · 색 채우지 않고 얇은 선만 */
+  .stake{background:transparent;border-left:0;border-top:1px solid var(--line-2);border-radius:0;
+    font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:13px 0 0;margin-top:16px;line-height:1.6}
+  .stake b{color:var(--accent-deep);font-weight:700}
+  .stake + .stake{border-top:0;margin-top:4px;padding-top:0}
+  .stake.plain{color:var(--ink-faint);font-size:12px;font-weight:500;border-top:0;margin-top:6px;padding-top:0}
   .sfoot .sf-n{background:transparent;color:var(--accent-deep);border:1px solid var(--line);border-radius:3px}
 
   /* 근거 자료 캡처 */
@@ -438,12 +441,13 @@
   .evshot .eh .src{margin-left:auto;font-family:ui-monospace,monospace;font-size:10px}
   .evshot figure{flex:1;min-height:0;overflow:hidden}
   .evshot img{width:100%;display:block}
-  .quote{border-left:3px solid var(--accent);background:var(--tint-soft);padding:16px 20px;border-radius:0 8px 8px 0}
-  .quote p{font-size:17px;font-weight:700;color:var(--accent-deep);line-height:1.5}
-  .quote cite{display:block;margin-top:9px;font-size:11.5px;color:var(--ink-faint);font-style:normal;font-weight:600}
-  .numrow{display:flex;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
-  .numrow > div{flex:1;padding:20px 22px}
-  .numrow > div + div{border-left:1px solid var(--line-2)}
+  .quote{border-left:2px solid var(--accent);background:transparent;padding:2px 0 2px 20px;border-radius:0}
+  .quote p{font-size:17px;font-weight:600;color:var(--ink);line-height:1.62;letter-spacing:-.02em}
+  .quote cite{display:block;margin-top:11px;font-size:11.5px;color:var(--ink-faint);font-style:normal;font-weight:500}
+  .numrow{display:flex;gap:0;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    border-radius:0;overflow:hidden;background:transparent}
+  .numrow > div{flex:1;padding:18px 20px 18px 0}
+  .numrow > div + div{border-left:1px solid var(--line-2);padding-left:24px}
   .numrow .nv{font-size:38px;font-weight:700;color:var(--accent-deep);letter-spacing:-.035em;line-height:1;
     font-variant-numeric:tabular-nums}
   .numrow .nv small{font-size:15px;font-weight:600;color:var(--ink-soft);margin-left:3px}
@@ -525,7 +529,7 @@
           <li>"블로그 베이직 <b>월 10건 40만원~</b>"</li>
           <li>월 단위로 <b>글 편수를 파는</b> 구조</li>
         </ul>
-        <p class="note">파는 방식이 10년 전과 거의 같습니다. 문제는 이 구조로는 원장님이 무엇을 받았는지 확인할 방법이 없다는 점입니다.</p>
+        <p class="note">이 구조에서는 원장님이 무엇을 받았는지 확인할 방법이 없습니다.</p>
       </div>
     </div>
   </section>
@@ -539,7 +543,7 @@
           <p>"네이버에서 병원 블로그를 '상위노출 보장'하는 것은 현실적으로 불가능하며, 보장 약속을 하는 대행사는 사기 위험이 큽니다."</p>
           <cite>네이버 AI 브리핑 · '병원 블로그 상위노출 보장' 검색 결과 · 2026.08</cite>
         </div>
-        <p class="note">환자도 같은 화면을 봅니다. 병원이 어떤 업체와 일하는지가 검색 한 번으로 드러날 수 있는 환경이 되었습니다.</p>
+        <p class="note">같은 검색어에서 광고와 답변이 서로 다른 이야기를 하고 있습니다.</p>
       </div>
       <div class="evshot"><div class="eh"><b>네이버 AI 브리핑</b> 답변<span class="src">search.naver.com</span></div>
         <figure><img src="assets/evidence/naver-ai-briefing.png" alt="네이버 AI 브리핑 답변" /></figure></div>
@@ -564,13 +568,13 @@
           <li><i class="mk o">·</i><span>여기가 업체 간 <b>가격 차이의 실체</b></span></li>
         </ul></div>
     </div>
-    <p class="note">"월 OO만원에 상위노출까지"처럼 둘을 합쳐 제시하면, 광고비를 줄이고 수수료를 늘려도 원장님은 알 수 없습니다.</p>
+    <p class="note">둘을 합쳐 제시하면 광고비와 수수료의 비율이 바뀌어도 확인할 수 없습니다.</p>
   </section>
 
   <section class="slide content tint">
     <span class="eyebrow accent">실제 업무</span>
     <h2>계약하면 누가, 어떻게 작업하나</h2>
-    <p class="rsub">영업 담당자와 실제 작업자가 다른 경우가 많습니다. 사람의 경력을 묻기보다 작업이 도는 방식을 물어보시는 편이 확인하기 쉽습니다.</p>
+    <p class="rsub">영업 담당자와 실제 작업자가 다른 경우가 있습니다. 개인 경력보다 작업 절차를 물어보시는 편이 확인하기 쉽습니다.</p>
     <ul class="info">
       <li><span class="m"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></span><div>우리 병원 글은 <b>누가 씁니까</b><span class="sub">내부 인력인지, 외주인지, 외주가 다시 외주로 넘어가는지.</span></div></li>
       <li><span class="m"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/><path d="M8.5 14.5l2 2 3.5-3.5"/></svg></span><div>의학적으로 틀린 내용은 <b>누가 잡아냅니까</b><span class="sub">게시 전 원장 검수 절차가 계약에 들어 있는지.</span></div></li>
@@ -582,7 +586,7 @@
   <section class="slide content">
     <span class="eyebrow accent">계약 전 확인</span>
     <h2>계약서에 서명하기 전에 물어볼 것</h2>
-    <p class="rsub">이 표를 그대로 들고 가서 하나씩 물어보시면 됩니다. 답을 못 하거나 얼버무리는 항목이 곧 위험 지점입니다.</p>
+    <p class="rsub">미팅에서 이 순서로 물어보시면 됩니다. 답변이 어려운 항목은 따로 표시해 두시면 비교에 쓰입니다.</p>
     <div class="doc">
       <table class="ptable" style="font-size:13px">
         <tr><th style="width:52%">물어볼 것</th><th>왜 중요한가</th></tr>
@@ -613,13 +617,13 @@
         <div class="clause bad"><span class="cn">제11조 (계정)</span><div>네이버·구글 등 채널 계정은 을이 관리하며, <span class="hl">갑에게 관리자 권한을 이양할 의무가 없다.</span></div></div>
       </div>
     </div>
-    <p class="note">계약이 끝나면 그동안 쌓은 <b>글·계정·데이터가 원장에게 하나도 남지 않을 수</b> 있습니다.</p>
+    <p class="note">이 조합이면 계약 종료 시 글·계정·데이터가 병원에 남지 않을 수 있습니다.</p>
   </section>
 
   <section class="slide content">
     <span class="eyebrow accent">분쟁 현황</span>
     <h2>이 조항들이 실제 분쟁으로 이어지고 있습니다</h2>
-    <p class="rsub">병원만의 이야기가 아니라 소상공인 전반에서 반복되는 문제이고, 정부가 대응 조직을 따로 두고 있습니다.</p>
+    <p class="rsub">병원에 한정된 문제는 아닙니다. 공정거래위원회가 온라인 광고대행 대응 조직을 따로 운영하고 있습니다.</p>
     <div class="ev side rev">
       <div>
         <div class="numrow" style="margin-bottom:14px">
@@ -642,7 +646,7 @@
   <section class="slide content tint">
     <span class="eyebrow accent">신호</span>
     <h2>피해야 할 대행사의 특징</h2>
-    <p class="rsub">하나만 해당해도 바로 탈락은 아닙니다. 다만 두세 개가 겹치면 계약을 미루고 다시 보시는 편이 낫습니다.</p>
+    <p class="rsub">하나만 해당한다고 탈락은 아닙니다. 여러 개가 겹칠 때 확인이 필요합니다.</p>
     <ul class="info">
       <li><span class="m x"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></span><div>상위노출이나 <b>신환 수를 보장</b>한다</div></li>
       <li><span class="m x"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></span><div>실제 <b>담당자와 작성자가 누구인지</b> 밝히지 않는다</div></li>
@@ -655,7 +659,7 @@
   <section class="slide content">
     <span class="eyebrow accent">기준</span>
     <h2>괜찮은 대행사를 찾는 기준</h2>
-    <p class="rsub">잘하는 곳을 고르기는 어렵지만, 최소한을 지키는 곳을 남기는 것은 가능합니다.</p>
+    <p class="rsub">잘하는 곳을 가려내기보다, 기준에 못 미치는 곳을 제외하는 방식이 확인하기 쉽습니다.</p>
     <div class="cardrow" style="grid-template-columns:repeat(5,1fr)">
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4z"/><path d="M9 10h6"/></svg></div><h4>구체적으로 설명한다</h4><p>무엇을 몇 건, 어떤 절차로 하는지 말로 설명된다</p></div>
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.3-3.1 7.6-7.5 9-4.4-1.4-7.5-4.7-7.5-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h4>계정을 병원이 갖는다</h4><p>광고·분석 계정이 병원 명의로 개설된다</p></div>
@@ -669,7 +673,7 @@
   <section class="slide content tint">
     <span class="eyebrow accent">책임</span>
     <h2>광고는 맡길 수 있지만, 책임은 맡길 수 없습니다</h2>
-    <p class="rsub">이 부분이 계약 조건보다 중요할 수 있습니다. 대행사가 쓴 글이 의료법을 위반해도 처분 대상은 대행사가 아닙니다.</p>
+    <p class="rsub">대행사가 작성한 글이 의료법을 위반한 경우에도 처분 대상은 의료기관입니다.</p>
     <div class="ev side">
       <div>
         <div class="quote">
@@ -685,7 +689,7 @@
       <div class="evshot"><div class="eh"><b>보건복지부</b> 보도자료<span class="src">2022.04.18</span></div>
         <figure><img src="assets/evidence/mohw-adlaw2.png" alt="복지부 불법의료광고 적발 보도자료" /></figure></div>
     </div>
-    <p class="note">대행사는 대신 써주지만, <b>책임까지 대신 져주지는 않습니다.</b></p>
+    <p class="note">광고 문안 작성은 위탁할 수 있지만, 의료법상 책임은 위탁되지 않습니다.</p>
   </section>
 
   <section class="slide content">
@@ -696,7 +700,7 @@
       <div class="tstep"><span class="w">확인 2</span><div class="tt">자산의 소유</div><ul><li>계정이 병원 명의인가</li><li>종료 시 글·도메인이 남는가</li></ul></div>
       <div class="tstep"><span class="w">확인 3</span><div class="tt">책임의 소재</div><ul><li>표현을 누가 검수하는가</li><li>위반 시 처분은 병원에 온다</li></ul></div>
     </div>
-    <p class="note">이 셋만 계약서에서 확인해도 흔한 분쟁의 대부분은 걸러집니다.</p>
+    <p class="note">계약서에서 이 세 가지를 먼저 확인하시면 됩니다.</p>
   </section>
   <!-- ============ 02 성과 측정 ============ -->
   <section class="slide cover" data-sec="02 성과 측정">
@@ -710,7 +714,7 @@
   <section class="slide content">
     <span class="eyebrow accent">지표</span>
     <h2>조회수와 순위로는 알 수 없는 것</h2>
-    <p class="rsub">두 지표 모두 틀린 숫자는 아닙니다. 다만 경영 판단에 쓰기에는 중간 단계에서 끊깁니다.</p>
+    <p class="rsub">두 지표 모두 틀린 숫자는 아닙니다. 다만 신환·매출까지 연결되지 않습니다.</p>
     <div class="cmp">
       <div class="col bad"><div class="h">지금 받고 계신 보고</div>
         <ul>
@@ -729,13 +733,13 @@
         </ul>
       </div>
     </div>
-    <p class="note">순위가 올라도 신환이 그대로일 수 있고, 순위가 그대로여도 신환이 늘 수 있습니다. 둘은 다른 숫자입니다.</p>
+    <p class="note">순위와 신환 수는 같은 방향으로 움직이지 않는 경우가 있습니다. 둘을 함께 보셔야 합니다.</p>
   </section>
 
   <section class="slide content tint">
     <span class="eyebrow accent">1단계</span>
     <h2>신환이 어디서 왔는지부터 기록합니다</h2>
-    <p class="rsub">가장 적은 비용으로 가장 많은 것을 알 수 있는 조치입니다. 초진 문진표에 항목 하나를 추가하면 됩니다.</p>
+    <p class="rsub">초진 문진표에 항목 하나를 추가하면 됩니다.</p>
     <div class="ev side">
       <div>
         <div class="doc" style="margin-top:0">
@@ -746,7 +750,7 @@
             <span><b>ChatGPT 등 AI</b></span><span>간판 보고</span><span>기타</span>
           </div>
         </div>
-        <p class="note">종이 문진표 한 줄이면 됩니다. 접수 데스크에서 체크만 받아 매달 세어도 3개월이면 판단할 근거가 생깁니다.</p>
+        <p class="note">접수 데스크에서 체크만 받아 매달 집계합니다. 3개월이면 경로별 비중이 나옵니다.</p>
       </div>
       <div>
         <ul class="wlist">
@@ -762,7 +766,7 @@
   <section class="slide content">
     <span class="eyebrow accent">2단계</span>
     <h2>상담과 예약까지 이어서 봅니다</h2>
-    <p class="rsub">경로별로 신환 수만 보면 "인스타가 제일 많다"에서 끝납니다. 뒤 단계까지 붙이면 판단이 달라집니다.</p>
+    <p class="rsub">경로별 신환 수만 보면 유입이 많은 채널이 좋아 보입니다. 뒤 단계를 붙이면 순서가 달라지기도 합니다.</p>
     <div class="howflow">
       <div class="hstep"><div class="hn">1</div>
         <div class="hic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div>
@@ -780,13 +784,13 @@
         <div class="hic"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
         <div class="ht">내원·매출</div><div class="hd">예약 중 몇 명이 실제로 왔는가</div></div>
     </div>
-    <p class="note">유입이 적어도 예약 전환이 높은 경로가 있습니다. 그 경로에 돈을 더 쓰는 것이 순위를 올리는 것보다 빠릅니다.</p>
+    <p class="note">유입이 적어도 예약 전환이 높은 경로가 있습니다. 어디에 더 쓸지는 이 표를 보고 정하시면 됩니다.</p>
   </section>
 
   <section class="slide content tint">
     <span class="eyebrow accent">3단계</span>
     <h2>대행사 리포트에서 받아야 할 숫자</h2>
-    <p class="rsub">"이 항목으로 매달 주세요"라고 요구하시면 됩니다. 못 준다고 하면 그 이유가 무엇인지가 다시 판단 재료가 됩니다.</p>
+    <p class="rsub">이 항목으로 매달 요청하시면 됩니다. 제공이 어려운 항목은 그 이유를 함께 확인하시면 됩니다.</p>
     <div class="doc">
       <table class="ptable" style="font-size:13.5px">
         <tr><th style="width:34%">항목</th><th style="width:33%">형태</th><th>확인 포인트</th></tr>
@@ -797,7 +801,7 @@
         <tr><td>전월 대비</td><td>증감과 그 이유</td><td>수치만 있고 해석이 없지 않은가</td></tr>
         <tr><td>다음 달 계획</td><td>무엇을 왜 바꾸는지</td><td>지난달과 같은 내용의 반복이 아닌가</td></tr>
       </table>
-      <div class="alert green"><b>같은 기준으로 6개월</b>만 쌓이면 대행사를 바꿔야 할지 아닌지가 숫자로 보입니다. 감으로 판단하지 않아도 됩니다.</div>
+      <div class="alert green">같은 기준으로 6개월 쌓이면 계약을 유지할지 판단할 재료가 됩니다.</div>
     </div>
   </section>
 
@@ -813,7 +817,7 @@
           <li>경쟁 병원과 <b>같은 기준으로</b> 비교했는가</li>
           <li>다음에 <b>무엇을 할지</b>가 우선순위로 나오는가</li>
         </ul>
-        <p class="note">점수는 절대 평가가 아니라 전·후 비교용 참고 지표입니다. 점수만 크게 쓰고 산출 기준이 없는 리포트는 걸러도 됩니다.</p>
+        <p class="note">점수는 절대 평가가 아니라 전·후 비교용 참고 지표입니다. 산출 기준이 적혀 있지 않은 점수는 비교에 쓰기 어렵습니다.</p>
       </div>
       <div class="evshot"><div class="eh"><b>진단 리포트</b> 예시<span class="src">병원명 가림</span></div>
         <figure><img src="assets/work/report-clinic.png" alt="진단 리포트 예시" /></figure></div>
@@ -822,19 +826,20 @@
 
   <section class="slide content tint">
     <span class="eyebrow accent">참고 · 실제 화면</span>
-    <h2>매달 같은 질문으로 다시 재는 화면</h2>
-    <p class="rsub">한 번 좋아진 것으로 끝나지 않도록, 같은 질문을 같은 방식으로 반복 조사한 기록을 남깁니다.</p>
-    <div class="ev side">
+    <h2>원장님이 매달 받는 화면</h2>
+    <p class="rsub">지표를 나열하는 대신 지난달과 이번 달을 나란히 놓고, 좋아진 것과 알려드릴 것을 나눠 적습니다.</p>
+    <div class="ev side rev">
       <div>
         <ul class="wlist">
-          <li>질문마다 <b>어느 채널에서 몇 번째로</b> 언급되는지</li>
-          <li><b>조사일과 엔진</b>을 함께 기록</li>
-          <li>비어 있는 <b>질문 카테고리</b>가 드러남</li>
+          <li>같은 항목을 <b>지난 → 이번</b>으로만 표기</li>
+          <li><b>좋은 변화</b>와 <b>먼저 알려드릴 것</b>을 분리</li>
+          <li>그 기간에 <b>실제로 처리한 작업</b>을 함께 기재</li>
+          <li>오른 것이 없으면 <b>없다고 적음</b></li>
         </ul>
-        <p class="note">화면은 가상 브랜드 데모입니다. 수치는 예시이며 실제 고객 데이터가 아닙니다.</p>
+        <p class="note">병원명은 가렸습니다. 지표 개수보다 전월과 비교 가능한 형태인지가 중요합니다.</p>
       </div>
-      <div class="evshot"><div class="eh"><b>측정 화면</b> 예시<span class="src">데모 워크스페이스</span></div>
-        <figure><img src="assets/work/cgcc-vis.png" alt="측정 화면 예시" /></figure></div>
+      <div class="evshot"><div class="eh"><b>월간 브리프</b> 원장 전달본<span class="src">병원명 가림</span></div>
+        <figure><img src="assets/work/doctor-brief.png" alt="원장 월간 브리프" /></figure></div>
     </div>
   </section>
 
@@ -844,20 +849,20 @@
     <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
     <span class="eyebrow"><span class="n">[ 03 ]</span></span>
     <h1>검색 환경은<br>어떻게 바뀌고 있나</h1>
-    <p class="lead" style="margin-top:20px;max-width:46ch">네이버가 끝났다는 이야기가 아닙니다. 환자가 병원을 찾는 경로가 하나 더 늘었다는 이야기입니다.</p>
+    <p class="lead" style="margin-top:20px;max-width:46ch">네이버가 축소됐다는 뜻은 아닙니다. 환자가 병원을 찾는 경로가 하나 늘었습니다.</p>
   </section>
 
   <section class="slide content">
     <span class="eyebrow accent">채널</span>
     <h2>대체가 아니라 추가입니다</h2>
-    <p class="rsub">어느 하나가 다른 하나를 없애는 구조가 아닙니다. 환자 한 명이 여러 채널을 거쳐 병원을 정합니다.</p>
+    <p class="rsub">환자 한 명이 여러 채널을 거쳐 병원을 정합니다.</p>
     <div class="cardrow">
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h4>네이버 검색</h4><p>여전히 가장 큰 유입원. 다만 순위 경쟁은 이미 포화</p></div>
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></div><h4>플레이스·지도</h4><p>"근처 OO과"로 찾을 때. 정보 정확성이 곧 성과</p></div>
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4z"/><path d="M12 8.6c-1-1.1-3-.5-3 1 0 1.2 3 2.9 3 2.9s3-1.7 3-2.9c0-1.5-2-2.1-3-1z"/></svg></div><h4>SNS·커뮤니티</h4><p>후기와 평판. 병원이 통제하기 가장 어려운 영역</p></div>
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 3l1.7 4.5L18 9l-4.3 1.6L12 15l-1.7-4.4L6 9l4.3-1.5z"/></svg></div><h4>AI 검색</h4><p>새로 생긴 발견 경로. 답변 안에 인용될지가 관건</p></div>
     </div>
-    <p class="note">그래서 "이제 네이버 접고 AI 하세요"가 아니라, <b>네 곳에서 같은 정보가 확인되게 만드는 것</b>이 목표가 됩니다.</p>
+    <p class="note">네 곳에서 같은 정보가 확인되도록 맞추는 것이 목표입니다.</p>
   </section>
 
   <section class="slide content tint">
@@ -921,7 +926,7 @@
         <div class="baout" style="color:var(--accent-deep);margin-top:14px">병원을 알았어도 로그에는 남지 않습니다</div>
       </div>
     </div>
-    <p class="note">그래서 앞에서 말씀드린 <b>초진 문진의 유입경로 기록</b>이 더 중요해집니다. 로그로 안 잡히는 유입을 사람이 물어서 잡는 것입니다.</p>
+    <p class="note">로그로 잡히지 않는 유입이 생기므로, 앞의 초진 문진 기록이 이를 보완합니다.</p>
   </section>
   <!-- ============ 04 GEO 어디까지 ============ -->
   <section class="slide cover" data-sec="04 GEO 준비">
@@ -929,7 +934,7 @@
     <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
     <span class="eyebrow"><span class="n">[ 04 ]</span></span>
     <h1>GEO, 병원은<br>어디까지 준비해야 할까</h1>
-    <p class="lead" style="margin-top:20px;max-width:46ch">기술 설명은 최소한만 하겠습니다. 원장님이 직접 하실 일과, 업체에 물어보실 일을 나누는 것이 목적입니다.</p>
+    <p class="lead" style="margin-top:20px;max-width:46ch">기술 설명은 최소한으로 줄였습니다. 직접 하실 일과 업체에 확인할 일을 나누는 것이 목적입니다.</p>
   </section>
 
   <section class="slide content">
@@ -949,13 +954,13 @@
           <li><i class="mk o">·</i><span>지표 : 언급 여부 · 인용 출처</span></li>
         </ul></div>
     </div>
-    <p class="note">대체 관계가 아닙니다. 다만 GEO는 아직 <b>변화가 빠른 영역</b>이라, 확립된 공식처럼 파는 곳은 경계하셔도 됩니다.</p>
+    <p class="note">대체 관계는 아닙니다. 다만 GEO는 아직 변화가 빠른 영역이라, 확립된 공식처럼 설명하는 곳은 확인이 필요합니다.</p>
   </section>
 
   <section class="slide content tint">
     <span class="eyebrow accent">블로그</span>
     <h2>블로그는 이제 어떻게 해야 할까</h2>
-    <p class="rsub">접으라는 이야기가 아닙니다. 다만 키워드를 반복해 넣는 방식은 네이버가 스팸으로 규정해 두었습니다.</p>
+    <p class="rsub">블로그를 접으라는 의미는 아닙니다. 다만 키워드를 반복해 넣는 방식은 네이버가 스팸 사례로 명시하고 있습니다.</p>
     <div class="ev side">
       <div class="evshot"><div class="eh"><b>네이버 서치어드바이저</b> 웹 콘텐츠 스팸사례<span class="src">searchadvisor.naver.com</span></div>
         <figure><img src="assets/evidence/naver-spam-policy.png" alt="네이버 웹 콘텐츠 스팸사례" /></figure></div>
@@ -981,13 +986,13 @@
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M8 4H6a2 2 0 00-2 2v3a2 2 0 01-2 2 2 2 0 012 2v3a2 2 0 002 2h2"/><path d="M16 4h2a2 2 0 012 2v3a2 2 0 002 2 2 2 0 00-2 2v3a2 2 0 01-2 2h-2"/></svg></div><h4>읽을 수 있는 상태</h4><p>크롤러가 페이지에 도달하고 본문을 텍스트로 읽는다</p></div>
       <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.4 10.7l7-4.2M8.4 13.3l7 4.2"/></svg></div><h4>정보의 일관성</h4><p>플레이스·홈페이지·디렉토리의 병원 정보가 서로 같다</p></div>
     </div>
-    <p class="note">넷 중 <b>정보의 일관성</b>이 가장 손이 덜 가고 효과가 확실합니다. 진료시간·주소·진료과목부터 맞춰 두세요.</p>
+    <p class="note">넷 중 <b>정보의 일관성</b>이 손이 가장 덜 갑니다. 진료시간·주소·진료과목부터 맞춰 두시면 됩니다.</p>
   </section>
 
   <section class="slide content">
     <span class="eyebrow accent">글 한 편</span>
     <h2>인용되는 글은 이렇게 생겼습니다</h2>
-    <p class="rsub">원장님이 직접 다 하실 필요는 없습니다. 대행사가 써 온 글을 이 기준으로 검수하시면 됩니다.</p>
+    <p class="rsub">직접 작성하지 않으셔도 됩니다. 대행사가 보내온 글을 이 항목으로 확인하시면 됩니다.</p>
     <div class="ev side rev">
       <div>
         <ul class="wlist">
@@ -997,7 +1002,7 @@
           <li>진료 경험이나 <b>근거</b>가 붙어 있는가</li>
           <li>그 작성자를 확인할 <b>별도 페이지</b>가 있는가</li>
         </ul>
-        <p class="note">다섯 개 중 세 개 이상 비어 있으면, 그 글은 검색에서도 AI에서도 잘 안 잡힙니다.</p>
+        <p class="note">비어 있는 항목이 많을수록 검색과 AI 양쪽에서 잡히기 어려워집니다.</p>
       </div>
       <div class="gdoc"><div class="gbar"><i></i><i></i><i></i><span>칼럼 예시</span></div>
         <div class="gbody">
@@ -1013,7 +1018,7 @@
   <section class="slide content tint">
     <span class="eyebrow accent">업체에 물어볼 것</span>
     <h2>기술적인 부분은 이 네 단어만 물어보세요</h2>
-    <p class="rsub">직접 하실 일이 아닙니다. 다만 이걸 물었을 때 설명이 나오는지 아닌지로 실제 해본 곳인지가 대체로 갈립니다.</p>
+    <p class="rsub">직접 설정하실 항목은 아닙니다. 다만 질문했을 때 설명이 돌아오는지로 수행 경험을 가늠할 수 있습니다.</p>
     <div class="ev side">
       <div class="wcode">&lt;script type="application/ld+json"&gt;
 {
@@ -1034,7 +1039,7 @@
           <li><b>sitemap · robots.txt</b> · 페이지 목록 제출과 봇 허용 설정</li>
           <li><b>hreflang</b> · 다국어 페이지를 서로 연결</li>
         </ul>
-        <p class="note">이 중 어느 것도 <b>노출을 보장하지 않습니다.</b> 읽힐 수 있는 상태로 만드는 것까지가 기술의 역할입니다.</p>
+        <p class="note">네 가지 모두 노출을 보장하는 항목은 아닙니다. 읽힐 수 있는 상태를 만드는 데까지가 범위입니다.</p>
       </div>
     </div>
   </section>
@@ -1076,7 +1081,7 @@
           <li><b>C.</b> 홈페이지 제작 도구 자체를 변경</li>
           <li><b>D.</b> 지금은 AI보다 네이버·플레이스를 우선</li>
         </ul>
-        <p class="note">환자 대부분이 아직 네이버에서 오신다면 <b>D도 충분히 합리적인 선택</b>입니다. 유입경로 기록이 있으면 이 판단을 숫자로 하실 수 있습니다.</p>
+        <p class="note">환자 대부분이 네이버에서 오는 병원이면 D가 맞을 수 있습니다. 유입경로 기록이 있으면 이 판단에 근거가 생깁니다.</p>
       </div>
     </div>
   </section>
@@ -1087,13 +1092,13 @@
     <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
     <span class="eyebrow"><span class="n">[ 05 ]</span></span>
     <h1>우리 병원,<br>지금 직접 확인해 보겠습니다</h1>
-    <p class="lead" style="margin-top:20px;max-width:44ch">휴대폰 꺼내셔서 같이 해보시면 됩니다. 도구 없이 10분이면 됩니다.</p>
+    <p class="lead" style="margin-top:20px;max-width:44ch">별도 도구 없이 챗GPT만으로 확인할 수 있습니다. 약 10분 소요됩니다.</p>
   </section>
 
   <section class="slide content">
     <span class="eyebrow accent">실습</span>
     <h2>10분 자가점검 세 단계</h2>
-    <p class="rsub">챗GPT나 퍼플렉시티를 열고 순서대로 물어보시면 됩니다. 결과는 질문·시점에 따라 달라지므로 한 번으로 단정하지 마세요.</p>
+    <p class="rsub">챗GPT나 퍼플렉시티를 열고 순서대로 물어보시면 됩니다. 결과는 질문과 시점에 따라 달라집니다. 한 번의 결과로 단정하기는 어렵습니다.</p>
     <div class="timeline">
       <div class="tstep"><span class="w">STEP 1</span><div class="tt">추천되는지</div>
         <ul><li>"○○동 (우리 진료과) 추천해줘"</li><li>우리 병원이 언급되는가</li><li>몇 번째로 나오는가</li></ul></div>
@@ -1102,13 +1107,13 @@
       <div class="tstep"><span class="w">STEP 3</span><div class="tt">경쟁과 비교</div>
         <ul><li>같은 질문에 어느 병원이 먼저 나오는가</li><li>그 병원은 무엇이 다른가</li><li>어떤 질문에서 우리가 비는가</li></ul></div>
     </div>
-    <p class="note">틀린 정보가 나오면 그것부터 고치는 것이 새 글을 쓰는 것보다 빠릅니다. 대개 플레이스·홈페이지의 오래된 정보가 원인입니다.</p>
+    <p class="note">틀린 정보가 나오면 원인은 대개 플레이스나 홈페이지의 오래된 정보입니다. 새 글을 쓰기 전에 그쪽부터 확인하시면 됩니다.</p>
   </section>
 
   <section class="slide content tint">
     <span class="eyebrow accent">기록</span>
     <h2>해보신 결과를 이렇게 적어두세요</h2>
-    <p class="rsub">지금 적어두시면 3개월 뒤 같은 질문을 다시 했을 때 비교가 됩니다. 이게 대행사에 요구할 리포트의 원형입니다.</p>
+    <p class="rsub">지금 기록해 두면 3개월 뒤 같은 질문으로 비교할 수 있습니다.</p>
     <div class="doc">
       <table class="ptable" style="font-size:13.5px">
         <tr><th style="width:34%">질문</th><th style="width:16%">우리 병원</th><th style="width:22%">먼저 나온 곳</th><th>메모</th></tr>
@@ -1117,7 +1122,7 @@
         <tr><td>(우리 병원) 어떤 곳</td><td>정보 일부 오류</td><td>-</td><td>진료시간 옛날 정보</td></tr>
         <tr><td>(증상) 어디 가야 하나</td><td>미언급</td><td>C의원</td><td>해당 질문 글 없음</td></tr>
       </table>
-      <div class="alert green">칸이 비어 있는 질문이 곧 <b>다음에 쓸 글의 목록</b>입니다. 감이 아니라 확인한 결과로 주제를 정하는 방법입니다.</div>
+      <div class="alert green">비어 있는 칸이 다음에 쓸 글의 목록이 됩니다.</div>
     </div>
   </section>
 
@@ -1125,7 +1130,7 @@
   <section class="slide content" data-sec="06 정리">
     <span class="eyebrow accent">실행</span>
     <h2>내일부터 하실 수 있는 다섯 가지</h2>
-    <p class="rsub">전부 비용이 들지 않고, 대행사가 없어도 됩니다.</p>
+    <p class="rsub">추가 비용 없이 병원 안에서 확인할 수 있는 항목입니다.</p>
     <ul class="info">
       <li><span class="m ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div>대행 <b>계약서에서 소유권·자동연장·위약금</b> 조항 찾아보기</div></li>
       <li><span class="m ok"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span><div>광고·분석 <b>계정이 병원 명의인지</b> 확인하기</div></li>
@@ -1146,7 +1151,7 @@
       <div class="tstep"><span class="w">8–12주</span><div class="tt">확인</div>
         <ul><li>경로별 신환 수 집계</li><li>질문형 콘텐츠 발행</li><li>같은 질문으로 2회차 점검</li></ul></div>
     </div>
-    <p class="note">한 번에 다 하지 않으셔도 됩니다. 순서가 뒤집히면 무엇 때문에 좋아졌는지 알 수 없게 됩니다.</p>
+    <p class="note">순서를 지키는 이유는, 여러 가지를 동시에 바꾸면 무엇이 작용했는지 구분되지 않기 때문입니다.</p>
   </section>
 
   <section class="slide dark">
