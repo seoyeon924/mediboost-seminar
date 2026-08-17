@@ -770,17 +770,6 @@
     <p class="lead" style="margin-top:18px;opacity:.85">트리 위치 : 신환 유입 · AI 검색</p>
   </section>
 
-  <section class="slide content tint">
-    <span class="eyebrow accent">순서를 바로잡으면</span>
-    <h2>AI 검색과 기존 콘텐츠의 공통점</h2>
-    <ul class="wlist" style="margin-top:8px">
-      <li>환자가 보던 기준 : 질문에 답하는가 · 누가 썼는가 · 근거가 있는가</li>
-      <li>AI가 보는 기준 : 거의 같은 항목을 기계적으로 확인</li>
-      <li>키워드 반복 글은 환자에게도 AI에게도 같은 이유로 밀림</li>
-    </ul>
-    <p class="note">AI 검색에서는 그 차이가 답변과 인용 결과에서도 드러나기 시작합니다</p>
-  </section>
-
   <section class="slide content">
     <span class="eyebrow accent">순위와 인용</span>
     <h2>구글 상위 페이지 ≠ AI가 인용하는 페이지</h2>
@@ -798,16 +787,33 @@
   <section class="slide content tint">
     <span class="eyebrow accent">두 축</span>
     <h2>검색 순위 × AI 인용, 네 가지 조합</h2>
-    <div class="doc">
-      <table class="ptable" style="font-size:14.5px">
-        <tr><th style="width:24%">검색 상태</th><th style="width:24%">AI 상태</th><th>해석</th></tr>
-        <tr><td>높음</td><td>높음</td><td>둘 다 강함</td></tr>
-        <tr><td>높음</td><td>낮음</td><td>AI 인용 공백 · 근거 구조 점검</td></tr>
-        <tr><td>낮음</td><td>높음</td><td>AI가 선호하는 근거가 존재</td></tr>
-        <tr><td>낮음</td><td>낮음</td><td>기반부터 개선</td></tr>
-      </table>
+    <div style="margin-top:8px">
+    <svg viewBox="0 0 1150 360" style="width:100%;height:auto;font-family:inherit">
+      <g stroke="#c3ccd8" stroke-width="1.4" fill="none">
+        <path d="M575 30 V330 M270 180 H880"/>
+        <path d="M575 30 l-5 9 h10z" fill="#c3ccd8"/><path d="M880 180 l-9 -5 v10z" fill="#c3ccd8"/>
+      </g>
+      <text x="575" y="20" text-anchor="middle" font-size="12.5" fill="#8a919c">AI 인용 높음 ↑</text>
+      <text x="575" y="350" text-anchor="middle" font-size="12.5" fill="#8a919c">AI 인용 낮음 ↓</text>
+      <text x="240" y="184" text-anchor="end" font-size="12.5" fill="#8a919c">검색 낮음 ←</text>
+      <text x="910" y="184" font-size="12.5" fill="#8a919c">→ 검색 높음</text>
+      <g>
+        <rect x="620" y="55" width="230" height="90" rx="12" fill="#eef4fd" stroke="#9db8e8"/>
+        <text x="735" y="93" text-anchor="middle" font-size="15.5" font-weight="600" fill="#003675">둘 다 강함</text>
+        <text x="735" y="116" text-anchor="middle" font-size="12" fill="#5b6b84">유지 · 질문 커버리지 확장</text>
+        <rect x="300" y="55" width="230" height="90" rx="12" fill="#fff" stroke="#dfe4ec"/>
+        <text x="415" y="93" text-anchor="middle" font-size="15.5" font-weight="600" fill="#16324f">AI가 선호하는 근거 보유</text>
+        <text x="415" y="116" text-anchor="middle" font-size="12" fill="#5b6b84">검색 기본기 보강</text>
+        <rect x="620" y="215" width="230" height="90" rx="12" fill="#fff" stroke="#dfe4ec"/>
+        <text x="735" y="253" text-anchor="middle" font-size="15.5" font-weight="600" fill="#16324f">AI 인용 공백</text>
+        <text x="735" y="276" text-anchor="middle" font-size="12" fill="#5b6b84">근거 구조 · 저자 연결 점검</text>
+        <rect x="300" y="215" width="230" height="90" rx="12" fill="#f4f5f7" stroke="#e2e5ea"/>
+        <text x="415" y="253" text-anchor="middle" font-size="15.5" font-weight="600" fill="#6b7380">기반부터 개선</text>
+        <text x="415" y="276" text-anchor="middle" font-size="12" fill="#8a919c">사이트 · 정보 일치부터</text>
+      </g>
+    </svg>
     </div>
-    <p class="note">네이버·구글에서 잘 나온다고 AI에서도 잘 나오는 것이 아님 · 반대도 마찬가지</p>
+    <p class="note">네이버 · 구글에서 잘 나온다고 AI에서도 잘 나오는 것이 아닙니다 · 반대도 마찬가지</p>
   </section>
 
   <section class="slide content">
@@ -964,13 +970,13 @@
     <span class="eyebrow accent">인용과 추천의 간격</span>
     <h2>글은 인용됐는데, 병원은 추천되지 않는 경우</h2>
     <div class="cmp">
-      <div class="col bad"><div class="h">일어나는 일</div>
+      <div class="col bad"><div class="h">일어나는 일</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13l2 2 4-4"/></svg><span style="font-size:12px;color:#8a919c">인용은 됨</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>AI가 우리 칼럼을 <b>출처로 읽음</b></span></li>
           <li><i class="mk x">✕</i><span>그런데 추천 목록에는 <b>다른 병원</b></span></li>
           <li><i class="mk x">✕</i><span>글쓴이와 병원의 <b>연결 정보가 약해서</b></span></li>
         </ul></div>
-      <div class="col"><div class="h">필요한 연결</div>
+      <div class="col"><div class="h">필요한 연결</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M9 15l6-6M8 12l-2.5 2.5a3.5 3.5 0 105 5L13 17M11 7l2.5-2.5a3.5 3.5 0 115 5L16 12"/></svg><span style="font-size:12px;color:#1d4fa8">저자 ↔ 병원</span></div>
         <ul>
           <li><i class="mk o">·</i><span>저자명 ↔ 병원명 ↔ 전문 분야</span></li>
           <li><i class="mk o">·</i><span>공식 프로필 페이지 ↔ 홈페이지</span></li>
@@ -983,14 +989,16 @@
   <section class="slide content tint">
     <span class="eyebrow accent">Representation</span>
     <h2>나오는 것보다, 어떻게 소개되는가</h2>
-    <div class="doc">
-      <table class="ptable" style="font-size:14.5px">
-        <tr><th style="width:26%">구분</th><th>예</th></tr>
-        <tr><td>병원이 원하는 설명</td><td>"색소 진단을 세분화하는 원장" · "필요 없는 시술을 권하지 않는 병원"</td></tr>
-        <tr><td>AI가 실제로 한 설명</td><td>"가격이 저렴한 피부과" · "보톡스 병원"</td></tr>
-        <tr><td>확인할 것</td><td>사실인가 · 원하는 방향인가 · 어떤 출처 문서 때문에 그렇게 설명되는가</td></tr>
-      </table>
+    <div style="display:flex;gap:14px;margin-top:12px;margin-bottom:4px">
+      <div style="flex:1;background:#eef4fd;border:1px solid #9db8e8;border-radius:14px;padding:16px 20px;font-size:16px;color:#003675;font-weight:600">"색소 진단을 세분화하는 원장" <span style="display:block;font-size:11.5px;font-weight:500;color:#5b6b84;margin-top:5px">병원이 원하는 소개</span></div>
+      <div style="flex:0 0 auto;align-self:center;color:#c3ccd8;font-size:19px">vs</div>
+      <div style="flex:1;background:#f4f5f7;border:1px solid #e2e5ea;border-radius:14px;padding:16px 20px;font-size:16px;color:#6b7380;font-weight:600">"가격이 저렴한 피부과" <span style="display:block;font-size:11.5px;font-weight:500;color:#8a919c;margin-top:5px">AI가 실제로 한 소개</span></div>
     </div>
+    <ul class="wlist" style="margin-top:14px">
+      <li>확인할 것 ① <b>사실인가</b> · 없어진 시술 · 옛 가격이 남아 있지 않은지</li>
+      <li>확인할 것 ② <b>원하는 방향인가</b> · 진료 철학과 맞는 소개인지</li>
+      <li>확인할 것 ③ <b>어떤 출처 문서 때문에</b> 그렇게 소개되는지</li>
+    </ul>
     <p class="note">"색소 진단을 세분화하는 원장"을 원했는데 AI가 "가격이 저렴한 피부과"라고 소개하면 오는 환자가 달라집니다 · 설명을 바꾸려면 AI가 읽는 근거 문서를 바꿔야 합니다</p>
     <p class="srcline">2026년 GEO 점검 가이드도 인용 여부만이 아니라 답변 속 브랜드 표현의 정확성 확인을 권함 (Search Engine Land)</p>
   </section>
@@ -1041,13 +1049,13 @@
     <span class="eyebrow accent">연구 단위의 변화</span>
     <h2>키워드 연구에서 질문 연구로</h2>
     <div class="cmp">
-      <div class="col bad"><div class="h">키워드 연구</div>
+      <div class="col bad"><div class="h">키워드 연구</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><span style="font-size:12px;color:#8a919c">검색어 한 번</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>"기미 레이저" 검색량 · 순위</span></li>
           <li><i class="mk x">✕</i><span>한 번의 검색어를 기준으로</span></li>
           <li><i class="mk x">✕</i><span>대응 : 키워드별 글 발행</span></li>
         </ul></div>
-      <div class="col"><div class="h">질문 연구 (Prompt Research)</div>
+      <div class="col"><div class="h">질문 연구 (Prompt Research)</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3 6h7v5H3zM14 6h7v5h-7zM8.5 13.5h7v5h-7z"/><path d="M6.5 11v2.5h4M17.5 11v2.5h-4"/></svg><span style="font-size:12px;color:#1d4fa8">질문의 연쇄</span></div>
         <ul>
           <li><i class="mk o">·</i><span>질문 → 조건 추가 → 비교 → 후속 질문의 연쇄</span></li>
           <li><i class="mk o">·</i><span>환자가 실제로 묻는 문장을 목록화</span></li>
@@ -1076,7 +1084,7 @@
     <h2>환자 질문이 곧 콘텐츠 목록</h2>
     <p class="rsub">콘텐츠 주제 출처 : 진료실에서 실제로 받는 질문</p>
     <div class="cmp">
-      <div class="col bad"><div class="h">키워드 방식 (기존)</div>
+      <div class="col bad"><div class="h">키워드 방식 (기존)</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><span style="font-size:12px;color:#8a919c">수백 병원이 경쟁</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>"이수역 피부과"</span></li>
           <li><i class="mk x">✕</i><span>"기미 레이저"</span></li>
@@ -1084,7 +1092,7 @@
         </ul>
         <p class="note" style="margin-top:12px">같은 키워드에 수백 개 병원이 경쟁 · 글의 차이가 없음</p>
       </div>
-      <div class="col"><div class="h">질문 방식</div>
+      <div class="col"><div class="h">질문 방식</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 5h16v11H9l-4 4z"/><path d="M8 9h8M8 12h5"/></svg><span style="font-size:12px;color:#1d4fa8">원장의 답이 들어감</span></div>
         <ul>
           <li><i class="mk o">·</i><span>"기미랑 주근깨는 같은 레이저로 되나요"</span></li>
           <li><i class="mk o">·</i><span>"레이저 토닝 후 붓기는 며칠 가나요"</span></li>
@@ -1205,13 +1213,13 @@
     <span class="eyebrow accent">개원과 경력</span>
     <h2>개원 직후, 온라인에 있는 것과 없는 것</h2>
     <div class="cmp">
-      <div class="col"><div class="h">원장에게 실제로 있는 것</div>
+      <div class="col"><div class="h">원장에게 실제로 있는 것</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></svg><span style="font-size:12px;color:#8a919c">경력 · 논문 · 경험</span></div>
         <ul>
           <li><i class="mk o">·</i><span>전문의 · 대학병원 경력</span></li>
           <li><i class="mk o">·</i><span>논문 · 학회 활동</span></li>
           <li><i class="mk o">·</i><span>수천 건의 시술 경험</span></li>
         </ul></div>
-      <div class="col bad"><div class="h">개원 직후 온라인에서 확인되는 것</div>
+      <div class="col bad"><div class="h">개원 직후 온라인에서 확인되는 것</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="6" width="18" height="10" rx="5"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span style="font-size:12px;color:#1d4fa8">거의 빈 검색 결과</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>병원명 · 주소 · 전화번호</span></li>
           <li><i class="mk x">✕</i><span>그 외에는 거의 없음</span></li>
@@ -1243,14 +1251,14 @@
     <span class="eyebrow accent">같은 주제, 두 글</span>
     <h2>그 진료실에 원장이 없는 경우</h2>
     <div class="cmp">
-      <div class="col bad"><div class="h">평범한 대행 원고</div>
+      <div class="col bad"><div class="h">평범한 대행 원고</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/></svg><span style="font-size:12px;color:#8a919c">어느 병원이든 같은 글</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>기미의 정의</span></li>
           <li><i class="mk x">✕</i><span>원인 · 증상</span></li>
           <li><i class="mk x">✕</i><span>치료 방법 소개</span></li>
           <li><i class="mk x">✕</i><span>주의사항</span></li>
         </ul></div>
-      <div class="col"><div class="h">원장이라면 이렇게 말했을 글</div>
+      <div class="col"><div class="h">원장이라면 이렇게 말했을 글</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20a5.5 5.5 0 0111 0M15 5h6M15 9h6M15 13h4"/></svg><span style="font-size:12px;color:#1d4fa8">사람이 보이는 글</span></div>
         <ul>
           <li><i class="mk o">·</i><span>"이 정도 색소라면 처음부터 강하게 치료하지 않습니다"</span></li>
           <li><i class="mk o">·</i><span>"환자분들이 가장 많이 오해하시는 부분은…"</span></li>
@@ -1339,11 +1347,11 @@
     <div class="doc">
       <table class="ptable" style="font-size:14px">
         <tr><th style="width:16%">영역</th><th>항목</th></tr>
-        <tr><td>소유</td><td>도메인 명의 · 관리자 계정 → 병원 보유</td></tr>
-        <tr><td>측정</td><td>GA4 · 구글 서치콘솔 · 네이버 서치어드바이저 연결</td></tr>
-        <tr><td>검색</td><td>sitemap · robots.txt · 대표주소(canonical) · HTTPS</td></tr>
-        <tr><td>AI</td><td>텍스트 기반 페이지 · 구조화 데이터(JSON-LD) · AI 크롤러 차단 여부</td></tr>
-        <tr><td>확장</td><td>원장별 프로필 URL · 시술별 개별 URL · 다국어 구조 · 계약 종료 후 소스 · 콘텐츠 귀속</td></tr>
+        <tr><td><span style="display:inline-flex;vertical-align:-5px;margin-right:7px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M14 10l7-7M18 3l3 3M8 22a6 6 0 116-6 6 6 0 01-6 6z"/></svg></span>소유</td><td>도메인 명의 · 관리자 계정 → 병원 보유</td></tr>
+        <tr><td><span style="display:inline-flex;vertical-align:-5px;margin-right:7px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3a9 9 0 019 9h-9z"/><circle cx="12" cy="12" r="9"/></svg></span>측정</td><td>GA4 · 구글 서치콘솔 · 네이버 서치어드바이저 연결</td></tr>
+        <tr><td><span style="display:inline-flex;vertical-align:-5px;margin-right:7px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></span>검색</td><td>sitemap · robots.txt · 대표주소(canonical) · HTTPS</td></tr>
+        <tr><td><span style="display:inline-flex;vertical-align:-5px;margin-right:7px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 3l1.7 4.5L18 9l-4.3 1.6L12 15l-1.7-4.4L6 9l4.3-1.5z"/><path d="M18 15l.9 2.3 2.1.7-2.1.8-.9 2.2-.9-2.2-2.1-.8 2.1-.7z"/></svg></span>AI</td><td>텍스트 기반 페이지 · 구조화 데이터(JSON-LD) · AI 크롤러 차단 여부</td></tr>
+        <tr><td><span style="display:inline-flex;vertical-align:-5px;margin-right:7px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 2.8 15.4 0 18M12 3c-2.8 2.6-2.8 15.4 0 18"/></svg></span>확장</td><td>원장별 프로필 URL · 시술별 개별 URL · 다국어 구조 · 계약 종료 후 소스 · 콘텐츠 귀속</td></tr>
       </table>
     </div>
     <p class="note">업체가 다섯 영역에 바로 답하지 못하면 그 자체가 판단 근거 · 세부 항목 목록은 QR 자료에</p>
@@ -1457,13 +1465,13 @@
     <span class="eyebrow accent">우선순위</span>
     <h2>어느 질문에서 먼저 이길 것인가</h2>
     <div class="cmp">
-      <div class="col bad"><div class="h">넓은 질문</div>
+      <div class="col bad"><div class="h">넓은 질문</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17"/></svg><span style="font-size:12px;color:#8a919c">정면 경쟁</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>"강남 피부과 추천"</span></li>
           <li><i class="mk x">✕</i><span>대형 병원 · 플랫폼과 정면 경쟁</span></li>
           <li><i class="mk x">✕</i><span>개원 초기에는 등장 확률이 낮음</span></li>
         </ul></div>
-      <div class="col"><div class="h">좁고 구체적인 질문</div>
+      <div class="col"><div class="h">좁고 구체적인 질문</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg><span style="font-size:12px;color:#1d4fa8">기준이 드러나는 질문</span></div>
         <ul>
           <li><i class="mk o">·</i><span>"수유 중 색소 치료 상담이 되는 곳"</span></li>
           <li><i class="mk o">·</i><span>"피부가 얇고 홍조가 있는 사람의 리프팅"</span></li>
@@ -1602,12 +1610,12 @@
     <div class="doc">
       <table class="ptable" style="font-size:13.5px">
         <tr><th style="width:38%">흔한 기대</th><th>확인된 사실</th></tr>
-        <tr><td>한 번 캡처에 나오면 성과다</td><td>AI 답변은 확률적 · 같은 질문도 매번 다름 → 반복 측정이 기본</td></tr>
-        <tr><td>ChatGPT에 나오면 다 나온다</td><td>엔진마다 수집 경로 · 출처가 다름 · Gemini 결과와 불일치</td></tr>
-        <tr><td>인용되면 추천된다</td><td>Citation ≠ Recommendation · 출처로만 쓰이고 추천에서 빠질 수 있음</td></tr>
-        <tr><td>추천되면 환자가 온다</td><td>Recommendation ≠ 내원 · 재검색 · 확인 · 예약 단계가 남음</td></tr>
-        <tr><td>AI 노출이 늘면 매출이 는다</td><td>장기 데이터 부족 · 직접 연결 근거는 아직 없음</td></tr>
-        <tr><td>AI가 구글을 대체했다</td><td>대체 근거 없음 · 기존 검색과 병행되는 단계</td></tr>
+        <tr><td><span style="display:inline-flex;width:20px;height:20px;border-radius:6px;background:#e9ebef;color:#8a919c;font-size:11px;font-weight:600;align-items:center;justify-content:center;margin-right:8px;vertical-align:-4px">✕</span>한 번 캡처에 나오면 성과다</td><td>AI 답변은 확률적 · 같은 질문도 매번 다름 → 반복 측정이 기본</td></tr>
+        <tr><td><span style="display:inline-flex;width:20px;height:20px;border-radius:6px;background:#e9ebef;color:#8a919c;font-size:11px;font-weight:600;align-items:center;justify-content:center;margin-right:8px;vertical-align:-4px">✕</span>ChatGPT에 나오면 다 나온다</td><td>엔진마다 수집 경로 · 출처가 다름 · Gemini 결과와 불일치</td></tr>
+        <tr><td><span style="display:inline-flex;width:20px;height:20px;border-radius:6px;background:#e9ebef;color:#8a919c;font-size:11px;font-weight:600;align-items:center;justify-content:center;margin-right:8px;vertical-align:-4px">✕</span>인용되면 추천된다</td><td>Citation ≠ Recommendation · 출처로만 쓰이고 추천에서 빠질 수 있음</td></tr>
+        <tr><td><span style="display:inline-flex;width:20px;height:20px;border-radius:6px;background:#e9ebef;color:#8a919c;font-size:11px;font-weight:600;align-items:center;justify-content:center;margin-right:8px;vertical-align:-4px">✕</span>추천되면 환자가 온다</td><td>Recommendation ≠ 내원 · 재검색 · 확인 · 예약 단계가 남음</td></tr>
+        <tr><td><span style="display:inline-flex;width:20px;height:20px;border-radius:6px;background:#e9ebef;color:#8a919c;font-size:11px;font-weight:600;align-items:center;justify-content:center;margin-right:8px;vertical-align:-4px">✕</span>AI 노출이 늘면 매출이 는다</td><td>장기 데이터 부족 · 직접 연결 근거는 아직 없음</td></tr>
+        <tr><td><span style="display:inline-flex;width:20px;height:20px;border-radius:6px;background:#e9ebef;color:#8a919c;font-size:11px;font-weight:600;align-items:center;justify-content:center;margin-right:8px;vertical-align:-4px">✕</span>AI가 구글을 대체했다</td><td>대체 근거 없음 · 기존 검색과 병행되는 단계</td></tr>
       </table>
     </div>
     <p class="srcline">AI 가시성 측정의 한계에 대한 업계 비판 (Search Engine Land, 2026) · 학계 리뷰(45개 연구)도 GEO를 확률적 과정으로 봄</p>
@@ -1729,14 +1737,14 @@
     <span class="eyebrow accent">자료를 모아 보니</span>
     <h2>네 곳에 흩어진 경력 · 잠긴 답변 154건</h2>
     <div class="cmp">
-      <div class="col bad"><div class="h">이전 · 각자 따로</div>
+      <div class="col bad"><div class="h">이전 · 각자 따로</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="5" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="17" cy="18" r="2"/><circle cx="12" cy="11" r="2"/></svg><span style="font-size:12px;color:#8a919c">흩어진 이력</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>SCI 논문 → 학술 DB에만</span></li>
           <li><i class="mk x">✕</i><span>학회 강연 11건 → 어디에도 없음</span></li>
           <li><i class="mk x">✕</i><span>방송 자문 → 방송사 페이지에만</span></li>
           <li><i class="mk x">✕</i><span>환자 답변 154건 → 로그인 뒤에 잠김</span></li>
         </ul></div>
-      <div class="col"><div class="h">이후 · 하나의 프로필로</div>
+      <div class="col"><div class="h">이후 · 하나의 프로필로</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M13 9h4M13 13h4M7 16h10"/></svg><span style="font-size:12px;color:#1d4fa8">한 페이지로 집약</span></div>
         <ul>
           <li><i class="mk o">·</i><span>공개 프로필 페이지에 이력 집약</span></li>
           <li><i class="mk o">·</i><span>칼럼마다 저자 정보로 연결</span></li>
@@ -1768,13 +1776,13 @@
     <span class="eyebrow accent">그다음, 글의 변화</span>
     <h2>같은 주제, 바뀐 글</h2>
     <div class="cmp">
-      <div class="col bad"><div class="h">BEFORE</div>
+      <div class="col bad"><div class="h">BEFORE</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#8a919c;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/></svg><span style="font-size:12px;color:#8a919c">정의 → 원인 → 치료</span></div>
         <ul>
           <li><i class="mk x">✕</i><span>"기미 치료란?"</span></li>
           <li><i class="mk x">✕</i><span>정의 → 원인 → 치료 → 주의사항</span></li>
           <li><i class="mk x">✕</i><span>어느 병원에 넣어도 같은 글</span></li>
         </ul></div>
-      <div class="col"><div class="h">AFTER</div>
+      <div class="col"><div class="h">AFTER</div><div style="display:flex;gap:8px;align-items:center;margin-top:10px"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20a5.5 5.5 0 0111 0M15 5h6M15 9h6M15 13h4"/></svg><span style="font-size:12px;color:#1d4fa8">기준 · 저자 연결</span></div>
         <ul>
           <li><i class="mk o">·</i><span>"기미가 있다고 무조건 토닝부터 하지는 않습니다"</span></li>
           <li><i class="mk o">·</i><span>치료를 나누는 기준 · 권하지 않는 경우가 본문에</span></li>
@@ -1800,13 +1808,13 @@
     <h2>AI가 인용하는 커뮤니티에 정보로 답했습니다</h2>
     <p class="rsub">발견 : 외국인 환자는 병원 홈페이지보다 커뮤니티 질문에서 먼저 정보를 찾는 경우가 있음 · 실제 게시글 요지</p>
     <div class="ev two">
-      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">reddit.com/r/Living_in_Korea</span></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><img src="assets/logos/reddit.svg" style="width:15px;height:15px;margin-left:4px" alt="Reddit" /><span class="u">reddit.com/r/Living_in_Korea</span></div>
         <div class="aim">
           <div class="q">GLP-1 availability — 한국에서 약값이 어떻게 되나요? (거주 외국인)</div>
           <div class="a">병원 관계자임을 밝히고 답변 : 공개된 약값 · 여권만으로 진료 가능한 근거 · 반출 수량은 진료와 세관 규정에 따름. 미국 약값이 더 저렴한 경우도 함께 안내.</div>
         </div>
       </div>
-      <div class="shot"><div class="bar"><i></i><i></i><i></i><span class="u">reddit.com/r/KoreaSeoulBeauty</span></div>
+      <div class="shot"><div class="bar"><i></i><i></i><i></i><img src="assets/logos/reddit.svg" style="width:15px;height:15px;margin-left:4px" alt="Reddit" /><span class="u">reddit.com/r/KoreaSeoulBeauty</span></div>
         <div class="aim">
           <div class="q">How can a foreigner get Wegovy or Ozempic? (서울 방문 예정자)</div>
           <div class="a">외국인도 대면 진료 시 처방 가능 · 접수에 여권만 필요 · 두 약제의 허가 사항 차이를 정리. 외국인 처방 안내 페이지 링크 첨부.</div>
@@ -1874,6 +1882,10 @@
   <section class="slide content">
     <span class="eyebrow accent">실행</span>
     <h2>업체와 계약하기 전에, 30분만</h2>
+    <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+      <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:none;stroke:#246beb;stroke-width:1.7;stroke-linecap:round"><circle cx="12" cy="13" r="8"/><path d="M12 13V8M9 2h6"/></svg>
+      <span style="font-size:13px;color:var(--ink-soft)">전부 무료 · 로그인 몇 번이면 끝나는 확인입니다</span>
+    </div>
     <div class="ev two" style="gap:22px">
       <ul class="wlist">
         <li>네이버에서 병원명 검색</li>
@@ -1929,7 +1941,7 @@
 
   <section class="slide content tint">
     <span class="eyebrow accent">기록</span>
-    <h2>점검 결과 기록 양식</h2>
+    <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-flex;width:34px;height:34px;border-radius:9px;background:var(--tint-soft);align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#003675;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M8 3h8v4H8zM6 5H5a2 2 0 00-2 2v13a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2h-1M8 12h8M8 16h5"/></svg></span><h2 style="margin:0">점검 결과 기록 양식</h2></div>
     <div class="doc">
       <table class="ptable" style="font-size:13.5px">
         <tr><th style="width:34%">질문</th><th style="width:16%">우리 병원</th><th style="width:22%">먼저 나온 곳</th><th>메모</th></tr>
@@ -2019,7 +2031,7 @@
 
   <section class="slide content tint">
     <span class="eyebrow accent">회수</span>
-    <h2>오늘 다르게 본 것</h2>
+    <div style="display:flex;align-items:center;gap:10px"><span style="display:inline-flex;width:34px;height:34px;border-radius:9px;background:var(--tint-soft);align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:21px;height:21px;fill:none;stroke:#003675;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M4 12h12M12 6l6 6-6 6"/></svg></span><h2 style="margin:0">오늘 다르게 본 것</h2></div>
     <div class="doc">
       <table class="ptable" style="font-size:14.5px">
         <tr><th style="width:34%">흔히 부르는 것</th><th>오늘 다르게 본 것</th></tr>
