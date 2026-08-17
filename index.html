@@ -19,7 +19,7 @@
     --sans:"Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%;overflow:hidden}
+  html,body{word-break:keep-all;overflow-wrap:break-word;height:100%;overflow:hidden}
   body{font-family:var(--sans);color:var(--ink);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased;background:#e8ecf1}
 
   /* 16:9 고정 캔버스 덱 */
@@ -1668,11 +1668,11 @@
     <h2>그로스 마케팅 틀로 본 오늘의 범위</h2>
     <p class="rsub">유입부터 소개까지, 오늘 다룬 것들의 자리</p>
     <div class="secmap" style="grid-template-columns:repeat(5,1fr)">
-      <div class="smq"><div class="sn">A</div><div class="st">Acquisition · 유입</div><div class="sd">검색 · 지도 · AI 노출<br><b>질문 세트 관측 · GEO</b></div></div>
-      <div class="smq"><div class="sn">A</div><div class="st">Activation · 첫 경험</div><div class="sd">홈페이지 · 콘텐츠 → 문의 · 예약<br><b>GA4 · 예약 페이지 도달</b></div></div>
-      <div class="smq"><div class="sn">R</div><div class="st">Retention · 재방문</div><div class="sd">시술 주기 관리<br><b>리콜 알림 · CRM</b></div></div>
-      <div class="smq"><div class="sn">R</div><div class="st">Referral · 소개</div><div class="sd">리뷰 · 지인 추천 · 커뮤니티<br><b>리뷰 응대 원칙 · 답변</b></div></div>
-      <div class="smq"><div class="sn">R</div><div class="st">Revenue · 매출</div><div class="sd">시술별 매출 · 순이익<br><b>문진 × 병원 장부</b></div></div>
+      <div class="smq"><div class="sn">A</div><div class="st">유입<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Acquisition</span></div><div class="sd">검색 · 지도 · AI 노출<br><b>질문 세트 관측 · GEO</b></div></div>
+      <div class="smq"><div class="sn">A</div><div class="st">첫 경험<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Activation</span></div><div class="sd">홈페이지 · 콘텐츠 → 문의 · 예약<br><b>GA4 · 예약 페이지 도달</b></div></div>
+      <div class="smq"><div class="sn">R</div><div class="st">재방문<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Retention</span></div><div class="sd">시술 주기 관리<br><b>리콜 알림 · CRM</b></div></div>
+      <div class="smq"><div class="sn">R</div><div class="st">소개<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Referral</span></div><div class="sd">리뷰 · 지인 추천 · 커뮤니티<br><b>리뷰 응대 원칙 · 답변</b></div></div>
+      <div class="smq"><div class="sn">R</div><div class="st">매출<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Revenue</span></div><div class="sd">시술별 매출 · 순이익<br><b>문진 × 병원 장부</b></div></div>
     </div>
     <p class="note">지표 트리가 "무엇을 키울지"라면, 이 다섯 칸은 "어느 단계를 고칠지" · 같은 데이터로 둘 다 봅니다</p>
   </section>
@@ -1779,13 +1779,19 @@
     <span class="eyebrow accent">처음 검색해 봤더니</span>
     <h2>검색 결과에 없는 원장의 경력</h2>
     <p class="rsub">서울의 한 피부과 · SCI 논문 · 학회 강연 11건 · 방송 자문 이력</p>
-    <div class="numrow" style="margin-bottom:14px">
-      <div><div class="nv down">0<small>개</small></div><div class="nl">홈페이지 구조화 데이터</div></div>
-      <div><div class="nv down">60<small>여 쪽</small></div><div class="nl">설정 오류로 색인 누락</div></div>
-      <div><div class="nv" style="color:var(--ink-soft)">154<small>건</small></div><div class="nl">로그인 뒤에 잠긴 원장 답변</div></div>
-      <div><div class="nv" style="color:var(--ink-soft)">11<small>건</small></div><div class="nl">검색되지 않는 학회 이력</div></div>
+    <div class="ev side">
+      <div>
+        <div class="numrow" style="margin-bottom:14px;grid-template-columns:1fr 1fr">
+          <div><div class="nv down">2<small>/28</small></div><div class="nl">추적 검색어 중 Google Top 20 진입</div><div class="nd">나머지 26개는 미노출</div></div>
+          <div><div class="nv down">0<small>개</small></div><div class="nl">홈페이지 구조화 데이터</div></div>
+          <div><div class="nv" style="color:var(--ink-soft)">154<small>건</small></div><div class="nl">로그인 뒤에 잠긴 원장 답변</div></div>
+          <div><div class="nv" style="color:var(--ink-soft)">11<small>건</small></div><div class="nl">검색되지 않는 학회 이력</div></div>
+        </div>
+        <p class="note">경력이 없는 원장님이 아니라, 온라인에 안 나와 있던 것</p>
+      </div>
+      <div class="evshot"><div class="eh"><b>GEO 모니터</b> · 시작 시점 검색어 순위<span class="src">병원명 가림</span></div>
+        <figure><img src="assets/work/monitor-yoon.png" alt="시작 시점 검색어 순위" /></figure></div>
     </div>
-    <p class="note">경력이 없었던 게 아니라, 검색할 수 있는 형태로 존재하지 않았던 것</p>
   </section>
 
   <section class="slide content tint">
