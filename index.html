@@ -870,18 +870,94 @@
   <section class="slide content">
     <span class="eyebrow accent">다섯 단계</span>
     <h2>AI 답변에 병원이 등장하기까지</h2>
-    <div class="howflow">
-      <div class="hstep"><div class="hn">1</div><div class="ht">Retrieval</div><div class="hd">질문과 관련된 문서를 수집</div></div>
-      <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="hstep"><div class="hn">2</div><div class="ht">Citation</div><div class="hd">그중 일부를 출처로 채택</div></div>
-      <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="hstep"><div class="hn">3</div><div class="ht">Mention</div><div class="hd">답변 문장에 병원 등장</div></div>
-      <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="hstep"><div class="hn">4</div><div class="ht">Recommendation</div><div class="hd">조건에 맞는 병원으로 제시</div></div>
-      <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-      <div class="hstep"><div class="hn">5</div><div class="ht">Representation</div><div class="hd">무엇이라고 설명하는가</div></div>
+    <div style="margin-top:14px">
+    <svg viewBox="0 0 1150 350" style="width:100%;height:auto;font-family:inherit">
+      <g fill="none" stroke="#c3ccd8" stroke-width="1.5">
+        <path d="M208 120 h28 m-8 -5 8 5 -8 5"/>
+        <path d="M438 120 h28 m-8 -5 8 5 -8 5"/>
+        <path d="M668 120 h28 m-8 -5 8 5 -8 5"/>
+        <path d="M898 120 h28 m-8 -5 8 5 -8 5"/>
+      </g>
+      <!-- 1 Retrieval : 여러 문서 수집 -->
+      <g>
+        <rect x="18" y="40" width="190" height="160" rx="14" fill="#fff" stroke="#dfe4ec"/>
+        <g fill="none" stroke="#8a919c" stroke-width="1.6">
+          <rect x="62" y="74" width="44" height="56" rx="5"/>
+          <rect x="76" y="66" width="44" height="56" rx="5" fill="#fff"/>
+          <rect x="90" y="58" width="44" height="56" rx="5" fill="#fff"/>
+          <path d="M99 72h26M99 82h26M99 92h18"/>
+        </g>
+        <circle cx="150" cy="112" r="13" fill="none" stroke="#246beb" stroke-width="1.8"/>
+        <path d="M159 121l9 9" stroke="#246beb" stroke-width="1.8" stroke-linecap="round"/>
+        <text x="113" y="166" text-anchor="middle" font-size="15" font-weight="600" fill="#003675">1 · Retrieval</text>
+        <text x="113" y="186" text-anchor="middle" font-size="12.5" fill="#5b6b84">질문과 관련된 문서 수집</text>
+      </g>
+      <!-- 2 Citation : 출처 채택 -->
+      <g>
+        <rect x="248" y="40" width="190" height="160" rx="14" fill="#fff" stroke="#dfe4ec"/>
+        <g fill="none" stroke="#8a919c" stroke-width="1.5">
+          <rect x="284" y="66" width="40" height="52" rx="5"/>
+          <path d="M292 78h22M292 88h22"/>
+        </g>
+        <g fill="none" stroke="#246beb" stroke-width="1.8">
+          <rect x="338" y="60" width="46" height="60" rx="6"/>
+          <path d="M347 74h27M347 84h27M347 94h19"/>
+          <path d="M361 118l6 7 12-14" stroke-width="2"/>
+        </g>
+        <text x="343" y="166" text-anchor="middle" font-size="15" font-weight="600" fill="#003675">2 · Citation</text>
+        <text x="343" y="186" text-anchor="middle" font-size="12.5" fill="#5b6b84">그중 일부를 출처로 채택</text>
+      </g>
+      <!-- 3 Mention : 답변 문장에 병원 등장 -->
+      <g>
+        <rect x="478" y="40" width="190" height="160" rx="14" fill="#fff" stroke="#dfe4ec"/>
+        <path d="M514 64h118a10 10 0 0110 10v40a10 10 0 01-10 10h-84l-20 16v-16h-14a10 10 0 01-10-10v-40a10 10 0 0110-10z" fill="none" stroke="#8a919c" stroke-width="1.6"/>
+        <path d="M524 80h98M524 92h60" stroke="#c3ccd8" stroke-width="1.6"/>
+        <rect x="524" y="100" width="64" height="12" rx="6" fill="#dce7fa"/>
+        <text x="556" y="110" text-anchor="middle" font-size="9.5" font-weight="600" fill="#1d4fa8">○○의원</text>
+        <text x="573" y="166" text-anchor="middle" font-size="15" font-weight="600" fill="#003675">3 · Mention</text>
+        <text x="573" y="186" text-anchor="middle" font-size="12.5" fill="#5b6b84">답변 문장에 병원 등장</text>
+      </g>
+      <!-- 4 Recommendation : 추천 목록 -->
+      <g>
+        <rect x="708" y="40" width="190" height="160" rx="14" fill="#fff" stroke="#dfe4ec"/>
+        <rect x="742" y="62" width="122" height="24" rx="6" fill="#eef4fd" stroke="#9db8e8"/>
+        <text x="752" y="78" font-size="11" font-weight="600" fill="#1d4fa8">1 · ○○의원</text>
+        <g fill="none" stroke="#c3ccd8" stroke-width="1.4">
+          <rect x="742" y="92" width="122" height="20" rx="6"/>
+          <rect x="742" y="118" width="122" height="20" rx="6"/>
+        </g>
+        <text x="752" y="106" font-size="10.5" fill="#8a919c">2 · △△의원</text>
+        <text x="752" y="132" font-size="10.5" fill="#8a919c">3 · ◇◇의원</text>
+        <text x="803" y="166" text-anchor="middle" font-size="15" font-weight="600" fill="#003675">4 · Recommendation</text>
+        <text x="803" y="186" text-anchor="middle" font-size="12.5" fill="#5b6b84">조건에 맞는 병원으로 제시</text>
+      </g>
+      <!-- 5 Representation : 무엇이라고 설명하는가 -->
+      <g>
+        <rect x="938" y="40" width="194" height="160" rx="14" fill="#fff" stroke="#dfe4ec"/>
+        <text x="972" y="92" font-size="30" font-weight="600" fill="#246beb">"</text>
+        <text x="1035" y="96" text-anchor="middle" font-size="11.5" fill="#3d4149">과잉 진료 없는</text>
+        <text x="1035" y="112" text-anchor="middle" font-size="11.5" fill="#3d4149">색소 진료 병원</text>
+        <text x="1098" y="128" font-size="30" font-weight="600" fill="#246beb">"</text>
+        <text x="1035" y="166" text-anchor="middle" font-size="15" font-weight="600" fill="#003675">5 · Representation</text>
+        <text x="1035" y="186" text-anchor="middle" font-size="12.5" fill="#5b6b84">무엇이라고 설명하는가</text>
+      </g>
+      <!-- 하단 흐름 요약 -->
+      <g font-size="12" fill="#8a919c" text-anchor="middle">
+        <text x="113" y="232">문서 수백 개</text>
+        <text x="343" y="232">출처 몇 개</text>
+        <text x="573" y="232">언급</text>
+        <text x="803" y="232">추천</text>
+        <text x="1035" y="232">설명</text>
+      </g>
+      <path d="M60 246 H1090" stroke="#eceef2" stroke-width="1.2"/>
+      <path d="M60 246 C 300 246 800 246 1090 246" fill="none"/>
+      <g stroke="#9db8e8" stroke-width="1.4" fill="#eef4fd">
+        <circle cx="113" cy="246" r="4.5"/><circle cx="343" cy="246" r="4.5"/><circle cx="573" cy="246" r="4.5"/><circle cx="803" cy="246" r="4.5"/><circle cx="1035" cy="246" r="4.5"/>
+      </g>
+      <text x="575" y="280" text-anchor="middle" font-size="12.5" fill="#5b6b84">단계가 넘어갈수록 후보가 줄어듭니다 · 우리 병원이 어느 단계에서 빠지는지가 진단 포인트</text>
+    </svg>
     </div>
-    <p class="note">어디에서 막혔는지에 따라 손댈 곳이 달라집니다 · 그래서 "AI에 나오나요?" 하나로 묶지 말고 단계별로 따로 봐야 합니다 · 커버한 질문 수 · 우리만 빠진 질문도 함께 기록</p>
+    <p class="note">어디에서 막혔는지에 따라 손댈 곳이 달라집니다 · "AI에 나오나요?" 하나로 묶지 말고 단계별로 따로 봐야 합니다 · 커버한 질문 수 · 우리만 빠진 질문도 함께 기록</p>
   </section>
 
   <section class="slide content">
