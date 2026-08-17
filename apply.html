@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>파닥파닥 세미나 신청 · AI 검색 시대의 병원 마케팅</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+:root{--navy:#003675;--accent:#246beb;--ink:#16181d;--body:#3d4149;--soft:#5b6b84;--faint:#8a8f98;--line:#e5e8ee;--tint:#eef4fd;--bg:#f6f8fc}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;color:var(--body);background:#fff;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+.hero{background:linear-gradient(158deg,#6f8bb4,#8ba3c6,#b7c9e0);color:#fff;padding:64px 0 56px}
+.hero .tag{font-size:13px;letter-spacing:.14em;font-weight:600;opacity:.9}
+.hero h1{font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin:14px 0 12px}
+.hero p{font-size:16px;opacity:.94;max-width:56ch}
+.hero .time{margin-top:22px;font-size:14.5px;font-weight:500;background:rgba(255,255,255,.16);display:inline-block;padding:8px 16px;border-radius:99px}
+section{padding:44px 0 8px}
+h2{font-size:21px;font-weight:600;color:var(--navy);letter-spacing:-.01em;margin-bottom:16px}
+.intro p{margin-bottom:14px;max-width:60ch}
+.intro b{color:var(--ink);font-weight:600}
+.benefit{background:var(--tint);border:1px solid #cfe0ff;border-radius:14px;padding:22px 24px;margin-top:6px}
+.benefit .bt{font-weight:600;color:var(--navy);font-size:16.5px}
+.benefit ol{margin:12px 0 0 20px}
+.benefit li{margin-bottom:10px}
+.benefit li b{color:var(--ink)}
+.benefit .sub{font-size:14px;color:var(--soft);margin-top:2px}
+ul.rec{list-style:none;margin-top:4px}
+ul.rec li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--line)}
+ul.rec li:last-child{border-bottom:0}
+ul.rec li::before{content:"";position:absolute;left:4px;top:16px;width:14px;height:8px;border-left:2.2px solid var(--accent);border-bottom:2.2px solid var(--accent);transform:rotate(-45deg)}
+.host{border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.host .nm{font-weight:600;color:var(--ink);font-size:17px}
+.host .rl{font-size:14px;color:var(--soft);margin-bottom:10px}
+.host p{font-size:14.5px;margin-bottom:8px}
+.host a{color:var(--accent);text-decoration:none;font-weight:500}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.svc div{border:1px solid var(--line);border-radius:10px;padding:13px 15px;font-size:13.5px}
+.svc b{display:block;color:var(--navy);font-size:14px;margin-bottom:3px}
+.cur{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:6px}
+.cur .row{display:flex;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.cur .row:last-child{border-bottom:0}
+.cur .no{flex:0 0 26px;height:26px;border-radius:8px;background:var(--tint);color:var(--navy);font-weight:600;font-size:13px;display:grid;place-items:center;margin-top:2px}
+.cur .tt{font-weight:600;color:var(--ink);margin-bottom:4px}
+.cur ul{list-style:none;font-size:14px;color:var(--soft)}
+.cur li{padding-left:12px;position:relative}
+.cur li::before{content:"·";position:absolute;left:0}
+.sched{display:flex;gap:10px;margin-top:14px;font-size:14.5px}
+.sched span{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 14px}
+form{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:30px 28px;margin:10px 0 20px}
+.f{margin-bottom:18px}
+label{display:block;font-size:14px;font-weight:600;color:var(--ink);margin-bottom:7px}
+label .req{color:#d6336c}
+label .opt{color:var(--faint);font-weight:450;font-size:12.5px}
+input[type=text],input[type=tel],input[type=email],input[type=url],select,textarea{width:100%;border:1px solid #d5dae3;border-radius:9px;padding:11px 13px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:var(--accent)}
+textarea{min-height:88px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid #d5dae3;border-radius:9px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.chk input{margin-top:4px;accent-color:var(--accent);width:15px;height:15px}
+.chk .t{font-size:14.5px}
+.chk .t b{color:var(--ink)}
+.chk .t small{display:block;color:var(--soft);font-size:12.5px;margin-top:2px}
+.agree{font-size:13px;color:var(--soft)}
+.agree summary{cursor:pointer;color:var(--faint);font-size:12.5px;margin-top:6px}
+.agree .box{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:12.5px}
+button{width:100%;border:0;background:var(--navy);color:#fff;font:inherit;font-size:16.5px;font-weight:600;padding:15px;border-radius:10px;cursor:pointer;margin-top:6px}
+button:hover{background:#00295a}
+button:disabled{background:#9aa7b8;cursor:default}
+.msg{display:none;margin-top:14px;padding:14px 16px;border-radius:10px;font-size:14.5px;font-weight:500}
+.msg.ok{display:block;background:#e8f6ee;color:#14683c;border:1px solid #bfe6cf}
+.msg.err{display:block;background:#fdeef2;color:#b02a4c;border:1px solid #f5c6d3}
+.hp{position:absolute;left:-9999px}
+footer{padding:28px 0 48px;color:var(--faint);font-size:12.5px;text-align:center}
+@media (max-width:560px){.hero h1{font-size:27px}.svc{grid-template-columns:1fr}.sched{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<div class="hero"><div class="wrap">
+  <div class="tag">파닥파닥 개원의 세미나 · 온라인</div>
+  <h1>AI 검색 시대의<br>병원 마케팅</h1>
+  <p>요즘 환자들은 뭘 보고 병원을 고를까요? 병원을 찾는 방식이 바뀌고 있습니다. 기존 네이버뿐 아니라 챗GPT · 퍼플렉시티 · 클로드 같은 AI에게 병원을 물어봅니다.</p>
+  <div class="time">21:00 – 22:15 강의 · 22:15 ~ Q&amp;A</div>
+</div></div>
+
+<div class="wrap">
+
+<section class="intro">
+  <h2>세미나 소개</h2>
+  <p>그런데 병원 마케팅은 여전히 네이버 블로그 · 플레이스 중심이고, 대행사 시장은 가격도, 방식도 불투명합니다.</p>
+  <p><b>데이터 · AI 전문가가 직접 정리합니다.</b> 현재 시장이 어떻게 돌아가는지, 어떤 대행사를 골라야 하는지, 어떤 대행사를 걸러야 하는지, AI 검색 시대에 병원이 무엇을 준비해야 하는지.</p>
+  <p>원장님들 스스로 판단할 기준을 갖추실 수 있도록 도와드리는 시간입니다.</p>
+</section>
+
+<section>
+  <h2>🎁 신청 혜택 · 리뷰 작성 시 전원 제공</h2>
+  <div class="benefit">
+    <ol>
+      <li><b>우리 병원 GEO 무료 진단 및 개선안 제공</b>
+        <div class="sub">환자 질문별 AI 답변에서 우리 병원이 나오는지 · 경쟁 병원과 비교해 측정한 결과를 문서로</div></li>
+      <li><b>기존 네이버 글 SEO/GEO 최적화 + 구글 · AI가 읽을 수 있는 자체 칼럼 사이트에 5편 업로드</b>
+        <div class="sub">기존 네이버 블로그에 갇힌 글을 구글 검색 · AI 답변에 인용될 수 있는 형태로 전환</div></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <h2>이런 분들에게 추천해요</h2>
+  <ul class="rec">
+    <li>블로그 · 대행사에 고정 비용을 매달 쓰는데 효과가 의문인 원장님</li>
+    <li>대행사에 처음 맡기거나, 대행사를 바꿀지 고민 중인 원장님</li>
+    <li>챗GPT · AI 검색에 우리 병원이 어떻게 나오는지 궁금한 원장님</li>
+    <li>개원 준비 중이라 온라인 마케팅을 어디서부터 시작할지 막막한 원장님</li>
+    <li>감이 아니라 데이터로 마케팅 효과를 판단하고 싶은 원장님</li>
+  </ul>
+</section>
+
+<section>
+  <h2>강의 구성</h2>
+  <div class="cur">
+    <div class="row"><div class="no">1</div><div><div class="tt">대행사 거르는 법 / 고르는 법</div>
+      <ul><li>최근 병원 마케팅 대행사의 문제점</li><li>마케팅 대행사 선택 시 고려할 점</li><li>계약서에서 꼭 확인할 조항</li></ul></div></div>
+    <div class="row"><div class="no">2</div><div><div class="tt">GEO : AI에 우리 병원이 추천되게 하기</div>
+      <ul><li>SEO와 GEO의 개념과 이해</li><li>검색 순위와 AI 인용률을 높이는 법</li><li>AI가 인용하는 글의 특징과 예시</li></ul></div></div>
+    <div class="row"><div class="no">3</div><div><div class="tt">우리 병원 구글 / AI 노출 자가 점검</div>
+      <ul><li>현재 AI 추천 여부를 확인하는 방법</li><li>우리 병원이 추천되지 않는 원인 5가지</li><li>아임웹 등 템플릿 사이트의 문제점과 대안</li></ul></div></div>
+    <div class="row"><div class="no">4</div><div><div class="tt">앞으로의 병원 마케팅 전략</div>
+      <ul><li>네이버 중심 마케팅에서 벗어나야 하는 이유</li><li>구체적인 단계별 마케팅 전략과 실행 플랜</li></ul></div></div>
+  </div>
+  <div class="sched"><span>✅ 21:00 – 22:15 · 강의 진행</span><span>✅ 22:15 ~ · Q&amp;A</span></div>
+</section>
+
+<section>
+  <h2>진행</h2>
+  <div class="host">
+    <div class="nm">전서연 · 메디부스트 Founder &amp; CEO</div>
+    <div class="rl">AI 검색 GEO 진단 · 병원 콘텐츠 구조화 · 리뷰 · 경쟁 모니터링</div>
+    <p>메디부스트는 데이터브릿지의 병원 마케팅 브랜드로, AI 검색(GEO) 시대에 맞춘 병원 콘텐츠 구조화를 전문적으로 하는 회사입니다.</p>
+    <p><a href="https://mediboost.ai/" target="_blank" rel="noopener">mediboost.ai</a> · <a href="https://databridge.co.kr/portfolio" target="_blank" rel="noopener">databridge.co.kr/portfolio</a></p>
+    <div class="svc">
+      <div><b>AI 검색(GEO) 노출 진단</b>환자가 AI에 묻는 질문별로, 우리 병원이 답변에 나오는지 · 경쟁 병원과 비교해 측정</div>
+      <div><b>AI 검색 대응 구조 세팅</b>구조화 데이터(스키마) · FAQ · llms.txt로 AI가 읽기 쉽게 정보 정리</div>
+      <div><b>병원 콘텐츠 제작</b>AI가 인용하기 좋은 구조의 블로그 · FAQ 콘텐츠</div>
+      <div><b>자사 / 경쟁사 모니터링</b>리뷰 모니터링 · 긍부정 분석, 경쟁 병원 모니터링</div>
+      <div><b>구글 데이터 분석</b>GA4 · Google Search Console 기반 데이터 분석 및 시각화</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>신청하기</h2>
+  <form id="f">
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" />
+    <div class="f"><label>성함 <span class="req">*</span></label><input type="text" name="name" required maxlength="30" /></div>
+    <div class="f"><label>병원명 <span class="opt">개원 예정이면 "개원 예정"으로 적어주세요</span></label><input type="text" name="clinic" maxlength="60" /></div>
+    <div class="f"><label>진료과</label><input type="text" name="dept" placeholder="예: 피부과" maxlength="30" /></div>
+    <div class="f"><label>연락처 <span class="req">*</span></label><input type="tel" name="phone" required placeholder="010-0000-0000" maxlength="20" /></div>
+    <div class="f"><label>이메일 <span class="opt">진단 결과를 받으실 주소</span></label><input type="email" name="email" maxlength="60" /></div>
+    <div class="f"><label>현재 상황</label>
+      <select name="stage">
+        <option value="">선택</option>
+        <option>개원 준비 중</option>
+        <option>개원 1~2년차</option>
+        <option>개원 3년 이상</option>
+        <option>대행사 이용 중</option>
+        <option>기타</option>
+      </select></div>
+    <div class="f"><label>네이버 블로그 · 홈페이지 주소 <span class="opt">혜택(진단 · 글 전환) 제공에 사용됩니다</span></label><input type="url" name="blog" placeholder="https://" maxlength="200" /></div>
+    <div class="f"><label>신청 혜택 <span class="opt">중복 선택 가능</span></label>
+      <label class="chk"><input type="checkbox" name="benefit_geo" /><span class="t"><b>우리 병원 GEO 무료 진단</b><small>AI 답변 노출 여부 · 경쟁 비교 · 개선안 문서</small></span></label>
+      <label class="chk"><input type="checkbox" name="benefit_posts" /><span class="t"><b>네이버 글 5편, 인용 가능한 형태로 전환</b><small>SEO/GEO 최적화 후 자체 칼럼 사이트 업로드</small></span></label>
+    </div>
+    <div class="f"><label>궁금한 점 <span class="opt">세미나에서 다뤄줬으면 하는 내용</span></label><textarea name="question" maxlength="600"></textarea></div>
+    <div class="f agree">
+      <label class="chk"><input type="checkbox" id="agree" required /><span class="t">개인정보 수집 · 이용에 동의합니다 <span class="req">*</span></span></label>
+      <details><summary>수집 항목 · 목적 · 보유 기간 보기</summary>
+        <div class="box">수집 항목: 성함 · 병원명 · 진료과 · 연락처 · 이메일 · 블로그/홈페이지 주소 · 문의 내용<br>
+        이용 목적: 세미나 안내, 신청 혜택(GEO 진단 · 콘텐츠 전환) 제공, 관련 문의 응대<br>
+        보유 기간: 수집일로부터 6개월 후 파기 · 동의를 거부할 수 있으나 거부 시 신청이 제한됩니다.</div>
+      </details>
+    </div>
+    <button type="submit" id="btn">세미나 신청하기</button>
+    <div class="msg" id="msg"></div>
+  </form>
+</section>
+
+</div>
+
+<footer>메디부스트 · 데이터브릿지 | 문의 tjdus92422@gmail.com</footer>
+
+<script>
+var f=document.getElementById('f'),btn=document.getElementById('btn'),msg=document.getElementById('msg');
+f.addEventListener('submit',async function(e){
+  e.preventDefault();
+  msg.className='msg';
+  btn.disabled=true;btn.textContent='전송 중…';
+  var d={};new FormData(f).forEach(function(v,k){d[k]=v});
+  d.benefit_geo=f.benefit_geo.checked;d.benefit_posts=f.benefit_posts.checked;
+  try{
+    var r=await fetch('https://mediboost-seminar-apply.netlify.app/.netlify/functions/apply',{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    var j=await r.json();
+    if(j.ok){msg.className='msg ok';msg.textContent='신청이 접수되었습니다. 입력하신 연락처로 안내드리겠습니다.';f.reset();btn.textContent='접수 완료';}
+    else throw new Error(j.error||'전송에 실패했습니다');
+  }catch(err){
+    msg.className='msg err';msg.textContent='전송에 실패했습니다. 잠시 후 다시 시도해 주세요. (문의: tjdus92422@gmail.com)';
+    btn.disabled=false;btn.textContent='세미나 신청하기';
+  }
+});
+</script>
+</body>
+</html>
