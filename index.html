@@ -826,20 +826,39 @@
   <section class="slide content tint">
     <span class="eyebrow accent">차단 정책</span>
     <h2>네이버 블로그 글은 AI가 원문을 읽지 못합니다</h2>
-    <p class="rsub">blog.naver.com/robots.txt 원문 · 2026.08 조회</p>
-    <div class="ev side">
-      <div class="evshot"><div class="eh"><b>네이버 블로그 robots.txt</b> · AI 봇 차단 목록<span class="src">blog.naver.com/robots.txt</span></div>
-        <figure><img src="assets/evidence/naver-robots.png" alt="네이버 블로그 robots.txt" /></figure></div>
+    <p class="rsub">네이버에만 글이 있는 병원은, AI 입장에서는 인용할 원문이 없는 병원입니다</p>
+    <div class="ev side" style="grid-template-columns:1.05fr 0.95fr">
       <div>
-        <ul class="wlist">
-          <li><b>GPTBot · OAI-SearchBot</b>(챗GPT 검색) · <b>PerplexityBot · ClaudeBot</b> 전면 차단</li>
-          <li>주석 원문 : "AI 학습 · RAG 목적의 봇 접근을 <b>엄격히 금지</b>"</li>
+        <div style="display:flex;align-items:center;gap:0;background:#fff;border:1px solid var(--line-2);border-radius:16px;padding:26px 22px;margin-top:6px">
+          <div style="flex:0 0 150px;text-align:center">
+            <img src="assets/logos/naver.svg" alt="네이버" style="width:44px;height:44px" />
+            <div style="font-size:14px;font-weight:600;color:var(--ink);margin-top:8px">네이버 블로그</div>
+            <div style="font-size:12px;color:var(--ink-soft)">blog.naver.com</div>
+          </div>
+          <div style="flex:1;text-align:center;position:relative">
+            <div style="border-top:1.6px dashed #c3ccd8;position:relative;top:0">
+              <span style="position:absolute;left:50%;top:-16px;transform:translateX(-50%);background:#e9ebef;color:#6b7380;width:32px;height:32px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;font-weight:600">✕</span>
+            </div>
+            <div style="font-size:11.5px;color:var(--ink-faint);margin-top:24px">robots.txt 전면 차단<br>"AI 학습 · RAG 봇 접근 엄격 금지"</div>
+          </div>
+          <div style="flex:0 0 240px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="text-align:center"><img src="assets/logos/openai-gray.svg" style="width:26px;height:26px;opacity:.75" alt="ChatGPT" /><div style="font-size:11px;color:var(--ink-faint);margin-top:3px">GPTBot ·<br>OAI-SearchBot</div></div>
+              <div style="text-align:center"><img src="assets/logos/googlegemini-gray.svg" style="width:26px;height:26px;opacity:.75" alt="Gemini" /><div style="font-size:11px;color:var(--ink-faint);margin-top:3px">Google-<br>Extended</div></div>
+              <div style="text-align:center"><img src="assets/logos/claude-gray.svg" style="width:26px;height:26px;opacity:.75" alt="Claude" /><div style="font-size:11px;color:var(--ink-faint);margin-top:3px">ClaudeBot</div></div>
+              <div style="text-align:center"><img src="assets/logos/perplexity-gray.svg" style="width:26px;height:26px;opacity:.75" alt="Perplexity" /><div style="font-size:11px;color:var(--ink-faint);margin-top:3px">PerplexityBot</div></div>
+            </div>
+          </div>
+        </div>
+        <ul class="wlist" style="margin-top:14px">
           <li>네이버 블로그에만 있는 글은 <b>AI 답변의 원문 출처가 될 수 없음</b></li>
           <li>인용되려면 자체 도메인 등 <b>구글과 AI가 읽는 곳</b>에 글이 있어야 함</li>
         </ul>
-        <p class="note">네이버 안 노출용과 AI 인용용은 글을 두는 위치부터 다름 · 플랫폼 정책은 변경될 수 있음</p>
       </div>
+      <div class="evshot"><div class="eh"><b>네이버 블로그 robots.txt</b> 원문<span class="src">2026.08 조회</span></div>
+        <figure><img src="assets/evidence/naver-robots.png" alt="네이버 블로그 robots.txt" /></figure></div>
     </div>
+    <p class="note">네이버 안 노출용과 AI 인용용은 글을 두는 위치부터 다릅니다 · 플랫폼 정책은 변경될 수 있음</p>
   </section>
 
   <section class="slide content">
