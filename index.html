@@ -589,8 +589,6 @@
     <p class="note">왼쪽 글에서 병원명을 지우면, 어느 병원 글인지 맞힐 수 있습니까?</p>
   </section>
 
-  <section class="slide content"><div style="flex:1;display:flex;align-items:center;justify-content:flex-start"><p style="font-size:46px;font-weight:600;color:var(--accent-deep);letter-spacing:-.035em;line-height:1.45">콘텐츠가 없는 게 아니라,<br>원장이 없는 겁니다.</p></div></section>
-
   <section class="slide content tint">
     <span class="eyebrow accent">한 원장의 경우</span>
     <h2>경력은 충분했는데, 검색에서는 평범했습니다</h2>
@@ -704,7 +702,7 @@
   <section class="slide content tint">
     <span class="eyebrow accent">시장 현황</span>
     <h2>'상위노출 보장' 검색 결과</h2>
-    <p class="rsub">검색어 : 병원 블로그 상위노출 보장 · 업체명 가림</p>
+    <p class="rsub">개원하면 가장 먼저 오는 연락이 이런 제안입니다 · 검색어 : 병원 블로그 상위노출 보장 · 업체명 가림</p>
     <div class="ev side">
       <div class="evshot"><div class="eh"><b>네이버 검색</b> 광고 영역<span class="src">2026.08 조회</span></div>
         <figure><img src="assets/evidence/naver-ads.png" alt="검색 결과 광고 영역" /></figure></div>
@@ -715,7 +713,7 @@
           <li>"블로그 베이직 <b>월 10건 40만원~</b>"</li>
           <li>월 단위로 <b>글 편수를 파는</b> 구조</li>
         </ul>
-        <p class="note">주로 파는 것 : 발행 건수 · 노출</p>
+        <p class="note">주로 파는 것 : 발행 건수 · 노출 · 개원 직후 판단 기준이 없을 때 계약하게 되는 상품</p>
       </div>
     </div>
   </section>
@@ -765,7 +763,7 @@
       </table>
       <div class="srcline">근거 : 보건복지부 「치료경험담 등 불법의료광고 286건 적발」 보도참고자료 (2022.04.18) · 위반 매체 중 블로그 83.6%</div>
     </div>
-    <p class="note">"인플루언서 섭외해 드립니다" 제안을 받으면 이 표부터</p>
+    <p class="note">개원 초기 "오픈 이벤트 후기 올려드립니다" 제안을 받으면 이 표부터</p>
   </section>
 
   <section class="slide content tint">
@@ -905,10 +903,12 @@
   <!-- ============ 04 GEO 어디까지 ============ -->
   <section class="slide content tint">
     <span class="eyebrow accent">순서를 바로잡으면</span>
-    <h2>AI 때문이 아니라, 환자 때문입니다</h2>
-    <div class="quote" style="margin-top:8px">
-      <p>AI 때문에 좋은 콘텐츠가 필요한 게 아닙니다.<br>환자 때문에 원래 필요했습니다.<br>AI가 그 차이를 더 잘 드러내기 시작한 것입니다.</p>
-    </div>
+    <h2>AI 검색과 기존 콘텐츠의 공통점</h2>
+    <ul class="wlist" style="margin-top:8px">
+      <li>환자가 보던 기준 : 질문에 답하는가 · 누가 썼는가 · 근거가 있는가</li>
+      <li>AI가 보는 기준 : 거의 같은 항목을 기계적으로 확인</li>
+      <li>키워드 반복 글은 환자에게도 AI에게도 같은 이유로 밀림</li>
+    </ul>
     <p class="note">AI 검색에서는 그 차이가 답변과 인용 결과에서도 드러나기 시작합니다</p>
   </section>
 
@@ -1074,23 +1074,28 @@
   </section>
 
   <section class="slide content">
-    <span class="eyebrow accent">자가검진</span>
-    <h2>나중에 뜯어고치지 않으려면, 처음부터 확인</h2>
+    <span class="eyebrow accent">발주 전</span>
+    <h2>홈페이지 계약 전에 확인할 것</h2>
+    <p class="rsub">개원 준비 중이라면 이 화면을 캡처해 업체 견적 단계에서 그대로 확인</p>
     <div class="ev two" style="gap:22px">
       <ul class="wlist">
-        <li>대표주소(canonical)가 엉뚱한 페이지를 가리킴</li>
-        <li>사이트맵에 옛 주소만 등록</li>
-        <li>robots.txt가 수집을 차단</li>
-        <li>HTTPS 미적용 · 인증서 오류</li>
+        <li>도메인 명의 → 병원</li>
+        <li>관리자 계정 → 병원 보유</li>
+        <li>구글 서치콘솔 연결</li>
+        <li>네이버 서치어드바이저 연결</li>
+        <li>GA4 연결</li>
+        <li>원장별 프로필 URL</li>
+        <li>시술 · 질환별 개별 URL</li>
       </ul>
       <ul class="wlist">
-        <li>진료 안내가 이미지 안에만 존재</li>
-        <li>원장 프로필이 로그인 뒤에 잠김</li>
-        <li>개편 후 이전 주소 redirect 없음</li>
-        <li>서치콘솔 · 서치어드바이저 미등록</li>
+        <li>sitemap.xml · robots.txt</li>
+        <li>대표주소(canonical) 설정</li>
+        <li>구조화 데이터(JSON-LD)</li>
+        <li>텍스트 기반 페이지 · HTTPS</li>
+        <li>다국어 확장 가능 구조</li>
+        <li>계약 종료 후 소스 · 콘텐츠 귀속</li>
       </ul>
     </div>
-    <p class="note">홈페이지 업체 선정 전에 이 화면을 캡처해 두고, 견적 단계에서 확인을 요청</p>
   </section>
 
   <section class="slide content tint">
@@ -1123,7 +1128,7 @@
 
   <section class="slide content tint">
     <span class="eyebrow accent">템플릿 사이트</span>
-    <h2>아임웹 등 템플릿 사이트 확인 사항</h2>
+    <h2>아임웹 등으로 홈페이지를 만들 계획이라면</h2>
     <p class="rsub">OpenAI 계열 봇 직접 접근 차단 · 일반 검색엔진은 정상 수집</p>
     <div class="ev two">
       <div class="doc" style="margin-top:0">
@@ -1171,6 +1176,25 @@
       <div class="hstep"><div class="hn">5</div><div class="ht">SNS</div><div class="hd">사람의 결</div></div>
     </div>
     <p class="note">시술 중심 진료과일수록 원장 검색 비중이 큼 · 개원 초기에 병원과 원장을 같이 만들어야 하는 이유</p>
+  </section>
+
+  <section class="slide content tint">
+    <span class="eyebrow accent">개원과 경력</span>
+    <h2>개원할 때, 경력은 자동으로 검색되지 않습니다</h2>
+    <div class="cmp">
+      <div class="col"><div class="h">원장에게 실제로 있는 것</div>
+        <ul>
+          <li><i class="mk o">·</i><span>전문의 · 대학병원 경력</span></li>
+          <li><i class="mk o">·</i><span>논문 · 학회 활동</span></li>
+          <li><i class="mk o">·</i><span>수천 건의 시술 경험</span></li>
+        </ul></div>
+      <div class="col bad"><div class="h">개원 직후 온라인에서 확인되는 것</div>
+        <ul>
+          <li><i class="mk x">✕</i><span>병원명 · 주소 · 전화번호</span></li>
+          <li><i class="mk x">✕</i><span>그 외에는 거의 없음</span></li>
+        </ul></div>
+    </div>
+    <p class="note">개원 초기에 원장 프로필 페이지를 먼저 만들어야 하는 이유 · 경력은 옮겨 적어야 자산이 됨</p>
   </section>
 
   <section class="slide content">
@@ -1313,7 +1337,7 @@
 
   <section class="slide content tint">
     <span class="eyebrow accent">측정 루프</span>
-    <h2>요즘 GEO가 가는 방향 · 한 번 세팅하고 끝이 아님</h2>
+    <h2>GEO는 발행보다 관측이 먼저</h2>
     <div class="howflow">
       <div class="hstep"><div class="hn">1</div><div class="ht">질문 정의</div><div class="hd">환자가 물을 질문 목록</div></div>
       <div class="harrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
@@ -1326,6 +1350,23 @@
       <div class="hstep"><div class="hn">5</div><div class="ht">재측정</div><div class="hd">같은 질문으로 → 1</div></div>
     </div>
     <p class="srcline">업계 사례 : 48시간 주기 · 최대 200개 질문 모니터링 (Onthe AI 공개 자료) · 병원은 여기에 의료광고법 · 네이버 · 리뷰 · 다국어가 더해짐</p>
+  </section>
+
+  <section class="slide content tint">
+    <span class="eyebrow accent">관측 화면</span>
+    <h2>운영 초기 데이터 · 2026.08</h2>
+    
+    <div class="ev side">
+      <div class="evshot"><div class="eh"><b>GEO 모니터</b> 일일 관측<span class="src">병원명 가림 · 2026.08</span></div>
+        <figure><img src="assets/work/monitor-yoon.png" alt="GEO 모니터" /></figure></div>
+      <div>
+        <ul class="wlist">
+          <li>추적 검색어 28개</li>
+          <li>Google Top 20 : 2개</li>
+          <li>일 단위 기록 · 공략 우선순위</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="slide content tint">
@@ -1402,8 +1443,8 @@
 
   <section class="slide content tint">
     <span class="eyebrow accent">1단계</span>
-    <h2>1단계 · 유입경로 기록</h2>
-    <p class="rsub">초진 문진표 항목 1개 추가</p>
+    <h2>개원 첫날부터 · 유입경로 기록</h2>
+    <p class="rsub">초진 문진표에 항목 1개 · 개원 첫날부터 시작하면 첫 분기 데이터가 그대로 생김</p>
     <div class="ev side">
       <div>
         <div class="doc" style="margin-top:0">
@@ -1503,7 +1544,7 @@
 
   <section class="slide content tint">
     <span class="eyebrow accent">3단계</span>
-    <h2>대행사 리포트에서 받아야 할 숫자</h2>
+    <h2>업체를 쓴다면, 리포트로 받을 항목</h2>
     <div class="doc">
       <table class="ptable" style="font-size:13.5px">
         <tr><th style="width:34%">항목</th><th style="width:33%">형태</th><th>확인 포인트</th></tr>
@@ -1518,45 +1559,6 @@
     </div>
   </section>
 
-  <section class="slide content">
-    <span class="eyebrow accent">참고 · 실제 화면</span>
-    <h2>진단 리포트 확인 항목</h2>
-    <p class="rsub">병원명 가림</p>
-    <div class="ev side rev">
-      <div>
-        <ul class="wlist">
-          <li>조사 기준</li>
-          <li>비교 대상</li>
-          <li>문제 항목</li>
-          <li>수정 우선순위</li>
-          <li>전후 비교 가능 여부</li>
-        </ul>
-        <p class="note">점수 = 전·후 비교용 참고 지표</p>
-      </div>
-      <div class="evshot"><div class="eh"><b>진단 리포트</b> 예시<span class="src">병원명 가림</span></div>
-        <figure><img src="assets/work/report-clinic.png" alt="진단 리포트 예시" /></figure></div>
-    </div>
-  </section>
-
-  <section class="slide content tint">
-    <span class="eyebrow accent">참고 · 실제 화면</span>
-    <h2>월간 리포트 예시</h2>
-    <p class="rsub">병원명 가림</p>
-    <div class="ev side rev">
-      <div>
-        <ul class="wlist">
-          <li>같은 항목을 <b>지난 → 이번</b>으로만 표기</li>
-          <li><b>좋은 변화</b>와 <b>먼저 알려드릴 것</b>을 분리</li>
-          <li>그 기간에 <b>실제로 처리한 작업</b>을 함께 기재</li>
-          <li>오른 것이 없으면 <b>없다고 적음</b></li>
-        </ul>
-      </div>
-      <div class="evshot"><div class="eh"><b>월간 브리프</b> 원장 전달본<span class="src">병원명 가림</span></div>
-        <figure><img src="assets/work/doctor-brief.png" alt="원장 월간 브리프" /></figure></div>
-    </div>
-  </section>
-
-  <!-- ============ 03 검색 환경 ============ -->
   <section class="slide content">
     <span class="eyebrow accent">한 장 요약</span>
     <h2>제가 원장님이라면 매달 이것만 보겠습니다</h2>
@@ -1581,13 +1583,13 @@
     <div class="cover-art"><svg viewBox="0 0 400 400"><circle cx="165" cy="165" r="120"/><circle cx="165" cy="165" r="72"/><line x1="250" y1="250" x2="362" y2="362"/><circle cx="330" cy="80" r="5"/><circle cx="80" cy="322" r="4"/></svg></div>
     <span class="eyebrow"><span class="n">[ 07 ]</span></span>
     <h1>아까 그 병원으로<br>돌아가 보겠습니다</h1>
-    <p class="lead" style="margin-top:20px;max-width:46ch">진행 중 사례 · 병원명 비공개</p>
+    <p class="lead" style="margin-top:20px;max-width:46ch">개원 때 인프라를 깔지 않으면 몇 년 뒤 도착하는 상태 · 진행 중 사례 · 병원명 비공개</p>
   </section>
 
   <section class="slide content">
     <span class="eyebrow accent"><span class="n">07</span> 시작 상태</span>
     <h2>네이버 블로그만 있던 병원</h2>
-    <p class="rsub">SCI 논문 · 학회 강연 · 방송 자문 이력이 있는 원장. 그런데 검색에서는 보이지 않는 상태</p>
+    <p class="rsub">개원 후 여러 해가 지난 병원 · 논문 · 학회 · 방송 이력이 충분한 원장 · 오늘 말씀드린 인프라가 없던 상태</p>
         <ul class="wlist">
       <li>콘텐츠가 <b>네이버 블로그에만</b> · 구글·AI에서는 찾기 어려움</li>
       <li>블로그에는 지역 키워드만 많고 <b>왜 이 원장인지</b>는 드러나지 않음</li>
@@ -1715,7 +1717,7 @@
 
   <section class="slide content">
     <span class="eyebrow accent">해외 환자 · 번역이 아니라</span>
-    <h2>평범함을 번역하면, 평범함이 네 개 언어가 됩니다</h2>
+    <h2>해외 환자용 콘텐츠에서 달라지는 질문</h2>
     <div class="cmp">
       <div class="col bad"><div class="h">번역</div>
         <ul>
@@ -1730,23 +1732,6 @@
         </ul></div>
     </div>
     <p class="note">외국인 환자 201만 (2025 · 보건복지부) · 이 환자들이 읽는 것도 결국 원장의 글</p>
-  </section>
-
-  <section class="slide content tint">
-    <span class="eyebrow accent"><span class="n">07</span> 지금</span>
-    <h2>운영 초기 데이터 · 2026.08</h2>
-    
-    <div class="ev side">
-      <div class="evshot"><div class="eh"><b>GEO 모니터</b> 일일 관측<span class="src">병원명 가림 · 2026.08</span></div>
-        <figure><img src="assets/work/monitor-yoon.png" alt="GEO 모니터" /></figure></div>
-      <div>
-        <ul class="wlist">
-          <li>추적 검색어 28개</li>
-          <li>Google Top 20 : 2개</li>
-          <li>일 단위 기록 · 공략 우선순위</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <section class="slide content">
@@ -1829,7 +1814,7 @@
   <!-- ============ 06 정리 ============ -->
   <section class="slide content" data-sec="09 마무리">
     <span class="eyebrow accent">실행</span>
-    <h2>대행사를 바꾸기 전에, 30분만</h2>
+    <h2>업체와 계약하기 전에, 30분만</h2>
     <div class="ev two" style="gap:22px">
       <ul class="wlist">
         <li>네이버에서 병원명 검색</li>
@@ -1841,11 +1826,22 @@
       <ul class="wlist">
         <li>챗GPT에 병원 질문</li>
         <li>최근 블로그 글 3개 병원명 가리기</li>
-        <li>대행 계약서 소유권 조항 확인</li>
-        <li>지난 3개월 초진 경로 집계</li>
-        <li>이 결과를 들고 업체 상담</li>
+        <li>계약서 초안의 소유권 조항 확인</li>
+        <li>문진표에 유입경로 항목 넣기</li>
+        <li>이 결과를 들고 업체 상담 · 개원 전이면 홈페이지 발주 전에</li>
       </ul>
     </div>
+  </section>
+
+  <section class="slide content">
+    <span class="eyebrow accent">개원 전</span>
+    <h2>개원 전, 이 순서로 준비</h2>
+    <div class="timeline">
+      <div class="tstep"><span class="w">D-60</span><div class="tt">발주 전 결정</div><ul><li>도메인 · 계정 병원 명의로 개설</li><li>홈페이지 업체에 기술 체크리스트 전달</li><li>원장 프로필 자료 정리 (경력 · 논문 · 기준)</li></ul></div>
+      <div class="tstep"><span class="w">D-30</span><div class="tt">채널 세팅</div><ul><li>플레이스 · 구글 비즈니스 등록</li><li>서치콘솔 · 서치어드바이저 연결</li><li>진료 영역별 페이지 초안</li></ul></div>
+      <div class="tstep"><span class="w">D-7</span><div class="tt">운영 준비</div><ul><li>문진표에 유입경로 항목</li><li>리뷰 응대 원칙 문서화</li><li>단골 질문 목록 → 첫 콘텐츠 주제</li></ul></div>
+    </div>
+    <p class="note">개원 후에 하려면 진료와 병행 · 개원 전이 가장 싸고 빠름</p>
   </section>
 
   <section class="slide content tint">
@@ -1887,14 +1883,6 @@
     </ul>
   </section>
 
-  <section class="slide content">
-    <span class="eyebrow accent">잘 맞는 경우</span>
-    <h2>반대로, 잘 맞는 병원</h2>
-    <div class="quote" style="margin-top:8px">
-      <p>이미 좋은 진료 기준과 경험은 있는데,<br>온라인에서 그 가치가 제대로 보이지 않는 병원.</p>
-    </div>
-  </section>
-
   <section class="slide content tint">
     <span class="eyebrow accent">회수</span>
     <h2>오늘 다르게 본 것</h2>
@@ -1913,7 +1901,7 @@
   <section class="slide content">
     <span class="eyebrow accent">운영</span>
     <h2>Mediboost</h2>
-    <p class="rsub" style="max-width:60ch">이 과정을 저희는 Mediboost에서 운영하고 있습니다.</p>
+    <p class="rsub" style="max-width:70ch">이 과정을 저희는 Mediboost에서 운영하고 있습니다 · 진단 · 콘텐츠 제작 · 검색/AI 모니터링 · 다국어</p>
     <p class="note">노출 · 순위 · 유입은 보장하지 않습니다</p>
     <div style="margin-top:18px"><span class="pill" style="background:var(--tint-soft);border:1px solid #cfe0ff;color:var(--accent-deep)">자료 · 계약 점검 체크리스트 · 문의 QR</span></div>
   </section>
