@@ -650,12 +650,12 @@
     <h2>환자가 병원을 처음 만나는 경로</h2>
     <p class="rsub">겹치지 않게 나누고, 빠짐없이 · 초진 문진의 보기 항목이 이 지도에서 나옴</p>
     <div class="cardrow" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
-      <div class="icard"><h4 style="margin-top:0">검색</h4><p>네이버 · 구글</p></div>
-      <div class="icard"><h4 style="margin-top:0">지도</h4><p>플레이스 · 구글맵</p></div>
-      <div class="icard"><h4 style="margin-top:0">소셜 · 콘텐츠</h4><p>인스타 · 유튜브 · 블로그</p></div>
-      <div class="icard" style="border-color:#9db8e8"><h4 style="margin-top:0;color:var(--accent)">AI 검색</h4><p>ChatGPT · Gemini · AI 브리핑</p></div>
-      <div class="icard"><h4 style="margin-top:0">추천</h4><p>지인 · 커뮤니티 · 카페</p></div>
-      <div class="icard"><h4 style="margin-top:0">오프라인</h4><p>간판 · 근처 생활권 · 소개장</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h4>검색</h4><p>네이버 · 구글</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></div><h4>지도</h4><p>플레이스 · 구글맵</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1"/></svg></div><h4>소셜 · 콘텐츠</h4><p>인스타 · 유튜브 · 블로그</p></div>
+      <div class="icard" style="border-color:#9db8e8"><div style="display:flex;gap:8px"><img src="assets/logos/openai.svg" style="width:22px;height:22px" alt="" /><img src="assets/logos/googlegemini.svg" style="width:22px;height:22px" alt="" /><img src="assets/logos/claude.svg" style="width:22px;height:22px" alt="" /></div><h4 style="color:var(--accent)">AI 검색</h4><p>ChatGPT · Gemini · AI 브리핑</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M8 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM2.5 20a5.5 5.5 0 0111 0M16 11a3.5 3.5 0 100-7M15 20a5.5 5.5 0 016.5-5.4"/></svg></div><h4>추천</h4><p>지인 · 커뮤니티 · 카페</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 9h16M6 9V5h12v4M5 9l1 11h12l1-11M10 13h4"/></svg></div><h4>오프라인</h4><p>간판 · 근처 생활권 · 소개장</p></div>
     </div>
     <div class="doc" style="margin-top:12px;padding:14px 18px">
       <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
@@ -688,6 +688,7 @@
   <section class="slide content tint">
     <span class="eyebrow accent">네이버 안의 변화</span>
     <h2>네이버 검색도 예전 방식이 아닙니다</h2>
+    <div style="display:flex;align-items:center;gap:9px;margin-top:10px"><img src="assets/logos/naver.svg" style="width:22px;height:22px" alt="네이버" /><span style="font-size:13px;color:var(--ink-soft)">search.naver.com · AI 브리핑 · 스마트블록 · 에어서치</span></div>
     <div class="numrow" style="margin-bottom:14px">
       <div><div class="nv">3,000<small>만+</small></div><div class="nl">AI 브리핑 이용자</div><div class="nd">2026.04 기준</div></div>
       <div><div class="nv">20<small>%</small></div><div class="nl">전체 검색 중 AI 브리핑 처리</div></div>
@@ -722,8 +723,8 @@
     <div class="ev side rev">
       <div>
         <div class="numrow" style="margin-bottom:14px">
-          <div><div class="nv">49.5<small>%</small></div><div class="nl">구글</div></div>
-          <div><div class="nv" style="color:var(--ink-soft)">40.9<small>%</small></div><div class="nl">네이버</div></div>
+          <div><div class="nv">49.5<small>%</small></div><div class="nl"><img src="assets/logos/google.svg" style="width:15px;height:15px;vertical-align:-2px;margin-right:5px" alt="" />구글</div></div>
+          <div><div class="nv" style="color:var(--ink-soft)">40.9<small>%</small></div><div class="nl"><img src="assets/logos/naver.svg" style="width:15px;height:15px;vertical-align:-2px;margin-right:5px" alt="" />네이버</div></div>
           <div><div class="nv" style="color:var(--ink-soft)">5.4<small>%</small></div><div class="nl">빙</div></div>
         </div>
         <ul class="wlist">
@@ -812,6 +813,11 @@
   <section class="slide content">
     <span class="eyebrow accent">엔진별 차이</span>
     <h2>ChatGPT와 Gemini는 다른 곳을 봅니다</h2>
+    <div style="display:flex;align-items:center;gap:0;background:#fff;border:1px solid var(--line-2);border-radius:16px;padding:20px 26px;margin:14px 0 16px">
+      <div style="flex:0 0 170px;text-align:center"><img src="assets/logos/openai.svg" style="width:36px;height:36px" alt="ChatGPT" /><div style="font-size:13.5px;font-weight:600;color:var(--ink);margin-top:6px">ChatGPT</div><div style="font-size:11.5px;color:var(--ink-faint)">Bing 계열 수집</div></div>
+      <div style="flex:1;text-align:center;position:relative"><div style="border-top:1.6px dashed #c3ccd8"></div><span style="position:relative;top:-14px;background:#eef4fd;color:#1d4fa8;font-size:12px;font-weight:600;border-radius:20px;padding:4px 14px">Top 5 참고 도메인 공통 0개</span></div>
+      <div style="flex:0 0 170px;text-align:center"><img src="assets/logos/googlegemini.svg" style="width:36px;height:36px" alt="Gemini" /><div style="font-size:13.5px;font-weight:600;color:var(--ink);margin-top:6px">Gemini</div><div style="font-size:11.5px;color:var(--ink-faint)">Google 검색 · 지도</div></div>
+    </div>
     <div class="numrow" style="margin-bottom:14px">
       <div><div class="nv">0<small>개</small></div><div class="nl">두 엔진 Top 5 참고 도메인의 공통 도메인</div><div class="nd">병원 11곳 · 700개 질문 · 6,713개 응답 · 약 4만 인용 분석</div></div>
       <div><div class="nv" style="color:var(--ink-soft)">5.1<small>곳</small></div><div class="nl">질문 하나에 함께 등장하는 평균 병원 수</div><div class="nd">치과 관련 AI 인용 약 6만 건</div></div>
@@ -917,7 +923,7 @@
     <span class="eyebrow accent">용어</span>
     <h2>SEO와 GEO의 차이</h2>
     <div class="cmp">
-      <div class="col"><div class="h">SEO · 검색 최적화</div>
+      <div class="col"><div class="h">SEO · 검색 최적화</div><div style="display:flex;gap:10px;align-items:center;margin-top:10px"><img src="assets/logos/naver.svg" style="width:20px;height:20px" alt="네이버" /><img src="assets/logos/google.svg" style="width:20px;height:20px" alt="구글" /><span style="font-size:12px;color:var(--ink-faint)">검색창</span></div>
         <ul>
           <li><i class="mk o">·</i><span>목표 : 검색 결과의 <b>순위</b></span></li>
           <li><i class="mk o">·</i><span>단위 : 키워드 ("이수역 피부과")</span></li>
@@ -925,7 +931,7 @@
           <li><i class="mk o">·</i><span>참조 : 블로그 · 웹문서 목록</span></li>
           <li><i class="mk o">·</i><span>지표 : 순위 · 클릭 수</span></li>
         </ul></div>
-      <div class="col"><div class="h">GEO · 생성형 검색 최적화</div>
+      <div class="col"><div class="h">GEO · 생성형 검색 최적화</div><div style="display:flex;gap:10px;align-items:center;margin-top:10px"><img src="assets/logos/openai.svg" style="width:20px;height:20px" alt="ChatGPT" /><img src="assets/logos/googlegemini.svg" style="width:20px;height:20px" alt="Gemini" /><img src="assets/logos/perplexity.svg" style="width:20px;height:20px" alt="Perplexity" /><span style="font-size:12px;color:var(--ink-faint)">AI 답변</span></div>
         <ul>
           <li><i class="mk o">·</i><span>목표 : AI 답변 속 <b>인용</b></span></li>
           <li><i class="mk o">·</i><span>단위 : 환자의 질문 문장</span></li>
@@ -1079,12 +1085,12 @@
     <span class="eyebrow accent">여섯 영역</span>
     <h2>검색과 AI가 읽는 병원 정보의 여섯 영역</h2>
     <div class="cardrow" style="grid-template-columns:repeat(3,1fr)">
-      <div class="icard"><h4 style="margin-top:0">공식 정보</h4><p>병원명 · 주소 · 진료시간 · 의료진 · 진료과목</p></div>
-      <div class="icard"><h4 style="margin-top:0">전문성 근거</h4><p>전문의 · 경력 · 논문 · 학회 · 저자 프로필</p></div>
-      <div class="icard"><h4 style="margin-top:0">진료 기준</h4><p>무엇을 하는가 · 무엇은 안 하는가 · 어떤 환자에게 적합한가</p></div>
-      <div class="icard"><h4 style="margin-top:0">제3자 확인</h4><p>리뷰 · 기사 · 논문 DB · 학회 · 커뮤니티</p></div>
-      <div class="icard"><h4 style="margin-top:0">위치 정보</h4><p>지도 · 플레이스 · Google 비즈니스 프로필</p></div>
-      <div class="icard"><h4 style="margin-top:0">콘텐츠</h4><p>질환 · 시술 · 비교 · 회복 · 부작용 · 비용 · FAQ</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg></div><h4>공식 정보</h4><p>병원명 · 주소 · 진료시간 · 의료진 · 진료과목</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13l-2 8 5-3 5 3-2-8"/></svg></div><h4>전문성 근거</h4><p>전문의 · 경력 · 논문 · 학회 · 저자 프로필</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M5 5h14v16H5zM9 3v4M15 3v4M9 11l2 2 4-4"/></svg></div><h4>진료 기준</h4><p>무엇을 하는가 · 무엇은 안 하는가 · 어떤 환자에게 적합한가</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></div><h4>제3자 확인</h4><p>리뷰 · 기사 · 논문 DB · 학회 · 커뮤니티</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10a6 6 0 1112 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></div><h4>위치 정보</h4><p>지도 · 플레이스 · Google 비즈니스 프로필</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg></div><h4>콘텐츠</h4><p>질환 · 시술 · 비교 · 회복 · 부작용 · 비용 · FAQ</p></div>
     </div>
     <p class="note">중요한 건 이 정보들이 서로 다른 말을 하지 않는 것 · 여섯 영역이 같은 말을 할 때 검색과 AI가 같은 병원으로 인식합니다</p>
     <p class="srcline">AI 노출을 사이트 내부 최적화만이 아니라 entity 신호 · 외부 출처까지 함께 보는 접근 (Search Engine Land, 2026)</p>
@@ -1362,11 +1368,11 @@
     <span class="eyebrow accent">질문 세트</span>
     <h2>키워드 순위표 대신, 질문 세트</h2>
     <div class="cardrow" style="grid-template-columns:repeat(5,1fr)">
-      <div class="icard"><h4 style="margin-top:0">탐색</h4><p>"○○역 피부과 추천"</p></div>
-      <div class="icard"><h4 style="margin-top:0">증상</h4><p>"기미 치료 어디가 좋아?"</p></div>
-      <div class="icard"><h4 style="margin-top:0">시술</h4><p>"울쎄라 경험 많은 의사"</p></div>
-      <div class="icard"><h4 style="margin-top:0">비교</h4><p>"A의원 B의원 차이"</p></div>
-      <div class="icard"><h4 style="margin-top:0">브랜드</h4><p>"○○의원 어때?"</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></div><h4>탐색</h4><p>"○○역 피부과 추천"</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h4>증상</h4><p>"기미 치료 어디가 좋아?"</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M5 19l6-6M13 5l6 6-8 8H5v-6z"/></svg></div><h4>시술</h4><p>"울쎄라 경험 많은 의사"</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M8 7h13M8 12h13M8 17h13M3 7h.01M3 12h.01M3 17h.01"/></svg></div><h4>비교</h4><p>"A의원 B의원 차이"</p></div>
+      <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></div><h4>브랜드</h4><p>"○○의원 어때?"</p></div>
     </div>
     <p class="note">질문마다 기록 : 언급 여부 · 몇 번째 · 경쟁 병원 · 출처 · 정보 정확성</p>
   </section>
@@ -1833,7 +1839,7 @@
     <span class="eyebrow accent">실습 2 · AI</span>
     <h2>AI에서 확인하는 네 단계</h2>
     <div class="timeline">
-      <div class="tstep"><span class="w">STEP 1</span><div class="tt">추천되는지</div>
+      <div class="tstep"><span class="w">STEP 1</span><div class="tt">추천되는지</div><div style="display:flex;gap:7px;margin:4px 0 2px"><img src="assets/logos/openai.svg" style="width:18px;height:18px" alt="" /><img src="assets/logos/googlegemini.svg" style="width:18px;height:18px" alt="" /><img src="assets/logos/perplexity.svg" style="width:18px;height:18px" alt="" /></div>
         <ul><li>"○○동 (우리 진료과) 추천해줘"</li><li>우리 병원이 언급되는가</li><li>몇 번째로 나오는가</li></ul></div>
       <div class="tstep"><span class="w">STEP 2</span><div class="tt">정보가 맞는지</div>
         <ul><li>"(우리 병원) 어떤 곳이야?"</li><li>진료시간·주소가 맞는가</li><li>없어진 시술이 남아 있지 않은가</li></ul></div>
