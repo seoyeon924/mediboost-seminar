@@ -1762,6 +1762,41 @@
     <p class="note">접수 체크 → 월 1회 집계 · "모름"도 기록 · 첫 접점과 확인 채널을 나누면 어디에 쓸지가 달라짐</p>
   </section>
 
+  <section class="slide content">
+    <span class="eyebrow accent">남은 칸</span>
+    <h2>이제 채울 칸 넷</h2>
+    <p class="rsub">유입은 봤으니, 나머지는 도구 화면으로 빠르게 봅니다</p>
+    <div style="flex:1;display:flex;align-items:center">
+    <svg viewBox="0 0 1140 300" style="width:100%;height:auto;font-family:inherit">
+      <g fill="none" stroke="#dfe4ec" stroke-width="1.4">
+        <path d="M570 58 V80 M300 80 H840 M300 80 V100 M840 80 V100"/>
+        <path d="M300 156 V176 M160 176 H440 M160 176 V196 M440 176 V196"/>
+        <path d="M840 156 V176 M700 176 H980 M700 176 V196 M980 176 V196"/>
+        <path d="M160 252 V268"/>
+      </g>
+      <rect x="500" y="16" width="140" height="42" rx="9" fill="#eceef2"/>
+      <text x="570" y="42" text-anchor="middle" font-size="15" font-weight="600" fill="#8a919c">매출</text>
+      <rect x="220" y="100" width="160" height="56" rx="9" fill="#f4f5f7" stroke="#e2e5ea"/>
+      <text x="300" y="133" text-anchor="middle" font-size="14" font-weight="600" fill="#8a919c">환자 수</text>
+      <rect x="760" y="100" width="160" height="56" rx="9" fill="#f4f5f7" stroke="#e2e5ea"/>
+      <text x="840" y="133" text-anchor="middle" font-size="14" font-weight="600" fill="#8a919c">객단가</text>
+      <rect x="90" y="196" width="140" height="56" rx="9" fill="#f4f5f7" stroke="#e2e5ea"/>
+      <text x="160" y="222" text-anchor="middle" font-size="13.5" font-weight="600" fill="#8a919c">신환 유입</text>
+      <text x="160" y="240" text-anchor="middle" font-size="10.5" fill="#a9b1bd">앞에서 봄 ✓</text>
+      <rect x="88" y="266" width="144" height="30" rx="8" fill="#eef4fd" stroke="#246beb" stroke-width="1.5"/>
+      <text x="160" y="286" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1d4fa8">① 전환율</text>
+      <rect x="370" y="196" width="140" height="56" rx="9" fill="#eef4fd" stroke="#246beb" stroke-width="1.5"/>
+      <text x="440" y="229" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1d4fa8">② 재진</text>
+      <rect x="630" y="196" width="140" height="56" rx="9" fill="#eef4fd" stroke="#246beb" stroke-width="1.5"/>
+      <text x="700" y="222" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1d4fa8">③ 방문당 시술 수</text>
+      <text x="700" y="240" text-anchor="middle" font-size="10.5" fill="#5b8de0">패키지 · 계절</text>
+      <rect x="910" y="196" width="140" height="56" rx="9" fill="#eef4fd" stroke="#246beb" stroke-width="1.5"/>
+      <text x="980" y="222" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1d4fa8">④ 시술 믹스</text>
+      <text x="980" y="240" text-anchor="middle" font-size="10.5" fill="#5b8de0">원가 · 순이익</text>
+    </svg>
+    </div>
+  </section>
+
   <section class="slide content tint">
     <span class="eyebrow accent">트리 칸 · 전환율</span>
     <h2>문의에서 예약까지 · 응대가 만드는 전환</h2>
@@ -1812,20 +1847,6 @@
   </section>
 
   <section class="slide content">
-    <span class="eyebrow accent">AARRR</span>
-    <h2>그로스 마케팅 틀로 본 오늘의 범위</h2>
-    <p class="rsub">유입부터 소개까지, 오늘 다룬 것들의 자리</p>
-    <div class="secmap" style="grid-template-columns:repeat(5,1fr)">
-      <div class="smq"><div class="sn">A</div><div class="st">유입<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Acquisition</span></div><div class="sd">검색 · 지도 · AI 노출<br><b>질문 세트 관측 · GEO</b></div></div>
-      <div class="smq"><div class="sn">A</div><div class="st">첫 경험<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Activation</span></div><div class="sd">홈페이지 · 콘텐츠 → 문의 · 예약<br><b>GA4 · 예약 페이지 도달</b></div></div>
-      <div class="smq"><div class="sn">R</div><div class="st">재방문<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Retention</span></div><div class="sd">시술 주기 관리<br><b>리콜 알림 · CRM</b></div></div>
-      <div class="smq"><div class="sn">R</div><div class="st">소개<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Referral</span></div><div class="sd">리뷰 · 지인 추천 · 커뮤니티<br><b>리뷰 응대 원칙 · 답변</b></div></div>
-      <div class="smq"><div class="sn">R</div><div class="st">매출<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Revenue</span></div><div class="sd">시술별 매출 · 순이익<br><b>문진 × 병원 장부</b></div></div>
-    </div>
-    <p class="note">지표 트리가 "무엇을 키울지"라면, 이 다섯 칸은 "어느 단계를 고칠지" · 같은 데이터로 둘 다 봅니다</p>
-  </section>
-
-  <section class="slide content">
     <span class="eyebrow accent">트리 칸 · 시술 평균 단가 · 믹스</span>
     <h2>시술별 매출 1위 ≠ 순이익 1위</h2>
     <p class="rsub">앞의 지표 트리를 화면으로 구성한 예 · 예시 데이터</p>
@@ -1836,6 +1857,20 @@
         <figure><img src="assets/work/dash-revenue.png" alt="매출 분석 대시보드" /></figure></div>
     </div>
     <p class="note">시술별 원가를 저장해 두면 매출이 아니라 순이익으로 믹스를 판단하게 됨 · 엑셀 피벗으로 시작해도 구조는 같음</p>
+  </section>
+
+  <section class="slide content">
+    <span class="eyebrow accent">AARRR</span>
+    <h2>그로스 마케팅 틀로 본 오늘의 범위</h2>
+    <p class="rsub">방금 본 네 칸을 퍼널로 다시 묶으면 이렇게 됩니다 · 유입부터 소개까지</p>
+    <div class="secmap" style="grid-template-columns:repeat(5,1fr)">
+      <div class="smq"><div class="sn">A</div><div class="st">유입<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Acquisition</span></div><div class="sd">검색 · 지도 · AI 노출<br><b>질문 세트 관측 · GEO</b></div></div>
+      <div class="smq"><div class="sn">A</div><div class="st">첫 경험<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Activation</span></div><div class="sd">홈페이지 · 콘텐츠 → 문의 · 예약<br><b>GA4 · 예약 페이지 도달</b></div></div>
+      <div class="smq"><div class="sn">R</div><div class="st">재방문<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Retention</span></div><div class="sd">시술 주기 관리<br><b>리콜 알림 · CRM</b></div></div>
+      <div class="smq"><div class="sn">R</div><div class="st">소개<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Referral</span></div><div class="sd">리뷰 · 지인 추천 · 커뮤니티<br><b>리뷰 응대 원칙 · 답변</b></div></div>
+      <div class="smq"><div class="sn">R</div><div class="st">매출<span style="display:block;font-size:12px;letter-spacing:.06em;color:var(--ink-faint);font-weight:500;margin-top:2px">Revenue</span></div><div class="sd">시술별 매출 · 순이익<br><b>문진 × 병원 장부</b></div></div>
+    </div>
+    <p class="note">지표 트리가 "무엇을 키울지"라면, 이 다섯 칸은 "어느 단계를 고칠지" · 같은 데이터로 둘 다 봅니다</p>
   </section>
 
   <section class="slide content">
@@ -1885,25 +1920,25 @@
     <h2>네이버 블로그만 있던 병원</h2>
     <p class="rsub">개원 후 여러 해가 지난 병원 · 논문 · 학회 · 방송 이력이 충분한 원장 · 계약 시점의 채널 상태입니다</p>
     <div class="cardrow" style="grid-template-columns:repeat(5,1fr);margin-top:16px">
-      <div class="icard" style="text-align:center">
+      <div class="icard" style="text-align:center;border:1.5px solid #03C75A;background:#f7fdf9">
         <img src="assets/logos/naver.svg" alt="네이버" style="width:30px;height:30px" />
         <h4 style="margin:10px 0 4px">네이버 블로그</h4>
         <div style="display:inline-block;font-size:11.5px;font-weight:600;background:#dce7fa;color:#1d4fa8;border-radius:20px;padding:3px 11px">운영 중</div>
         <p style="margin-top:8px">지역 키워드 글 위주<br>원장 기준은 안 보임</p>
       </div>
-      <div class="icard" style="text-align:center">
+      <div class="icard" style="text-align:center;background:#fafbfc;opacity:.75">
         <svg viewBox="0 0 24 24" style="width:30px;height:30px;fill:none;stroke:#16324f;stroke-width:1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg>
         <h4 style="margin:10px 0 4px">홈페이지</h4>
         <div style="display:inline-block;font-size:11.5px;font-weight:600;background:#eceef2;color:#6b7380;border-radius:20px;padding:3px 11px">있지만 방치</div>
         <p style="margin-top:8px">측정 도구 미설치<br>원장 이력은 로그인 뒤</p>
       </div>
-      <div class="icard" style="text-align:center">
+      <div class="icard" style="text-align:center;background:#fafbfc;opacity:.75">
         <img src="assets/logos/google.svg" alt="구글" style="width:30px;height:30px" />
         <h4 style="margin:10px 0 4px">구글 검색</h4>
         <div style="display:inline-block;font-size:11.5px;font-weight:600;background:#eceef2;color:#6b7380;border-radius:20px;padding:3px 11px">찾기 어려움</div>
         <p style="margin-top:8px">색인 일부 누락<br>블로그 글은 차단 정책상 없음</p>
       </div>
-      <div class="icard" style="text-align:center">
+      <div class="icard" style="text-align:center;background:#fafbfc;opacity:.75">
         <div style="display:flex;gap:7px;justify-content:center">
           <img src="assets/logos/openai-gray.svg" style="width:22px;height:22px" alt="ChatGPT" />
           <img src="assets/logos/googlegemini-gray.svg" style="width:22px;height:22px" alt="Gemini" />
@@ -1913,7 +1948,7 @@
         <div style="display:inline-block;font-size:11.5px;font-weight:600;background:#eceef2;color:#6b7380;border-radius:20px;padding:3px 11px">언급 없음</div>
         <p style="margin-top:8px">인용할 원문이<br>구글 쪽에 없음</p>
       </div>
-      <div class="icard" style="text-align:center">
+      <div class="icard" style="text-align:center;background:#fafbfc;opacity:.75">
         <svg viewBox="0 0 24 24" style="width:30px;height:30px;fill:none;stroke:#16324f;stroke-width:1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 2.8 15.4 0 18M12 3c-2.8 2.6-2.8 15.4 0 18"/></svg>
         <h4 style="margin:10px 0 4px">영문 사이트</h4>
         <div style="display:inline-block;font-size:11.5px;font-weight:600;background:#eceef2;color:#6b7380;border-radius:20px;padding:3px 11px">대행사 범용</div>
