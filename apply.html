@@ -171,7 +171,7 @@ footer{padding:28px 0 48px;color:var(--faint);font-size:12.5px;text-align:center
       <label class="chk"><input type="checkbox" name="benefit_geo" /><span class="t"><b>우리 병원 GEO 무료 진단</b><small>AI 답변 노출 여부 · 경쟁 비교 · 개선안 문서</small></span></label>
       <label class="chk"><input type="checkbox" name="benefit_posts" /><span class="t"><b>네이버 글 5편, 인용 가능한 형태로 전환</b><small>SEO/GEO 최적화 후 자체 칼럼 사이트 업로드</small></span></label>
     </div>
-    <div class="f"><label>궁금한 점 <span class="opt">세미나에서 다뤄줬으면 하는 내용</span></label><textarea name="question" maxlength="600"></textarea></div>
+    <div class="f"><label>궁금한 점 · 추가 문의 <span class="opt">진단 · 콘텐츠 전환 관련 문의도 좋습니다</span></label><textarea name="question" maxlength="600"></textarea></div>
     <div class="f agree">
       <label class="chk"><input type="checkbox" id="agree" required /><span class="t">개인정보 수집 · 이용에 동의합니다 <span class="req">*</span></span></label>
       <details><summary>수집 항목 · 목적 · 보유 기간 보기</summary>
@@ -198,7 +198,7 @@ f.addEventListener('submit',async function(e){
   var d={};new FormData(f).forEach(function(v,k){d[k]=v});
   d.benefit_geo=f.benefit_geo.checked;d.benefit_posts=f.benefit_posts.checked;
   try{
-    var r=await fetch('https://mediboost-seminar-apply.netlify.app/.netlify/functions/apply',{
+    var r=await fetch('https://mediboost-seminar.netlify.app/.netlify/functions/apply',{
       method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
     var j=await r.json();
     if(j.ok){msg.className='msg ok';msg.textContent='신청이 접수되었습니다. 입력하신 연락처로 안내드리겠습니다.';f.reset();btn.textContent='접수 완료';}
