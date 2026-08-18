@@ -461,6 +461,15 @@
   .numrow .nv.up{color:var(--accent)}
   .numrow .nv.down{color:var(--warn)}
 
+  .rankgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;padding:14px 18px}
+  .rankrow{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line-2)}
+  .rankrow .kw{font-size:15.5px;font-weight:600;color:var(--ink);white-space:nowrap}
+  .rankrow .dem{font-size:11px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+  .rankrow .chips{margin-left:auto;display:flex;gap:6px}
+  .chip{font-size:15px;font-weight:700;border-radius:7px;padding:4px 10px;line-height:1;font-variant-numeric:tabular-nums}
+  .chip.g{background:#e8f0fe;color:#1a56c4}
+  .chip.n{background:#e6f4ec;color:#0b7a3e}
+  .chip.off{background:#f1f2f4;color:#9aa1ab;font-weight:600}
   @media print{.nav,.ctrl{display:none}}
   @media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -1962,17 +1971,26 @@
     <span class="eyebrow accent">처음 검색해 봤더니</span>
     <h2>검색 결과에 없는 원장의 경력</h2>
     <p class="rsub">서울의 한 피부과 · SCI 논문 · 학회 강연 11건 · 방송 자문 이력</p>
-    <div style="display:flex;flex-direction:column;gap:12px;flex:1;min-height:0">
-    <div class="numrow" style="grid-template-columns:repeat(4,1fr)">
-      <div><div class="nv down">2<small>/28</small></div><div class="nl">추적 검색어 중 Google Top 20 진입</div></div>
+    <div class="numrow" style="margin-bottom:14px">
+      <div><div class="nv down">2<small>/28</small></div><div class="nl">추적 검색어 중 Google Top 20 진입</div><div class="nd">나머지 26개는 미노출</div></div>
       <div><div class="nv down">0<small>개</small></div><div class="nl">홈페이지 구조화 데이터</div></div>
       <div><div class="nv" style="color:var(--ink-soft)">154<small>건</small></div><div class="nl">로그인 뒤에 잠긴 원장 답변</div></div>
       <div><div class="nv" style="color:var(--ink-soft)">11<small>건</small></div><div class="nl">검색되지 않는 학회 이력</div></div>
     </div>
-    <div class="evshot" style="flex:1;min-height:0"><div class="eh"><b>GEO 모니터</b> · 검색어별 순위 · 시작 시점<span class="src">메디부스트 자체 툴 · 병원명 · 지역명 가림</span></div>
-      <figure><img src="assets/work/monitor-ranks.png" alt="검색어별 순위" style="object-position:top" /></figure></div>
+    <div class="evshot">
+      <div class="eh"><b>GEO 모니터</b> · 메디부스트 자체 툴 · 시작 시점 검색어별 순위<span class="src">병원명 가림 · 수요 큰 순</span></div>
+      <div class="rankgrid">
+        <div class="rankrow"><span class="kw">○○역 피부과</span><span class="dem">수요 73</span><span class="chips"><span class="chip g">G 6위</span><span class="chip n">N 5위</span></span></div>
+        <div class="rankrow"><span class="kw">○○ 피부과</span><span class="dem">수요 26</span><span class="chips"><span class="chip off">G 미노출</span><span class="chip n">N 27위</span></span></div>
+        <div class="rankrow"><span class="kw">○○ 피부과</span><span class="dem">수요 20</span><span class="chips"><span class="chip off">미노출</span></span></div>
+        <div class="rankrow"><span class="kw">○○ 피부과</span><span class="dem">수요 12</span><span class="chips"><span class="chip off">미노출</span></span></div>
+        <div class="rankrow"><span class="kw">○○역 피부과</span><span class="dem">수요 11</span><span class="chips"><span class="chip off">미노출</span></span></div>
+        <div class="rankrow"><span class="kw">○○ 피부과</span><span class="dem">수요 10</span><span class="chips"><span class="chip off">G 미노출</span><span class="chip n">N 6위</span></span></div>
+        <div class="rankrow"><span class="kw">○○역 보톡스</span><span class="dem">수요 4.6</span><span class="chips"><span class="chip off">미노출</span></span></div>
+        <div class="rankrow"><span class="kw">○○역 피부과 추천</span><span class="dem">수요 1.0</span><span class="chips"><span class="chip g">G 9위</span><span class="chip off">N 미노출</span></span></div>
+      </div>
     </div>
-    <p class="note">막대가 없는 회색 줄이 전부 미노출 검색어 · 경력이 없는 원장님이 아니라, 온라인에 안 나와 있던 것</p>
+    <p class="note">외 20개 검색어 중 17개 미노출 · 경력이 없는 원장님이 아니라, 온라인에 안 나와 있던 것</p>
   </section>
 
   <section class="slide content tint">
