@@ -441,6 +441,7 @@
   /* 근거 자료 캡처 */
   .ev{display:grid;gap:14px;flex:1;min-height:0}
   .ev.two{grid-template-columns:1fr 1fr}
+  .ev.three{grid-template-columns:1fr 1fr 1fr}
   .ev.side{grid-template-columns:1.24fr 0.76fr}
   .ev.side.rev{grid-template-columns:0.76fr 1.24fr}
   .ev > *{align-self:center;max-height:100%}
@@ -1121,6 +1122,28 @@
   </section>
 
   <section class="slide content tint">
+    <span class="eyebrow accent">엔진별 차이 · 실측</span>
+    <h2>같은 질문 20개의 엔진별 결과</h2>
+    <p class="rsub">서울의 한 의원 · 같은 날 같은 질문 20개를 두 엔진에 물었습니다 · 답변 원문에 병원 이름이 나온 질문 수</p>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <table class="ptable" style="font-size:15px">
+      <tr><th style="width:34%">질문의 지역 범위</th><th style="width:12%">질문 수</th><th style="width:27%"><img src="assets/logos/openai.svg" style="width:16px;height:16px;vertical-align:-3px;margin-right:6px" alt="" />OpenAI API</th><th><img src="assets/logos/googlegemini.svg" style="width:16px;height:16px;vertical-align:-3px;margin-right:6px" alt="" />Gemini API</th></tr>
+      <tr><td><b>동 단위</b> · "○○동 여드름 피부과"</td><td>8</td><td>0</td><td><b>8</b></td></tr>
+      <tr><td><b>단지 단위</b> · "○○단지 근처 피부과"</td><td>4</td><td>1</td><td><b>4</b></td></tr>
+      <tr><td><b>구 단위</b> · "○○구 리프팅 피부과 추천"</td><td>8</td><td>0</td><td>1</td></tr>
+      <tr><td><b>합계</b></td><td>20</td><td>1 (5%)</td><td><b>13 (65%)</b></td></tr>
+      <tr><td style="color:#5b6b84">우리 홈페이지를 인용한 답변</td><td style="color:#5b6b84">20</td><td style="color:#5b6b84">0</td><td style="color:#5b6b84">13</td></tr>
+      <tr><td style="color:#5b6b84">답변 하나가 인용한 사이트 수 (평균)</td><td style="color:#5b6b84">·</td><td style="color:#5b6b84">2.0</td><td style="color:#5b6b84">7.5</td></tr>
+    </table>
+    <ul class="wlist" style="font-size:15px;gap:10px;margin-top:20px">
+      <li>한 엔진의 결과만 보면 <b>"안 나온다"와 "대부분 나온다"</b>가 같은 병원에서 동시에 나옵니다</li>
+      <li>두 엔진 모두 <b>구 단위 질문</b>에서는 거의 나오지 않았습니다 · 좁은 질문부터 나옵니다</li>
+    </ul>
+    </div>
+    <p class="note">메디부스트 워크스페이스 · 2026.09 · API 수집 1회 · 앱 화면의 답변과 다를 수 있고, 답변은 물을 때마다 달라질 수 있어 반복 측정이 필요합니다 · Gemini 결과는 원문의 병원명 기준입니다</p>
+  </section>
+
+  <section class="slide content tint">
     <span class="eyebrow accent">차단 정책</span>
     <h2>AI가 원문을 읽지 못하는 네이버 블로그</h2>
     <p class="rsub">네이버에만 글이 있으면 외부 AI가 원문을 직접 수집하지 못합니다 · 네이버 자체 AI 브리핑은 자사 데이터라 예외</p>
@@ -1314,6 +1337,24 @@
       <div class="smq"><div class="sn">문제 3</div><div class="st">병원은 나오는데 원장이 없음</div><div class="sd">원인 : 경력 · 논문 · 진료 기준이 검색 가능한 페이지에 없음</div></div>
     </div>
     <p class="note">문제 1(안 나옴)은 질문 · 근거 파트에서, 문제 2(정보 틀림)는 개원 인프라에서, 문제 3(원장 없음)은 근거 파트에서 순서대로 풉니다</p>
+  </section>
+
+  <section class="slide content">
+    <span class="eyebrow accent">확인 방법 · 실제 화면</span>
+    <h2>답변 원문에서 확인하는 세 가지</h2>
+    <p class="rsub">나왔는지만 보지 않습니다 · 어떤 문장으로 소개됐는지, 어떤 페이지를 읽고 그렇게 말했는지까지 같이 봅니다</p>
+    <div class="ev side">
+      <div class="evshot" style="height:100%"><div class="eh"><b>답변 원문과 근거</b> · 우리 병원 이름은 형광 표시<span class="src">메디부스트 워크스페이스 · 2026.09 · 병원명 · 지역명 가림</span></div>
+        <figure style="background:#0b1220"><img src="assets/work/aipi-answer.png" alt="AI 답변 원문 화면 · 우리 병원 이름 형광 표시와 인용 출처 목록" style="height:100%;width:100%;object-fit:contain" /></figure></div>
+      <div>
+        <ul class="wlist" style="font-size:16px;gap:14px">
+          <li><b>등장</b> · 우리 병원이 몇 번째로, 어떤 병원들과 함께 나오는가</li>
+          <li><b>소개 문장</b> · 진료 기준이 나오는가, 위치와 진료시간만 나오는가</li>
+          <li><b>인용 출처</b> · 우리 홈페이지를 읽었는가, 다른 사이트에 적힌 정보를 읽었는가</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">밑줄은 AI가 출처를 붙인 문장입니다 · 출처 목록에 우리 홈페이지가 없으면 소개 문장은 다른 사이트의 정보로 만들어진 것입니다</p>
   </section>
 
   <section class="slide cover">
@@ -2069,6 +2110,24 @@
   </section>
 
   <section class="slide content tint">
+    <span class="eyebrow accent">측정 루프 · 실제 화면</span>
+    <h2>질문 등록에서 답변 확인까지</h2>
+    <p class="rsub">루프의 1–3단계 · 환자 질문 20개를 등록하고, AI별 답변을 같은 조건으로 수집해, 우리 병원이 빠진 질문을 찾습니다</p>
+    <div class="ev side rev">
+      <div>
+        <ul class="wlist" style="font-size:16px;gap:14px">
+          <li>질문은 <b>지역 범위 × 고민</b>으로 구성 · ○○구 · ○○동 · 단지 이름 단위</li>
+          <li>답변 <b>원문과 인용 출처</b>를 그대로 저장 · 수집 실패는 집계에서 제외</li>
+          <li>답변에 나온 <b>병원 이름을 자동으로 찾아</b> 두고 사람이 확인한 뒤에만 언급률에 반영</li>
+        </ul>
+      </div>
+      <div class="evshot" style="height:100%"><div class="eh"><b>AI 검색 진단</b> · 답변 수집<span class="src">메디부스트 워크스페이스 · 2026.09 · 지역명 가림</span></div>
+        <figure style="background:#0b1220"><img src="assets/work/aipi-collect.png" alt="AI 검색 진단의 답변 수집 화면 · 질문 20개 목록과 수집 결과" style="height:100%;width:100%;object-fit:contain" /></figure></div>
+    </div>
+    <p class="note">API로 수집한 답변입니다 · 같은 질문이라도 앱 화면의 답변과 다를 수 있어 같은 조건으로 반복 측정합니다</p>
+  </section>
+
+  <section class="slide content tint">
     <span class="eyebrow accent">관측 화면</span>
     <h2>일 단위로 쌓는 관측 기록</h2>
     <p class="rsub">운영 초기 화면 · 2026.08 · 추적 검색어 28개 · Google Top 20 진입 2개 · 병원명 가림</p>
@@ -2501,14 +2560,16 @@
   <section class="slide content">
     <span class="eyebrow accent">오늘 내용의 실행 도구</span>
     <h2>AI Patient Intelligence · 분석 워크스페이스</h2>
-    <p class="rsub">오늘 다룬 진단 · 관측 · 개선 · 보고를 한곳에서 돌리는 도구입니다 · 실제 화면 · 병원명 가림</p>
-    <div class="ev two">
+    <p class="rsub">오늘 다룬 입지 · 진단 · 관측 · 개선 · 보고를 돌리는 도구입니다 · 실제 화면 · 병원명 가림</p>
+    <div class="ev three">
+      <div class="evshot" style="height:100%"><div class="eh"><b>개원입지 분석</b> · 인구 · 의료기관 · 임대료<span class="src">실제 화면</span></div>
+        <figure style="background:#0b1220"><img src="assets/work/location-analysis.png" alt="개원입지 분석 화면" style="height:100%;width:100%;object-fit:contain" /></figure></div>
       <div class="evshot" style="height:100%"><div class="eh"><b>오늘의 현황</b> · 언급률 · 빠진 답변 · 개선 작업<span class="src">실제 화면 · 병원명 가림</span></div>
         <figure style="background:#0b1220"><img src="assets/work/aipi-overview.png" alt="워크스페이스 오늘의 현황" style="height:100%;width:100%;object-fit:contain" /></figure></div>
       <div class="evshot" style="height:100%"><div class="eh"><b>성과 보고서</b> · 서치콘솔 · GA4 연결<span class="src">실제 화면 · 병원명 가림</span></div>
         <figure style="background:#0b1220"><img src="assets/work/aipi-report.png" alt="워크스페이스 성과 보고서" style="height:100%;width:100%;object-fit:contain" /></figure></div>
     </div>
-    <p class="note">질문 20개 등록 → 답변 검토 → 빠진 질문이 작업 목록으로 → 서치콘솔 · GA4로 결과 확인 · 오늘 보신 순서 그대로입니다</p>
+    <p class="note">개원 전 : 후보지의 인구 · 의료기관 · 임대료 비교 · 개원 후 : 질문 20개 등록 → 답변 검토 → 빠진 질문이 작업 목록으로 → 서치콘솔 · GA4로 결과 확인</p>
   </section>
 
   <section class="slide content tint">
@@ -2518,7 +2579,7 @@
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
       <div style="background:#fff;border:1px solid var(--line-2);border-radius:12px;padding:16px 18px"><div style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><circle cx="10" cy="10" r="7"/><path d="M15.5 15.5L21 21M7 10l2 2 4-4"/></svg><span style="font-size:11px;letter-spacing:.08em;color:#8a919c;font-weight:700">01 · CHECK</span></div><h4 style="margin:8px 0 6px;font-size:16.5px;color:#003675">AI 검색 진단</h4><div style="font-size:12.5px;color:var(--ink-soft);line-height:1.65">질문 20개 × AI 4곳에서 현재 노출 확인 · 경쟁 병원 3곳과 비교 · 먼저 고칠 것을 정리한 리포트</div><div style="margin-top:10px;font-size:12px;color:#8a919c">운영 중인 병원 · 무료</div></div>
-      <div style="background:#eef4fd;border:1.5px solid #246beb;border-radius:12px;padding:16px 18px"><div style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#1d4fa8;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12M13 13h4M13 17h4"/></svg><span style="font-size:11px;letter-spacing:.08em;color:#1d4fa8;font-weight:700">02 · PLAN</span></div><h4 style="margin:8px 0 6px;font-size:16.5px;color:#003675">Pre-Opening Blueprint</h4><div style="font-size:12.5px;color:var(--ink-soft);line-height:1.65">개원 예정 지역의 검색 환경 · 경쟁 · 병원명 · 검색 수요 · 홈페이지 구조를 개원 전에 설계</div><div style="margin-top:10px;font-size:12px;color:#1d4fa8">개원 예정 병원 · 79만원</div></div>
+      <div style="background:#eef4fd;border:1.5px solid #246beb;border-radius:12px;padding:16px 18px"><div style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#1d4fa8;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 9v12M13 13h4M13 17h4"/></svg><span style="font-size:11px;letter-spacing:.08em;color:#1d4fa8;font-weight:700">02 · PLAN</span></div><h4 style="margin:8px 0 6px;font-size:16.5px;color:#003675">Pre-Opening Blueprint</h4><div style="font-size:12.5px;color:var(--ink-soft);line-height:1.65">후보지 입지 분석(인구 · 의료기관 · 임대료) · 지역 검색 환경 · 병원명 · 검색 수요 · 홈페이지 구조를 개원 전에 설계</div><div style="margin-top:10px;font-size:12px;color:#1d4fa8">개원 예정 병원 · 79만원</div></div>
       <div style="background:#fff;border:1px solid var(--line-2);border-radius:12px;padding:16px 18px"><div style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M12 21V8M12 8l-5 5M12 8l5 5"/><path d="M5 3h14"/></svg><span style="font-size:11px;letter-spacing:.08em;color:#8a919c;font-weight:700">03 · LAUNCH</span></div><h4 style="margin:8px 0 6px;font-size:16.5px;color:#003675">홈페이지 + 검색 기반</h4><div style="font-size:12.5px;color:var(--ink-soft);line-height:1.65">검색과 AI가 읽는 구조로 처음부터 제작 · 구조화 데이터 · 서치콘솔 · GA4까지 설치</div><div style="margin-top:10px;font-size:12px;color:#8a919c">신설 · 개편 병원 · 350만원부터</div></div>
       <div style="background:#fff;border:1px solid var(--line-2);border-radius:12px;padding:16px 18px"><div style="display:flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#16324f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round"><path d="M3 20h18"/><path d="M4 16l5-5 3 3 7-8"/><path d="M19 6h1v1"/></svg><span style="font-size:11px;letter-spacing:.08em;color:#8a919c;font-weight:700">04 · GROW</span></div><h4 style="margin:8px 0 6px;font-size:16.5px;color:#003675">Search &amp; AI Growth</h4><div style="font-size:12.5px;color:var(--ink-soft);line-height:1.65">AI 재측정 · 경쟁 모니터링 · SEO/GEO 개선 · 전문 콘텐츠 · 데이터 기반 월간 보고</div><div style="margin-top:10px;font-size:12px;color:#8a919c">운영 단계 · 월 200만원부터</div></div>
     </div>
