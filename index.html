@@ -1248,24 +1248,21 @@
     <span class="eyebrow accent">통계 · 네이버와 외부 AI</span>
     <h2>AI 답변에 인용되지 않는 네이버 글</h2>
     <p class="rsub">그 인용 출처를 세어 보면 네이버 글은 사실상 0입니다 · 병원 관련 질의 답변의 유효 인용 160,167건 · 2026.07 ~ 08</p>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:28px">
-      <div style="max-width:780px;width:100%;margin:0 auto">
-        <div style="font-size:13.5px;color:var(--ink-faint);margin-bottom:10px">AI 답변의 인용 출처 중 <b style="color:var(--ink)">네이버 블로그</b> 비율</div>
-        <svg viewBox="0 0 620 196" style="width:100%;height:auto;font-family:inherit">
-      <text x="0" y="18" font-size="13.5" font-weight="700" fill="#16324f">ChatGPT</text>
-      <rect x="0" y="26" width="3" height="18" rx="1.5" fill="#1d4fa8"/>
-      <text x="12" y="40" font-size="13" font-weight="700" fill="#003675">0.03%</text><text x="70" y="40" font-size="12" fill="#5b6b84">· 44 / 127,956건 · 차단 정책 준수</text>
-      <text x="0" y="84" font-size="13.5" font-weight="700" fill="#16324f">Gemini</text>
-      <rect x="0" y="92" width="2" height="18" rx="1" fill="#1d4fa8"/>
-      <text x="12" y="106" font-size="13" font-weight="700" fill="#003675">0%</text><text x="42" y="106" font-size="12" fill="#5b6b84">· 0 / 8,100건 · 차단 정책 준수</text>
-      <text x="0" y="150" font-size="13.5" font-weight="600" fill="#8a919c">Perplexity</text>
-      <rect x="0" y="158" width="404" height="18" rx="4" fill="#c9cfd9"/>
-      <text x="412" y="172" font-size="13" font-weight="700" fill="#5b6b84">18.3%</text><text x="470" y="172" font-size="12" fill="#8a919c">· 차단 정책 미준수 논란</text>
-        </svg>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="cmp">
+      <div class="col"><div class="h">수집을 허용한 일반 사이트 50곳</div>
+        <div style="margin-top:22px"><span style="font:600 54px 'Space Grotesk',sans-serif;letter-spacing:-.02em;color:#003675">29,199</span><span style="font-size:19px;color:#5b6b84;margin-left:6px">번 방문</span></div>
+        <p style="font-size:14px;color:#5b6b84;margin-top:10px">AI 수집기 방문 횟수 · 서버 로그 7주 (2026.06 ~ 08)</p>
+        <p style="font-size:12.5px;color:#8a919c;margin-top:14px">GPTBot · ClaudeBot · Googlebot · OAI-SearchBot · ChatGPT-User</p>
       </div>
-      <div style="max-width:780px;width:100%;margin:0 auto;background:#eef4fd;border:1px solid #9db8e8;border-radius:10px;padding:13px 18px;font-size:14.5px;line-height:1.7;color:#1d4fa8">같은 기간, 수집을 허용한 일반 사이트 50곳에는 AI 수집기가 <b>29,199번</b> 방문했습니다 (서버 로그 7주) · 네이버 블로그 · 카페 · 지식iN은 2025년 7월부터 AI 수집기를 전면 차단했습니다</div>
+      <div class="col bad"><div class="h">네이버 블로그 · 카페 · 지식iN</div>
+        <div style="margin-top:22px"><span style="font:600 54px/1.1 Pretendard,sans-serif;letter-spacing:-.02em;color:#16324f">전면 차단</span></div>
+        <p style="font-size:14px;color:#5b6b84;margin-top:10px">2025년 7월부터 robots.txt로 AI 수집기 차단</p>
+        <p style="font-size:14.5px;margin-top:14px;color:#16324f">그 결과, AI 답변 인용 비율 : <b>ChatGPT 0.03% · Gemini 0%</b></p>
+      </div>
     </div>
-    <p class="note">인용되지 않는 원인은 글의 품질이 아니라 접근 가능성입니다</p>
+    </div>
+    <p class="note">인용되지 않는 원인은 글의 품질이 아니라 접근 가능성입니다 · 차단을 지키지 않는다는 논란이 있는 Perplexity만 예외적으로 18.3%</p>
     <p class="srcline">출처 : 국내 GEO 실측 보고서 2026.08 (자체 운영 사이트 50곳의 서버 로그 · 인용 기록) · 중앙일보 2025.08.05 · 네이버 각 서비스 robots.txt 원문 (2026.09.22 재확인)</p>
   </section>
 
