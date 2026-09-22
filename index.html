@@ -1957,6 +1957,22 @@
     <p class="note">거주 인구 기준이라 직장인 · 유동 인구는 빠져 있습니다(강남역 · 압구정의 지수가 낮은 이유) · 관련 의원은 등록 진료과 기준이며 실제 시술 경쟁과 다릅니다 · 임대료는 포함하지 않았습니다</p>
   </section>
 
+  <section class="slide content tint">
+    <span class="eyebrow accent">01 · 지역 · 원장님 피드백 반영</span>
+    <h2>이런 고민, 있으시죠</h2>
+    <p class="rsub">개원 준비 중인 원장님들이 화면을 보고 주신 말을 그대로 적고, 무엇을 바꿨는지 옆에 적었습니다</p>
+    <table class="ptable" style="font-size:15.5px;margin-top:10px">
+      <tr><th style="width:38%">원장님이 하신 말</th><th>지금 화면에서는</th></tr>
+      <tr><td>"경쟁 지수가 높은 게 좋은 건지 나쁜 건지 모르겠어요"</td><td>지수 옆에 <b>판정 문구</b>(경쟁 덜함 · 전국 평균 수준 · 치열)와 <b>눈금</b>을 붙였습니다 · 전국 평균이 100, 높을수록 경쟁 덜함 · 의원 1곳당 타깃 인구를 전국과 몇 배로 비교하는지 함께 표시</td></tr>
+      <tr><td>"뭐라고 검색해야 하는 거예요? 주소를 다 쳐야 하나요"</td><td><b>"동탄역", "둔촌동", "세교2지구"</b>처럼 역 · 동 · 건물 이름으로 찾습니다 · 후보를 추가하면 검색창이 먼저 뜨고, 지도에서 직접 찍는 건 보조 선택</td></tr>
+      <tr><td>"이 동네 타깃 인구가 늘고 있는지 줄고 있는지 알고 싶어요"</td><td>5년 전 대비 변화율과 <b>2019~2024년 추이 그래프</b> · 같은 통계 구역으로 비교해 경계 변경의 영향을 받지 않음</td></tr>
+      <tr><td>"인구 막대그래프가 잘 안 보여요"</td><td>연령별 배후 인구와 인구 추이를 <b>지도 바로 옆</b>으로 옮기고, 타깃 연령대만 밝은 색으로</td></tr>
+      <tr><td>"임대료는 평균이라도 넣어 주세요 · 직방 같은 데이터 없어요?"</td><td>직방 · 네이버 부동산은 공개 API가 없고 수집이 금지돼 쓰지 않습니다 · 대신 <b>한국부동산원 상권별 · 층별 평균 임대료</b>(2026년 2분기)로 상권 · 층 · 평수를 고르면 월 임대료가 계산됩니다</td></tr>
+      <tr><td>"분석 결과를 파일로 받고 싶은데 JSON은 못 열어요"</td><td><b>인쇄용 보고서(PDF)</b>와 <b>CSV</b>로 내보냅니다 · 후보지 비교표, 연령별 인구, 경쟁 판정, 자료 출처와 기준일 포함</td></tr>
+    </table>
+    <p class="note">모두 공개 자료의 비율이며 점수나 매출 예측이 아닙니다 · 세미나 이후 신청하신 분께는 예정 지역 기준으로 기본 분석 화면을 캡처해 보내드립니다</p>
+  </section>
+
   <section class="slide content">
     <span class="eyebrow accent">세 가지</span>
     <h2>개원할 때 같이 만들어야 하는 것</h2>
@@ -2869,18 +2885,19 @@
   <section class="slide content">
     <span class="eyebrow accent">혜택 신청</span>
     <h2>혜택 신청 · 리뷰 작성 시 전원 제공</h2>
-    <p class="rsub">세미나를 끝까지 듣고 리뷰를 남기면 아래 세 가지를 전부 드립니다 · 리뷰는 파닥파닥 세미나 페이지에 · 노출 · 순위 · 유입은 보장하지 않습니다</p>
+    <p class="rsub">세미나를 끝까지 듣고 리뷰를 남기면 아래 네 가지를 전부 드립니다 · 리뷰는 파닥파닥 세미나 페이지에 · 노출 · 순위 · 유입은 보장하지 않습니다</p>
     <div class="ev side" style="grid-template-columns:1fr 300px">
       <div>
         <div style="display:flex;align-items:center;gap:10px;background:#eef4fd;border:1px solid #9db8e8;border-radius:10px;padding:11px 14px;margin-top:4px">
           <svg viewBox="0 0 24 24" style="width:22px;height:22px;flex:none;fill:none;stroke:#1d4fa8;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg>
           <span style="font-size:14px;color:#1d4fa8"><b>① 세미나 VOD 다시보기</b> · 오늘 전체 영상 제공</span>
         </div>
-        <div class="cardrow" style="grid-template-columns:1fr 1fr;margin-top:10px">
-          <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M8 11l2 2 4-4"/></svg></div><h4>② 우리 병원 GEO 무료 진단</h4><p>환자 질문별 AI 답변에서 우리 병원 노출 여부 · 경쟁 병원 비교 · 개선안 문서로 제공</p></div>
+        <div class="cardrow" style="grid-template-columns:1fr 1fr 1fr;margin-top:10px">
+          <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4M8 11l2 2 4-4"/></svg></div><h4>② 우리 병원 GEO 무료 진단</h4><p>환자 질문별 AI 답변에서 우리 병원 노출 여부 · 경쟁 병원 비교 · 개선안 문서</p></div>
           <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/><path d="M9 14l3-3 3 3M12 11v7"/></svg></div><h4>③ 네이버 글 5편, 인용 가능한 형태로</h4><p>기존 네이버 글 SEO · GEO 최적화 후 구글 · AI가 읽는 자체 칼럼 사이트에 업로드</p></div>
+          <div class="icard"><div class="ii"><svg viewBox="0 0 24 24"><path d="M12 21s-6-5.2-6-10a6 6 0 0112 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></div><h4>④ 개원입지 기본 분석</h4><p>예정 지역(또는 현 위치) 기준 타깃 인구 · 관련 의원 · 경쟁 여유 지수 · 임대료 화면을 캡처해 전달</p></div>
         </div>
-        <p class="note">네이버 블로그에 갇힌 글을 구글 검색 · AI 답변에 인용될 수 있는 위치로 옮기는 작업 · 혜택 신청 폼에 병원명과 블로그 주소를 남기면 진단 결과를 메일로 보내드립니다 · 개원 전이면 예정 지역 · 진료 분야 기준으로 진단합니다</p>
+        <p class="note">신청 폼에 남긴 연락처로 <b>카카오톡으로 순차 연락</b>드립니다 · GEO 진단 문서와 입지 분석 화면 캡처를 함께 보내고, 글 전환은 블로그 주소를 남긴 분부터 진행합니다 · 개원 전이면 예정 지역 · 진료 분야 기준</p>
       </div>
       <div style="text-align:center">
         <img src="assets/qr-apply.png" alt="혜택 신청 QR" style="width:200px;height:200px;border:1px solid var(--line-2);border-radius:12px;padding:10px;background:#fff" />
